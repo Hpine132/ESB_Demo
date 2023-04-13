@@ -1,0 +1,146 @@
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\country_flow.msgflow.
+Successfully added file Country\country_flow.msgflow to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\CountrySchema.xsd.
+Successfully added file Country\CountrySchema.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.
+Successfully added file Country\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.
+Successfully added file Country\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\IBMdefined\soap.xsd.
+Successfully added file Country\IBMdefined\soap.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\ListOfContinentsByName\ListOfContinentsByName.subflow.
+Successfully added file Country\ListOfContinentsByName\ListOfContinentsByName.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql.
+Dependent ESQL file ListOfContinentsByName/ListOfContinentsByName_BuildResult.esql is added to the BAR file.
+
+Successfully added file Country\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\ListOfContinentsByName\ListOfContinentsByName_BuildResult.esql.
+Dependent ESQL file ListOfContinentsByName/ListOfContinentsByName_BuildReq.esql is added to the BAR file.
+
+Successfully added file Country\ListOfContinentsByName\ListOfContinentsByName_BuildResult.esql to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\application.descriptor.
+Successfully added file Country\application.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file Country\application.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\application.descriptor.
+Successfully added file Country\application.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file Country\application.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\country.wsdl.
+Successfully added file Country\country.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\country_flow_inputMessage.xml.
+Successfully added file Country\country_flow_inputMessage.xml to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file Country\country_flow_routeToLabel.esql.
+Successfully added file Country\country_flow_routeToLabel.esql to BAR file.
+
+==============================================
+
+!Wed Apr 12 17:54:12 ICT 2023
+
+Processing file CountryLib.
+Library file CountryLib.libzip successfully added to the BAR.
+Library compiled contents:
+    
+    Processing file CountryLib\CountryInfoService_1.wsdl.
+    Successfully added file CountryLib\CountryInfoService_1.wsdl to BAR file.
+    
+    
+    Processing file CountryLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.
+    Successfully added file CountryLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.
+    
+    
+    Processing file CountryLib\CountryInfoService_1_InlineSchema1.xsd.
+    Successfully added file CountryLib\CountryInfoService_1_InlineSchema1.xsd to BAR file.
+    
+    
+    Processing file CountryLib\IBMdefined\soap.xsd.
+    Successfully added file CountryLib\IBMdefined\soap.xsd to BAR file.
+    
+    
+    Processing file CountryLib\library.descriptor.
+    Successfully added file CountryLib\library.descriptor to BAR file.
+    Elapsed time: 0 second(s).
+    
+    Successfully added file CountryLib\library.descriptor to BAR file.
+    
+    
+    Processing file CountryLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.
+    Successfully added file CountryLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.
+    
+    
+    Processing file CountryLib\CountryInfoService_1.xsd.
+    Successfully added file CountryLib\CountryInfoService_1.xsd to BAR file.
+    
+    
+    Processing file CountryLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd.
+    Successfully added file CountryLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd to BAR file.
+    
+
+Elapsed time: 0.004 second(s).

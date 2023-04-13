@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CountrySchema" xmlns:tns="http://www.example.org/CountrySchema" elementFormDefault="qualified" xmlns:Q1="http://www.oorsprong.org/websamples.countryinfo">
+
+    <import schemaLocation="../CountryLib/CountryInfoService_1_InlineSchema1.xsd" namespace="http://www.oorsprong.org/websamples.countryinfo"></import>
+    <element name="Input" type="tns:input"></element>
+
+    <complexType name="input">
+    	<sequence>
+    		<element name="FunctionCode" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Output">
+    	<complexType>
+    		<sequence>
+    			<element name="List" type="tns:ListType"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+
+    <complexType name="ListType">
+    	<sequence>
+    		<element name="item" type="tns:NewType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="NewType">
+    	<sequence>
+    		<element name="sCode" type="string"></element>
+    		<element name="sName" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

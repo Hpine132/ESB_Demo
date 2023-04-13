@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="Country">
+  <XSDCollection href="platform:/resource/Country/CountrySchema.xsd" prefix="tns" targetNamespace="http://www.example.org/CountrySchema">
+    <import name="CountryInfoService_1_InlineSchema1.xsd" targetNamespace="http://www.oorsprong.org/websamples.countryinfo"/>
+    <element href="platform:/resource/Country/CountrySchema.xsd#//Input;XSDElementDeclaration" name="Input" type="mlib://Country#/-/complexType{http://www.example.org/CountrySchema}input"/>
+    <element href="platform:/resource/Country/CountrySchema.xsd#//Output;XSDElementDeclaration=1" name="Output" type="mlib://Country#/-/complexType{http://www.example.org/CountrySchema}output"/>
+    <complexType baseType="mlib://Country#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/Country/CountrySchema.xsd#//input;XSDComplexTypeDefinition" name="input"/>
+    <complexType baseType="mlib://Country#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/Country/CountrySchema.xsd#//ListType;XSDComplexTypeDefinition=1" name="ListType"/>
+    <complexType baseType="mlib://Country#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/Country/CountrySchema.xsd#//NewType;XSDComplexTypeDefinition=2" name="NewType"/>
+    <complexType baseType="mlib://Country#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/Country/CountrySchema.xsd#//output;XSDComplexTypeDefinition=3" name="output"/>
+  </XSDCollection>
+</MessageBroker>

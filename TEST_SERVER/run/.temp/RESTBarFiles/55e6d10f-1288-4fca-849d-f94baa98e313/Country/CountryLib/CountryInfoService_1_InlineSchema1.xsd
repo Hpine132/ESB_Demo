@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oorsprong.org/websamples.countryinfo" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.oorsprong.org/websamples.countryinfo">
+      <xsd:complexType name="tContinent">
+        <xsd:sequence>
+          <xsd:element name="sCode" type="xsd:string"/>
+          <xsd:element name="sName" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="tCurrency">
+        <xsd:sequence>
+          <xsd:element name="sISOCode" type="xsd:string"/>
+          <xsd:element name="sName" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="tCountryCodeAndName">
+        <xsd:sequence>
+          <xsd:element name="sISOCode" type="xsd:string"/>
+          <xsd:element name="sName" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="tCountryCodeAndNameGroupedByContinent">
+        <xsd:sequence>
+          <xsd:element name="Continent" type="tns:tContinent"/>
+          <xsd:element name="CountryCodeAndNames" type="tns:ArrayOftCountryCodeAndName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="tCountryInfo">
+        <xsd:sequence>
+          <xsd:element name="sISOCode" type="xsd:string"/>
+          <xsd:element name="sName" type="xsd:string"/>
+          <xsd:element name="sCapitalCity" type="xsd:string"/>
+          <xsd:element name="sPhoneCode" type="xsd:string"/>
+          <xsd:element name="sContinentCode" type="xsd:string"/>
+          <xsd:element name="sCurrencyISOCode" type="xsd:string"/>
+          <xsd:element name="sCountryFlag" type="xsd:string"/>
+          <xsd:element name="Languages" type="tns:ArrayOftLanguage"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="tLanguage">
+        <xsd:sequence>
+          <xsd:element name="sISOCode" type="xsd:string"/>
+          <xsd:element name="sName" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftCountryCodeAndName">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tCountryCodeAndName" nillable="true" type="tns:tCountryCodeAndName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftLanguage">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tLanguage" nillable="true" type="tns:tLanguage"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftContinent">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tContinent" nillable="true" type="tns:tContinent"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftCurrency">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tCurrency" nillable="true" type="tns:tCurrency"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftCountryCodeAndNameGroupedByContinent">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tCountryCodeAndNameGroupedByContinent" nillable="true" type="tns:tCountryCodeAndNameGroupedByContinent"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOftCountryInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="tCountryInfo" nillable="true" type="tns:tCountryInfo"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfContinentsByName">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfContinentsByNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfContinentsByNameResult" type="tns:ArrayOftContinent"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfContinentsByCode">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfContinentsByCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfContinentsByCodeResult" type="tns:ArrayOftContinent"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCurrenciesByName">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCurrenciesByNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfCurrenciesByNameResult" type="tns:ArrayOftCurrency"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCurrenciesByCode">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCurrenciesByCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfCurrenciesByCodeResult" type="tns:ArrayOftCurrency"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CurrencyName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCurrencyISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CurrencyNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CurrencyNameResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesByCode">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesByCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfCountryNamesByCodeResult" type="tns:ArrayOftCountryCodeAndName"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesByName">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesByNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfCountryNamesByNameResult" type="tns:ArrayOftCountryCodeAndName"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesGroupedByContinent">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfCountryNamesGroupedByContinentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfCountryNamesGroupedByContinentResult" type="tns:ArrayOftCountryCodeAndNameGroupedByContinent"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountryNameResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryISOCode">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryISOCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountryISOCodeResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CapitalCity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CapitalCityResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CapitalCityResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryCurrency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryCurrencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountryCurrencyResult" type="tns:tCurrency"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryFlag">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryFlagResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountryFlagResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryIntPhoneCode">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountryIntPhoneCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountryIntPhoneCodeResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="FullCountryInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sCountryISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="FullCountryInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FullCountryInfoResult" type="tns:tCountryInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="FullCountryInfoAllCountries">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="FullCountryInfoAllCountriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FullCountryInfoAllCountriesResult" type="tns:ArrayOftCountryInfo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountriesUsingCurrency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sISOCurrencyCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="CountriesUsingCurrencyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CountriesUsingCurrencyResult" type="tns:ArrayOftCountryCodeAndName"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfLanguagesByName">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfLanguagesByNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfLanguagesByNameResult" type="tns:ArrayOftLanguage"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfLanguagesByCode">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="ListOfLanguagesByCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListOfLanguagesByCodeResult" type="tns:ArrayOftLanguage"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="LanguageName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sISOCode" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="LanguageNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LanguageNameResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="LanguageISOCode">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sLanguageName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="LanguageISOCodeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LanguageISOCodeResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>

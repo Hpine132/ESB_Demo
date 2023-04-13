@@ -1,0 +1,13 @@
+DECLARE ns NAMESPACE 'http://www.example.org/CountrySchema';
+
+
+CREATE COMPUTE MODULE country_flow_routeToLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE OperationName CHARACTER;
+		SET OperationName  = InputRoot.SOAP.Body.ns:Input.ns:FunctionCode;
+		PROPAGATE TO LABEL OperationName FINALIZE NONE DELETE NONE;
+	END;
+END MODULE;
+

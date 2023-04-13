@@ -1,0 +1,10 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE OperationName CHARACTER;
+		SET OperationName  = InputRoot.XMLNSC.ns:Input.ns:FunctionCode;
+			-- Preparation
+			--CREATE LASTCHILD OF OutputLocalEnvironment.Variables FROM Environment.Variables.SOAVariables.soa:SOAEnvelope;			
+			-- Go
+			PROPAGATE TO LABEL TRIM(OperationName)FINALIZE NONE DELETE NONE;
+	END;

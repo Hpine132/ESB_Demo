@@ -1,0 +1,68 @@
+2023-04-13 10:26:13.040758Z: [Thread 15660] (Msg 1/1) BIP1990I: Integration server 'TEST_SERVER' starting initialization; version '12.0.2.0' (64-bit) 
+2023-04-13 10:26:13.047897Z: [Thread 15660] (Msg 1/1) BIP9905I: Initializing resource managers. 
+2023-04-13 10:26:18.211154Z: [Thread 15660] (Msg 1/1) BIP9906I: Reading deployed resources. 
+2023-04-13 10:26:18.253022Z: [Thread 15660] (Msg 1/1) BIP9907I: Initializing deployed resources. 
+2023-04-13 10:26:18.262068Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 10:26:18.263372Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:18.298768Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:18.299070Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:24.690098Z: [Thread 15660] (Msg 1/1) BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 10:26:24.692400Z: [Thread 15660] (Msg 1/1) BIP1996I: Listening on HTTP URL '/country'. 
+2023-04-13 10:26:25.947416Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 10:26:25.959114Z: [Thread 15660] (Msg 1/1) BIP2269I: Deployed resource 'country_flow' (uuid='country_flow',type='MessageFlow') started successfully. 
+2023-04-13 10:26:25.959172Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:25.959204Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:25.959498Z: [Thread 15660] (Msg 1/1) BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 10:26:25.959536Z: [Thread 15660] (Msg 1/1) BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+2023-04-13 10:26:25.959664Z: [Thread 15660] (Msg 1/1) BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 10:26:25.959700Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:26.926322Z: [Thread 16064] (Msg 1/1) BIP2866I: IBM App Connect Enterprise administration security is inactive. 
+2023-04-13 10:26:26.943196Z: [Thread 16064] (Msg 1/1) BIP3132I: The HTTP Listener has started listening on port '7600' for 'RestAdmin http' connections. 
+2023-04-13 10:26:26.944684Z: [Thread 15660] (Msg 1/1) BIP1991I: Integration server has finished initialization. 
+2023-04-13 10:26:33.505920Z: [Thread 15732] (Msg 1/1) BIP2152I: Configuration message received. 
+2023-04-13 10:26:33.522694Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:33.522960Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:35.978412Z: [Thread 15732] (Msg 1/1) BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 10:26:35.978504Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:36.015200Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:36.028408Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:36.028532Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:36.678556Z: [Thread 15732] (Msg 1/1) BIP9342I: Created compiled 'XMLNSC' schema file 'CountryByRest/$mqsiApplication.bir'. 
+2023-04-13 10:26:37.928004Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:26:37.928316Z: [Thread 15732] (Msg 1/1) BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 10:26:37.928348Z: [Thread 15732] (Msg 1/1) BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+2023-04-13 10:26:37.928512Z: [Thread 15732] (Msg 1/1) BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 10:26:37.928580Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:26:37.928616Z: [Thread 15732] (Msg 1/1) BIP9332I: RestAPI 'CountryByRest' has been changed successfully. 
+2023-04-13 10:26:37.928648Z: [Thread 15732] (Msg 1/1) BIP9326I: The source 'CountryByRestproject.generated.bar' has been successfully deployed. 
+2023-04-13 10:26:37.939920Z: [Thread 15732] (Msg 1/1) BIP2154I: Integration server finished with Configuration message. 
+2023-04-13 10:27:33.310340Z: [Thread 15732] (Msg 1/1) BIP2152I: Configuration message received. 
+2023-04-13 10:27:33.320442Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:33.320576Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:37.238748Z: [Thread 15732] (Msg 1/1) BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 10:27:37.238840Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:37.259096Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:37.275920Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:37.276072Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:37.404280Z: [Thread 15732] (Msg 1/1) BIP9342I: Created compiled 'XMLNSC' schema file 'CountryByRest/$mqsiApplication.bir'. 
+2023-04-13 10:27:38.618224Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:38.618512Z: [Thread 15732] (Msg 1/1) BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 10:27:38.618540Z: [Thread 15732] (Msg 1/1) BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+2023-04-13 10:27:38.618696Z: [Thread 15732] (Msg 1/1) BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 10:27:38.618732Z: [Thread 15732] (Msg 1/1) BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:38.618772Z: [Thread 15732] (Msg 1/1) BIP9332I: RestAPI 'CountryByRest' has been changed successfully. 
+2023-04-13 10:27:38.618792Z: [Thread 15732] (Msg 1/1) BIP9326I: The source 'CountryByRestproject.generated.bar' has been successfully deployed. 
+2023-04-13 10:27:38.618948Z: [Thread 15732] (Msg 1/1) BIP2154I: Integration server finished with Configuration message. 
+2023-04-13 10:27:44.737004Z: [Thread 15660] (Msg 1/1) BIP1989I: Integration server is terminating due to a shutdown event. 
+2023-04-13 10:27:55.476804Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 10:27:55.477092Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:55.477188Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:55.477316Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:57.091120Z: [Thread 15660] (Msg 1/1) BIP2271I: Deployed resource 'country_flow' (uuid='country_flow',type='MessageFlow') successfully stopped. 
+2023-04-13 10:27:58.646580Z: [Thread 15660] (Msg 1/1) BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 10:27:59.033940Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 10:27:59.064824Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:59.064928Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 10:27:59.096240Z: [Thread 15660] (Msg 1/1) BIP3133I: The HTTP Listener has stopped listening on port '7800' for 'http' connections. 
+2023-04-13 10:27:59.098200Z: [Thread 15660] (Msg 1/1) BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 10:27:59.963808Z: [Thread 15660] (Msg 1/1) BIP1992I: Integration server 'TEST_SERVER' stopped. 

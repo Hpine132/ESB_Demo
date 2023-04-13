@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Broker deployBarfile="CountryByRestproject.generated.bar" deployTimestamp="2023-04-13 10:27:33">
+  <CompiledApplication>
+    <ConfigurableProperty uri="startMode">
+    </ConfigurableProperty>
+  </CompiledApplication>
+  <CompiledMessageFlow name="gen.CountryByRest" deployBarfile="CountryByRestproject.generated.bar" deployTimestamp="2023-04-13 10:27:33">
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.URLSpecifier" override="/countrybyrest/v1*">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.decompressInputMessage">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.faultFormat" override="JSON">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.timeoutForClient">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.useHTTPS">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Input.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#HTTP Reply.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#additionalInstances" override="3">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#commitCount">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#commitInterval">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#consumerPolicySet">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#consumerPolicySetBindings">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#coordinatedTransaction">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#maximumRateMsgsPerSec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#monitoringProfile">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#notificationThresholdMsgsPerSec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#processingTimeoutAction">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#processingTimeoutSec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#providerPolicySet">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#providerPolicySetBindings">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#startInstancesWhenFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#startMode">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="gen.CountryByRest#wlmPolicy">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="postListOfContinentsByName" type="subflow" deployBarfile="CountryByRestproject.generated.bar" deployTimestamp="2023-04-13 10:27:33">
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute1.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute1.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Compute1.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#Route.distributionMode">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.acceptCompressedResponses">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.allowMTOM">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.allowedSSLCiphers">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.connectionFactoryName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.deliveryMode">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.enableCRLCheck">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.hostnameChecking">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.httpProxyLocation">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.initialContextFactory">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.jmsDestination">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.jmsReplyToDestination">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.keyAlias">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.locationJndiBindings">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.messageExpiration">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.messagePriority">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.messageType">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.policySet">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.policySetBindings">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.requestCompressionType">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.requestTimeout">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.requestTimeoutJMS">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.sslProtocol" override="TLS">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.targetService">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.validateFailureAction">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="postListOfContinentsByName#SOAP Request.webServiceURL" override="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+</Broker>

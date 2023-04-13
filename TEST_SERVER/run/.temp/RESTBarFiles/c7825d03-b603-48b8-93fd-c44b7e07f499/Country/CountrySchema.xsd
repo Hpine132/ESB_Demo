@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CountrySchema" xmlns:tns="http://www.example.org/CountrySchema" elementFormDefault="qualified">
+
+    <element name="Input" type="tns:input"></element>
+
+    <complexType name="input">
+    	<sequence>
+    		<element name="FunctionCode" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Output" type="tns:output"></element>
+
+    <complexType name="output">
+    	<sequence>
+    		<element name="Status" type="string"></element>
+    		<element name="BindingOperation" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

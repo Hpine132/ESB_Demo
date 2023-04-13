@@ -1,0 +1,219 @@
+Country>>>>TEST_SERVER>>SUCCESS>>1681199558403
+BIP9332I<<Application 'Country' has been created successfully. <<1681199558403
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681199558403
+Country>>>>TEST_SERVER>>SUCCESS>>1681199675505
+BIP9332I<<Application 'Country' has been changed successfully. <<1681199675505
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681199675505
+Country>>>>TEST_SERVER>>SUCCESS>>1681199743337
+BIP9332I<<Application 'Country' has been changed successfully. <<1681199743337
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681199743337
+Country>>>>TEST_SERVER>>SUCCESS>>1681201265926
+BIP9332I<<Application 'Country' has been changed successfully. <<1681201265926
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681201265926
+Country>>>>TEST_SERVER>>SUCCESS>>1681201381357
+BIP9332I<<Application 'Country' has been changed successfully. <<1681201381357
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681201381357
+Country>>>>TEST_SERVER>>SUCCESS>>1681205228250
+BIP9332I<<Application 'Country' has been changed successfully. <<1681205228250
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681205228250
+Country>>>>TEST_SERVER>>SUCCESS>>1681272342079
+BIP9332I<<Application 'Country' has been changed successfully. <<1681272342079
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681272342079
+Country>>>>TEST_SERVER>>SUCCESS>>1681272800055
+BIP9332I<<Application 'Country' has been changed successfully. <<1681272800055
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681272800055
+Country>>>>TEST_SERVER>>SUCCESS>>1681274222680
+BIP9332I<<Application 'Country' has been changed successfully. <<1681274222680
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681274222680
+Country>>>>TEST_SERVER>>SUCCESS>>1681274529651
+BIP9332I<<Application 'Country' has been changed successfully. <<1681274529651
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681274529651
+Country>>>>TEST_SERVER>>SUCCESS>>1681274638279
+BIP9332I<<Application 'Country' has been changed successfully. <<1681274638279
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681274638279
+Country>>>>TEST_SERVER>>SUCCESS>>1681274849567
+BIP9332I<<Application 'Country' has been changed successfully. <<1681274849567
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681274849567
+Country>>>>TEST_SERVER>>SUCCESS>>1681281951901
+BIP9332I<<Application 'Country' has been changed successfully. <<1681281951901
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681281951901
+Country>>>>TEST_SERVER>>SUCCESS>>1681282232314
+BIP9332I<<Application 'Country' has been changed successfully. <<1681282232314
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681282232314
+Country>>>>TEST_SERVER>>SUCCESS>>1681282258678
+BIP9332I<<Application 'Country' has been changed successfully. <<1681282258678
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681282258678
+Country>>>>TEST_SERVER>>SUCCESS>>1681285235490
+BIP9332I<<Application 'Country' has been changed successfully. <<1681285235490
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681285235490
+Country>>>>TEST_SERVER>>SUCCESS>>1681286186177
+BIP9332I<<Application 'Country' has been changed successfully. <<1681286186177
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681286186177
+Country>>>>TEST_SERVER>>SUCCESS>>1681286344243
+BIP9332I<<Application 'Country' has been changed successfully. <<1681286344243
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681286344243
+Country>>>>TEST_SERVER>>SUCCESS>>1681286425454
+BIP9332I<<Application 'Country' has been changed successfully. <<1681286425454
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681286425454
+Country>>>>TEST_SERVER>>SUCCESS>>1681286607956
+BIP9332I<<Application 'Country' has been changed successfully. <<1681286607956
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681286607956
+Country>>>>TEST_SERVER>>SUCCESS>>1681287356657
+BIP9332I<<Application 'Country' has been changed successfully. <<1681287356657
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681287356657
+Country>>>>TEST_SERVER>>SUCCESS>>1681287477237
+BIP9332I<<Application 'Country' has been changed successfully. <<1681287477237
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681287477237
+Country>>>>TEST_SERVER>>SUCCESS>>1681287588400
+BIP9332I<<Application 'Country' has been changed successfully. <<1681287588400
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681287588400
+Country>>>>TEST_SERVER>>ERROR>>1681287814359
+BIP1921S<<The integration node or integration server cannot be reached. Check that the integration node or integration server is running. Check that the TCP/IP address 'localhost' matches the address of the machine where the integration node or integration server is running,and that port '7600' matches the Administration REST API port that is configured for the integration node or integration server. See the following messages for details of the error.<<1681287814359
+BIP8032E<<Unable to connect to the integration node or integration server. <<1681287814359
+Country>>>>TEST_SERVER>>SUCCESS>>1681288053327
+BIP9332I<<Application 'Country' has been changed successfully. <<1681288053327
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681288053327
+Country>>>>TEST_SERVER>>SUCCESS>>1681288982777
+BIP9332I<<Application 'Country' has been changed successfully. <<1681288982777
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681288982777
+Country>>>>TEST_SERVER>>SUCCESS>>1681289817012
+BIP9332I<<Application 'Country' has been changed successfully. <<1681289817012
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681289817012
+Country>>>>TEST_SERVER>>SUCCESS>>1681290092324
+BIP9332I<<Application 'Country' has been changed successfully. <<1681290092324
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681290092324
+Country>>>>TEST_SERVER>>ERROR>>1681290305943
+BIP1921S<<The integration node or integration server cannot be reached. Check that the integration node or integration server is running. Check that the TCP/IP address 'localhost' matches the address of the machine where the integration node or integration server is running,and that port '7600' matches the Administration REST API port that is configured for the integration node or integration server. See the following messages for details of the error.<<1681290305943
+BIP8032E<<Unable to connect to the integration node or integration server. <<1681290305943
+Country>>>>TEST_SERVER>>SUCCESS>>1681290380410
+BIP9332I<<Application 'Country' has been changed successfully. <<1681290380410
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681290380410
+Country>>>>TEST_SERVER>>SUCCESS>>1681290387792
+BIP9332I<<Application 'Country' has been changed successfully. <<1681290387792
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681290387792
+Country>>>>TEST_SERVER>>SUCCESS>>1681291162396
+BIP9332I<<Application 'Country' has been changed successfully. <<1681291162396
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681291162396
+Country>>>>TEST_SERVER>>SUCCESS>>1681292946362
+BIP9332I<<Application 'Country' has been changed successfully. <<1681292946362
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681292946362
+Country>>>>TEST_SERVER>>SUCCESS>>1681293196019
+BIP9332I<<Application 'Country' has been changed successfully. <<1681293196019
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681293196019
+Country>>>>TEST_SERVER>>SUCCESS>>1681293317333
+BIP9332I<<Application 'Country' has been changed successfully. <<1681293317333
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681293317333
+Country>>>>TEST_SERVER>>SUCCESS>>1681293927876
+BIP9332I<<Application 'Country' has been changed successfully. <<1681293927876
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681293927876
+Country>>>>TEST_SERVER>>SUCCESS>>1681294215448
+BIP9332I<<Application 'Country' has been changed successfully. <<1681294215448
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681294215448
+Country>>>>TEST_SERVER>>SUCCESS>>1681294266773
+BIP9332I<<Application 'Country' has been changed successfully. <<1681294266773
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681294266773
+Country>>>>TEST_SERVER>>SUCCESS>>1681294278533
+BIP9332I<<Application 'Country' has been changed successfully. <<1681294278533
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681294278533
+Country>>>>TEST_SERVER>>SUCCESS>>1681294333652
+BIP9332I<<Application 'Country' has been changed successfully. <<1681294333652
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681294333652
+Country>>>>TEST_SERVER>>SUCCESS>>1681294758198
+BIP9332I<<Application 'Country' has been changed successfully. <<1681294758198
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681294758198
+Country>>>>TEST_SERVER>>ERROR>>1681294789581
+BIP1921S<<The integration node or integration server cannot be reached. Check that the integration node or integration server is running. Check that the TCP/IP address 'localhost' matches the address of the machine where the integration node or integration server is running,and that port '7600' matches the Administration REST API port that is configured for the integration node or integration server. See the following messages for details of the error.<<1681294789581
+BIP8032E<<Unable to connect to the integration node or integration server. <<1681294789581
+Country>>>>TEST_SERVER>>SUCCESS>>1681295010496
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295010496
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295010496
+Country>>>>TEST_SERVER>>SUCCESS>>1681295315484
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295315484
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681295315484
+Country>>>>TEST_SERVER>>SUCCESS>>1681295325857
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295325857
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295325857
+Country>>>>TEST_SERVER>>SUCCESS>>1681295410844
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295410844
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295410844
+Country>>>>TEST_SERVER>>SUCCESS>>1681295617855
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295617855
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295617855
+Country>>>>TEST_SERVER>>SUCCESS>>1681295687396
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295687396
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295687396
+Country>>>>TEST_SERVER>>SUCCESS>>1681295718044
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295718044
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681295718044
+Country>>>>TEST_SERVER>>SUCCESS>>1681295732681
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295732681
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295732681
+Country>>>>TEST_SERVER>>SUCCESS>>1681295875962
+BIP9332I<<Application 'Country' has been changed successfully. <<1681295875962
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681295875962
+Country>>>>TEST_SERVER>>SUCCESS>>1681296305439
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296305439
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296305439
+Country>>>>TEST_SERVER>>SUCCESS>>1681296420292
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296420292
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296420292
+Country>>>>TEST_SERVER>>SUCCESS>>1681296506855
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296506855
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296506855
+Country>>>>TEST_SERVER>>SUCCESS>>1681296678575
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296678575
+BIP9326I<<The source 'Countryproject.generated.bar' has been successfully deployed. <<1681296678575
+Country>>>>TEST_SERVER>>SUCCESS>>1681296688299
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296688299
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296688299
+Country>>>>TEST_SERVER>>SUCCESS>>1681296768617
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296768617
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296768617
+Country>>>>TEST_SERVER>>SUCCESS>>1681296852660
+BIP9332I<<Application 'Country' has been changed successfully. <<1681296852660
+BIP9326I<<The source 'Countryproject.TestMode.bar' has been successfully deployed. <<1681296852660
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681378922227
+BIP9332I<<RestAPI 'CountryByRest' has been created successfully. <<1681378922227
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681378922227
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681379082012
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681379082012
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681379082012
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681379232826
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681379232826
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681379232826
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681379817625
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681379817625
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681379817625
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681379917691
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681379917691
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681379917691
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380022425
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380022425
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380022425
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380084386
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380084386
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380084386
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380110620
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380110620
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380110620
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380283913
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380283913
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380283913
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380442835
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380442835
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380442835
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380525452
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380525452
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380525452
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380597813
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380597813
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380597813
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681380696067
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681380696067
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681380696067
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681381593500
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681381593500
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681381593500
+CountryByRest>>>>TEST_SERVER>>SUCCESS>>1681381653307
+BIP9332I<<RestAPI 'CountryByRest' has been changed successfully. <<1681381653307
+BIP9326I<<The source 'CountryByRestproject.generated.bar' has been successfully deployed. <<1681381653307

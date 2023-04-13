@@ -1,0 +1,73 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "CountryByRest",
+    "version" : "1.0.0",
+    "description" : "CountryByRest"
+  },
+  "paths" : {
+    "/ListOfContinentsByName" : {
+      "post" : {
+        "operationId" : "postListOfContinentsByName",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Res"
+              }
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Insert a ListOfContinentsByName",
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/Req"
+          },
+          "description" : "The request body for the operation",
+          "required" : true
+        } ]
+      }
+    }
+  },
+  "basePath" : "/countrybyrest/v1",
+  "definitions" : {
+    "Req" : {
+      "type" : "object",
+      "properties" : {
+        "FunctionCode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Res" : {
+      "type" : "object",
+      "properties" : {
+        "list" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "tContinents" : {
+                "type" : "object",
+                "properties" : {
+                  "sCode" : {
+                    "type" : "string"
+                  },
+                  "sName" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

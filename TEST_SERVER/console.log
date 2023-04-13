@@ -1,0 +1,77 @@
+2023-04-13 17:26:13.040758: BIP1990I: Integration server 'TEST_SERVER' starting initialization; version '12.0.2.0' (64-bit) 
+2023-04-13 17:26:13.047897: BIP9905I: Initializing resource managers. 
+Listening for transport dt_socket at address: 9997
+2023-04-13 17:26:18.211154: BIP9906I: Reading deployed resources. 
+2023-04-13 17:26:18.253022: BIP9907I: Initializing deployed resources. 
+2023-04-13 17:26:18.262068: BIP2155I: About to 'Initialize' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 17:26:18.263372: BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:18.298768: BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:26:18.299070: BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+An http endpoint was registered on port '7800', path '/country'.
+2023-04-13 17:26:24.690098: BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 17:26:24.692400: BIP1996I: Listening on HTTP URL '/country'. 
+2023-04-13 17:26:25.947416: BIP2155I: About to 'Start' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 17:26:25.959114: BIP2269I: Deployed resource 'country_flow' (uuid='country_flow',type='MessageFlow') started successfully. 
+2023-04-13 17:26:25.959172: BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:25.959204: BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+An http endpoint was registered on port '7800', path '/countrybyrest/v1*'.
+2023-04-13 17:26:25.959498: BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 17:26:25.959536: BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+Started native listener for HTTP input node on port 7800 for URL /countrybyrest/v1*
+2023-04-13 17:26:25.959664: BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 17:26:25.959700: BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:26.926322: BIP2866I: IBM App Connect Enterprise administration security is inactive. 
+2023-04-13 17:26:26.943196: BIP3132I: The HTTP Listener has started listening on port '7600' for 'RestAdmin http' connections. 
+2023-04-13 17:26:26.944684: BIP1991I: Integration server has finished initialization. 
+2023-04-13 17:26:33.505920: BIP2152I: Configuration message received. 
+2023-04-13 17:26:33.522694: BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:26:33.522960: BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:35.978412: BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 17:26:35.978504: BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:26:36.015200: BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:36.028408: BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:26:36.028532: BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:36.678556: BIP9342I: Created compiled 'XMLNSC' schema file 'CountryByRest/$mqsiApplication.bir'. 
+2023-04-13 17:26:37.928004: BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+An http endpoint was registered on port '7800', path '/countrybyrest/v1*'.
+2023-04-13 17:26:37.928316: BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 17:26:37.928348: BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+Started native listener for HTTP input node on port 7800 for URL /countrybyrest/v1*
+2023-04-13 17:26:37.928512: BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 17:26:37.928580: BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:26:37.928616: BIP9332I: RestAPI 'CountryByRest' has been changed successfully. 
+2023-04-13 17:26:37.928648: BIP9326I: The source 'CountryByRestproject.generated.bar' has been successfully deployed. 
+2023-04-13 17:26:37.939920: BIP2154I: Integration server finished with Configuration message. 
+2023-04-13 17:27:33.310340: BIP2152I: Configuration message received. 
+2023-04-13 17:27:33.320442: BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:27:33.320576: BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:37.238748: BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 17:27:37.238840: BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:27:37.259096: BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:37.275920: BIP2155I: About to 'Initialize' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:27:37.276072: BIP2155I: About to 'Initialize' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:37.404280: BIP9342I: Created compiled 'XMLNSC' schema file 'CountryByRest/$mqsiApplication.bir'. 
+2023-04-13 17:27:38.618224: BIP2155I: About to 'Start' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+An http endpoint was registered on port '7800', path '/countrybyrest/v1*'.
+2023-04-13 17:27:38.618512: BIP3132I: The HTTP Listener has started listening on port '7800' for 'http' connections. 
+2023-04-13 17:27:38.618540: BIP1996I: Listening on HTTP URL '/countrybyrest/v1*'. 
+Started native listener for HTTP input node on port 7800 for URL /countrybyrest/v1*
+2023-04-13 17:27:38.618696: BIP2269I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') started successfully. 
+2023-04-13 17:27:38.618732: BIP2155I: About to 'Start' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:38.618772: BIP9332I: RestAPI 'CountryByRest' has been changed successfully. 
+2023-04-13 17:27:38.618792: BIP9326I: The source 'CountryByRestproject.generated.bar' has been successfully deployed. 
+2023-04-13 17:27:38.618948: BIP2154I: Integration server finished with Configuration message. 
+2023-04-13 17:27:44.737004: BIP1989I: Integration server is terminating due to a shutdown event. 
+2023-04-13 17:27:55.476804: BIP2155I: About to 'Stop' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 17:27:55.477092: BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:55.477188: BIP2155I: About to 'Stop' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:27:55.477316: BIP2155I: About to 'Stop' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:57.091120: BIP2271I: Deployed resource 'country_flow' (uuid='country_flow',type='MessageFlow') successfully stopped. 
+2023-04-13 17:27:58.646580: BIP2271I: Deployed resource 'gen.CountryByRest' (uuid='gen.CountryByRest',type='MessageFlow') successfully stopped. 
+2023-04-13 17:27:59.033940: BIP2155I: About to 'TearDown' the deployed resource 'CountryByRest' of type 'RestAPI'. 
+2023-04-13 17:27:59.064824: BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+2023-04-13 17:27:59.064928: BIP2155I: About to 'TearDown' the deployed resource 'Country' of type 'Application'. 
+2023-04-13 17:27:59.096240: BIP3133I: The HTTP Listener has stopped listening on port '7800' for 'http' connections. 
+2023-04-13 17:27:59.098200: BIP2155I: About to 'TearDown' the deployed resource 'CountryLib' of type 'StaticLibrary'. 
+node.js process.on('exit') event emitted with exitCode of 0
+2023-04-13 17:27:59.963808: BIP1992I: Integration server 'TEST_SERVER' stopped. 

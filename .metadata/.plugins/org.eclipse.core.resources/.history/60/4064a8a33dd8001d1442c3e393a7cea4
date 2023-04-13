@@ -1,0 +1,26 @@
+
+
+Importing file: C:\Users\nguye\OneDrive\Desktop\New Folder\CountryInfoService_1.wsdl
+
+The WSDL import will proceed with bindings CountryInfoServiceSoapBinding.
+Creating wsdl schema document for file:///C:/Users/nguye/OneDrive/Desktop/New Folder/CountryInfoService_1.wsdl.
+Parsing wsdl binding {http://www.oorsprong.org/websamples.countryinfo}CountryInfoServiceSoapBinding.
+Parsing wsdl binding input ListOfContinentsByName.
+Parsing wsdl binding output ListOfContinentsByName.
+Parsing wsdl binding input ListOfContinentsByCode.
+Parsing wsdl binding output ListOfContinentsByCode.
+Parsing wsdl binding input ListOfCurrenciesByName.
+Parsing wsdl binding output ListOfCurrenciesByName.
+Parsing wsdl binding input ListOfCurrenciesByCode.
+Parsing wsdl binding output ListOfCurrenciesByCode.
+Parsing wsdl binding input CurrencyName.
+Parsing wsdl binding output CurrencyName.
+Parsing wsdl binding input ListOfCountryNamesByCode.
+Parsing wsdl binding output ListOfCountryNamesByCode.
+Parsing wsdl binding input ListOfCountryNamesByName.
+Parsing wsdl binding output ListOfCountryNamesByName.
+Parsing wsdl binding input ListOfCountryNamesGroupedByContinent.
+Parsing wsdl binding output ListOfCountryNamesGroupedByContinent.
+Parsing wsdl binding input CountryName.
+Parsing wsdl binding output CountryName.
+Parsing wsdl binding input CountryISOCode.

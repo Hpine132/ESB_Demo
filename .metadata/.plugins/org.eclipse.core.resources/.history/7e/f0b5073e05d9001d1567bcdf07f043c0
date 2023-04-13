@@ -1,0 +1,16 @@
+DECLARE ns NAMESPACE 'http://www.example.org/CountrySchema';
+
+
+CREATE COMPUTE MODULE country_flow_routeToLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE OperationName CHARACTER;
+		SET OperationName  = InputRoot.XMLNSC.ns:Input.ns:FunctionCode;
+			-- Preparation
+			--CREATE LASTCHILD OF OutputLocalEnvironment.Variables FROM Environment.Variables.SOAVariables.soa:SOAEnvelope;			
+			-- Go
+			PROPAGATE TO LABEL TRIM(OperationName)||'_'||TRIM(ServiceVersion) FINALIZE NONE DELETE NONE;
+	END;
+END MODULE;
+

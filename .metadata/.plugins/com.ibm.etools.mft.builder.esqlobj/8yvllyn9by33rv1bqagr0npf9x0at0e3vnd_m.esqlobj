@@ -1,0 +1,7 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE OperationName CHARACTER;
+		SET OperationName  = InputRoot.SOAP.Body.ns:Input.ns:FunctionCode;
+		PROPAGATE TO LABEL TRIM(OperationName) FINALIZE NONE DELETE NONE;
+	END;

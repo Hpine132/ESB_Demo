@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="PjicoMessageLib">
+  <XSDCollection href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <include name="/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd" targetNamespace="http://tempuri.org/"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd#//SOAP_Domain_Msg;XSDElementDeclaration" name="SOAP_Domain_Msg" type="mlib://PjicoMessageLib#/-/complexType{}SOAP_Msg_type"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd#//MIME_Headers_type;XSDComplexTypeDefinition" name="MIME_Headers_type"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd#//Attachment_type;XSDComplexTypeDefinition=1" name="Attachment_type"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd#//SOAP_Msg_type;XSDComplexTypeDefinition=2" name="SOAP_Msg_type"/>
+    <group href="platform:/resource/PjicoMessageLib/IBMdefined/soap.xsd#//MIME_header_fields;XSDModelGroupDefinition" name="MIME_header_fields"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd" prefix="tns" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
+    <import name="IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd" targetNamespace="http://www.w3.org/XML/1998/namespace"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Envelope;XSDElementDeclaration" name="Envelope" type="mlib://PjicoMessageLib#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Header;XSDElementDeclaration=1" name="Header" type="mlib://PjicoMessageLib#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Header"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Body;XSDElementDeclaration=2" name="Body" type="mlib://PjicoMessageLib#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Body"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Fault;XSDElementDeclaration=3" name="Fault" type="mlib://PjicoMessageLib#/-/complexType{http://schemas.xmlsoap.org/soap/envelope/}Fault"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Envelope;XSDComplexTypeDefinition" name="Envelope"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Header;XSDComplexTypeDefinition=1" name="Header"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Body;XSDComplexTypeDefinition=2" name="Body"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//Fault;XSDComplexTypeDefinition=3" name="Fault"/>
+    <complexType href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//FaultString;XSDComplexTypeDefinition=4" name="FaultString"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//detail;XSDComplexTypeDefinition=5" name="detail"/>
+    <simpleType href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDSimpleTypeDefinition" name="encodingStyle" variety="list"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//mustUnderstand;XSDAttributeDeclaration" name="mustUnderstand"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//actor;XSDAttributeDeclaration=1" name="actor"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDAttributeDeclaration=2" name="encodingStyle"/>
+    <attributeGroup href="platform:/resource/PjicoMessageLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd#//encodingStyle;XSDAttributeGroupDefinition" name="encodingStyle"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//PJICO_SMSBRANDNAME;XSDElementDeclaration" name="PJICO_SMSBRANDNAME"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//PJICO_SMSBRANDNAMEResponse;XSDElementDeclaration=1" name="PJICO_SMSBRANDNAMEResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//PJICO_GIAMDINH;XSDElementDeclaration=2" name="PJICO_GIAMDINH"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//PJICO_GIAMDINHResponse;XSDElementDeclaration=3" name="PJICO_GIAMDINHResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_GIAMDINH;XSDElementDeclaration=4" name="WECAN_GIAMDINH"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_GIAMDINHResponse;XSDElementDeclaration=5" name="WECAN_GIAMDINHResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_IMAGES;XSDElementDeclaration=6" name="WECAN_IMAGES"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_IMAGESResponse;XSDElementDeclaration=7" name="WECAN_IMAGESResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_SMSBRANDNAME;XSDElementDeclaration=8" name="WECAN_SMSBRANDNAME"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//WECAN_SMSBRANDNAMEResponse;XSDElementDeclaration=9" name="WECAN_SMSBRANDNAMEResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//FTS_CLAIMS;XSDElementDeclaration=10" name="FTS_CLAIMS"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//FTS_CLAIMSResponse;XSDElementDeclaration=11" name="FTS_CLAIMSResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//FTS_IMAGES;XSDElementDeclaration=12" name="FTS_IMAGES"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd#//FTS_IMAGESResponse;XSDElementDeclaration=13" name="FTS_IMAGESResponse"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd" prefix="tns" targetNamespace="http://www.w3.org/2003/05/soap-envelope">
+    <import name="IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd" targetNamespace="http://www.w3.org/XML/1998/namespace"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Envelope;XSDElementDeclaration" name="Envelope" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}Envelope"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Header;XSDElementDeclaration=1" name="Header" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}Header"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Body;XSDElementDeclaration=2" name="Body" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}Body"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Fault;XSDElementDeclaration=3" name="Fault" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}Fault"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//NotUnderstood;XSDElementDeclaration=4" name="NotUnderstood" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}NotUnderstoodType"/>
+    <element href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Upgrade;XSDElementDeclaration=5" name="Upgrade" type="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2003/05/soap-envelope}UpgradeType"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Envelope;XSDComplexTypeDefinition" name="Envelope"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Header;XSDComplexTypeDefinition=1" name="Header"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Body;XSDComplexTypeDefinition=2" name="Body"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//Fault;XSDComplexTypeDefinition=3" name="Fault"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//faultreason;XSDComplexTypeDefinition=4" name="faultreason"/>
+    <complexType href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//reasontext;XSDComplexTypeDefinition=5" name="reasontext"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//faultcode;XSDComplexTypeDefinition=6" name="faultcode"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//subcode;XSDComplexTypeDefinition=7" name="subcode"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//detail;XSDComplexTypeDefinition=8" name="detail"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//NotUnderstoodType;XSDComplexTypeDefinition=9" name="NotUnderstoodType"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//SupportedEnvType;XSDComplexTypeDefinition=10" name="SupportedEnvType"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//UpgradeType;XSDComplexTypeDefinition=11" name="UpgradeType"/>
+    <simpleType href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//faultcodeEnum;XSDSimpleTypeDefinition" name="faultcodeEnum" variety="atomic"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//mustUnderstand;XSDAttributeDeclaration" name="mustUnderstand"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//relay;XSDAttributeDeclaration=1" name="relay"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//role;XSDAttributeDeclaration=2" name="role"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd#//encodingStyle;XSDAttributeDeclaration=3" name="encodingStyle"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/payment/hotrows_1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <include name="/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd" targetNamespace="http://tempuri.org/"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <element href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//CREATE_SURVER_SHORTURL;XSDElementDeclaration" name="CREATE_SURVER_SHORTURL" type="mlib://PjicoMessageLib#/-/complexType{http://tempuri.org/}CREATE_SURVER_SHORTURL_OperType"/>
+    <element href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//CREATE_SURVER_SHORTURLResponse;XSDElementDeclaration=1" name="CREATE_SURVER_SHORTURLResponse" type="mlib://PjicoMessageLib#/-/complexType{http://tempuri.org/}CREATE_SURVER_SHORTURLResponse_OperType"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//CREATE_SURVER_SHORTURL_OperType;XSDComplexTypeDefinition" name="CREATE_SURVER_SHORTURL_OperType"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//CREATE_SURVER_SHORTURLResponse_OperType;XSDComplexTypeDefinition=1" name="CREATE_SURVER_SHORTURLResponse_OperType"/>
+    <group href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//IGiamdinh_CREATE_SURVER_SHORTURL_OutputMessageGroup;XSDModelGroupDefinition" name="IGiamdinh_CREATE_SURVER_SHORTURL_OutputMessageGroup"/>
+    <group href="platform:/resource/PjicoMessageLib/assessment/Giamdinh_1.xsd#//IGiamdinh_CREATE_SURVER_SHORTURL_InputMessageGroup;XSDModelGroupDefinition=1" name="IGiamdinh_CREATE_SURVER_SHORTURL_InputMessageGroup"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd" prefix="xml" targetNamespace="http://www.w3.org/XML/1998/namespace">
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//lang;XSDAttributeDeclaration" name="lang"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//space;XSDAttributeDeclaration=1" name="space"/>
+    <attribute href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//base;XSDAttributeDeclaration=2" name="base"/>
+    <attributeGroup href="platform:/resource/PjicoMessageLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd#//specialAttrs;XSDAttributeGroupDefinition" name="specialAttrs"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/digitalsign/SignProcess_1_InlineSchema1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <element href="platform:/resource/PjicoMessageLib/digitalsign/SignProcess_1_InlineSchema1.xsd#//DigitalSign;XSDElementDeclaration" name="DigitalSign"/>
+    <element href="platform:/resource/PjicoMessageLib/digitalsign/SignProcess_1_InlineSchema1.xsd#//DigitalSignResponse;XSDElementDeclaration=1" name="DigitalSignResponse"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/digitalsign/SignProcess_1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <include name="/PjicoMessageLib/digitalsign/SignProcess_1_InlineSchema1.xsd" targetNamespace="http://tempuri.org/"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//RSADecrypt;XSDElementDeclaration" name="RSADecrypt"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//RSADecryptResponse;XSDElementDeclaration=1" name="RSADecryptResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//createPolQRCode;XSDElementDeclaration=2" name="createPolQRCode"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//createPolQRCodeResponse;XSDElementDeclaration=3" name="createPolQRCodeResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//createPolQRCodeTransparent;XSDElementDeclaration=4" name="createPolQRCodeTransparent"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//createPolQRCodeTransparentResponse;XSDElementDeclaration=5" name="createPolQRCodeTransparentResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//TestcreatePolQRCode;XSDElementDeclaration=6" name="TestcreatePolQRCode"/>
+    <element href="platform:/resource/PjicoMessageLib/qrcode/QRCodeWS_1_InlineSchema1.xsd#//TestcreatePolQRCodeResponse;XSDElementDeclaration=7" name="TestcreatePolQRCodeResponse"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/assessment/webservice_1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <include name="/PjicoMessageLib/assessment/webservice_1_InlineSchema1.xsd" targetNamespace="http://tempuri.org/"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd" prefix="tns" targetNamespace="http://tempuri.org/">
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//CHECK_BLKLIST;XSDElementDeclaration" name="CHECK_BLKLIST"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//CHECK_BLKLISTResponse;XSDElementDeclaration=1" name="CHECK_BLKLISTResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPE;XSDElementDeclaration=2" name="GET_VEH_TYPE"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPEResponse;XSDElementDeclaration=3" name="GET_VEH_TYPEResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_LOSS_MISC;XSDElementDeclaration=4" name="GET_LOSS_MISC"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_LOSS_MISCResponse;XSDElementDeclaration=5" name="GET_LOSS_MISCResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_SMI_TYPE;XSDElementDeclaration=6" name="GET_SMI_TYPE"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_SMI_TYPEResponse;XSDElementDeclaration=7" name="GET_SMI_TYPEResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VCXECG_CHARGE;XSDElementDeclaration=8" name="GET_VCXECG_CHARGE"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VCXECG_CHARGEResponse;XSDElementDeclaration=9" name="GET_VCXECG_CHARGEResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VCXECG_CHARGE_JSON;XSDElementDeclaration=10" name="GET_VCXECG_CHARGE_JSON"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VCXECG_CHARGE_JSONResponse;XSDElementDeclaration=11" name="GET_VCXECG_CHARGE_JSONResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPE_TP;XSDElementDeclaration=12" name="GET_VEH_TYPE_TP"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPE_TPResponse;XSDElementDeclaration=13" name="GET_VEH_TYPE_TPResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPE_TP_JSON;XSDElementDeclaration=14" name="GET_VEH_TYPE_TP_JSON"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_TYPE_TP_JSONResponse;XSDElementDeclaration=15" name="GET_VEH_TYPE_TP_JSONResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_SMI_BY_RISK;XSDElementDeclaration=16" name="GET_SMI_BY_RISK"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_SMI_BY_RISKResponse;XSDElementDeclaration=17" name="GET_SMI_BY_RISKResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_GOOD;XSDElementDeclaration=18" name="GET_VEH_GOOD"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_VEH_GOODResponse;XSDElementDeclaration=19" name="GET_VEH_GOODResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_RISK;XSDElementDeclaration=20" name="GET_RISK"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_RISKResponse;XSDElementDeclaration=21" name="GET_RISKResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_POINT_TNDS;XSDElementDeclaration=22" name="GET_POINT_TNDS"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_POINT_TNDSResponse;XSDElementDeclaration=23" name="GET_POINT_TNDSResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_POINT_TNDS_JSON;XSDElementDeclaration=24" name="GET_POINT_TNDS_JSON"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_POINT_TNDS_JSONResponse;XSDElementDeclaration=25" name="GET_POINT_TNDS_JSONResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_NG_BY_SMI;XSDElementDeclaration=26" name="GET_NG_BY_SMI"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_NG_BY_SMIResponse;XSDElementDeclaration=27" name="GET_NG_BY_SMIResponse"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_DATA_CONNGUOI_KETHOP;XSDElementDeclaration=28" name="GET_DATA_CONNGUOI_KETHOP"/>
+    <element href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//GET_DATA_CONNGUOI_KETHOPResponse;XSDElementDeclaration=29" name="GET_DATA_CONNGUOI_KETHOPResponse"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//ResultBoolModel;XSDComplexTypeDefinition" name="ResultBoolModel"/>
+    <complexType baseType="mlib://PjicoMessageLib#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/PjicoMessageLib/payment/hotrows_1_InlineSchema1.xsd#//ResultModel;XSDComplexTypeDefinition=1" name="ResultModel"/>
+  </XSDCollection>
+</MessageBroker>

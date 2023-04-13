@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" overrideConfigurableProperties="false" includeESQL="false">
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1681379785862" workspaceResource="/CountryByRest/ListOfContinentsByName/ListOfContinentsByName_BuildReq.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql.&#xA;Dependent ESQL file ListOfContinentsByName/ListOfContinentsByName_Compute.esql is added to the BAR file.&#xA;&#xA;Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681378862555" workspaceResource="/CountryByRest/ListOfContinentsByName/ListOfContinentsByName_Compute.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_Compute.esql.&#xA;Dependent ESQL file ListOfContinentsByName/ListOfContinentsByName_BuildReq.esql is added to the BAR file.&#xA;&#xA;Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_Compute.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName\ListOfContinentsByName_Compute.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681381193229" workspaceResource="/CountryByRest/gen/CountryByRest.msgflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\gen\CountryByRest.msgflow.&#xA;Successfully added file CountryByRest\gen\CountryByRest.msgflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="gen\CountryByRest.msgflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681381646423" workspaceResource="/CountryByRest/postListOfContinentsByName.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\postListOfContinentsByName.subflow.&#xA;Successfully added file CountryByRest\postListOfContinentsByName.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="postListOfContinentsByName.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681380679603" workspaceResource="/CountryByRest/postListOfContinentsByName_Mapping.map">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\postListOfContinentsByName_Mapping.map.&#xA;Successfully added file CountryByRest\postListOfContinentsByName_Mapping.map to BAR file.&#xA;" severity="0"/>
+      <barEntry name="postListOfContinentsByName_Mapping.map"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681381193228" workspaceResource="/CountryByRest/restapi.descriptor">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\restapi.descriptor.&#xA;Successfully added file CountryByRest\restapi.descriptor to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file CountryByRest\restapi.descriptor to BAR file.&#xA;" severity="0"/>
+      <barEntry name="restapi.descriptor"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681381193228" workspaceResource="/CountryByRest/swagger.json">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryByRest\swagger.json.&#xA;Successfully added file CountryByRest\swagger.json to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file CountryByRest\swagger.json to BAR file.&#xA;" severity="0"/>
+      <barEntry name="swagger.json"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681199461221" workspaceResource="/CountryLib/.project">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file CountryLib.&#xA;Library file CountryLib.libzip successfully added to the BAR.&#xA;Library compiled contents:&#xA;    &#xA;    Processing file CountryLib\CountryInfoService_1.wsdl.&#xA;    Successfully added file CountryLib\CountryInfoService_1.wsdl to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.&#xA;    Successfully added file CountryLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\CountryInfoService_1_InlineSchema1.xsd.&#xA;    Successfully added file CountryLib\CountryInfoService_1_InlineSchema1.xsd to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\IBMdefined\soap.xsd.&#xA;    Successfully added file CountryLib\IBMdefined\soap.xsd to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\library.descriptor.&#xA;    Successfully added file CountryLib\library.descriptor to BAR file.&#xA;    Elapsed time: 0 second(s).&#xA;    &#xA;    Successfully added file CountryLib\library.descriptor to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.&#xA;    Successfully added file CountryLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\CountryInfoService_1.xsd.&#xA;    Successfully added file CountryLib\CountryInfoService_1.xsd to BAR file.&#xA;    &#xA;    &#xA;    Processing file CountryLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd.&#xA;    Successfully added file CountryLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd to BAR file.&#xA;    &#xA;&#xA;Elapsed time: 0.008 second(s).&#xA;" severity="0"/>
+      <barEntry name="CountryLib.libzip"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>

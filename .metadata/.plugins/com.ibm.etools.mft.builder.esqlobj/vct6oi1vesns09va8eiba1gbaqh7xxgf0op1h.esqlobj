@@ -1,0 +1,16 @@
+CREATE COMPUTE MODULE country_flow_routeToLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE OperationName CHARACTER;
+		SET OperationName = InputRoot.XMLNS.ns:ListOfContinentsByCode.ns:FunctionCode;
+		IF OperationName IS NULL THEN
+			CALL ErrorHandlers.Common.ESQLs.throwSOAException(007, NULL, NULL);
+		ELSE
+			-- Preparation
+			--CREATE LASTCHILD OF OutputLocalEnvironment.Variables FROM Environment.Variables.SOAVariables.soa:SOAEnvelope;			
+			-- Go
+			PROPAGATE TO LABEL TRIM(OperationName) FINALIZE NONE DELETE NONE;
+		END IF;
+	END;
+END MODULE;

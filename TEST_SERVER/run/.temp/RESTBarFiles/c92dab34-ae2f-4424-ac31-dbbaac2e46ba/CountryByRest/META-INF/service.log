@@ -1,0 +1,32 @@
+
+==============================================
+
+!Thu Apr 13 17:23:52 ICT 2023
+
+Successfully added file CountryByRest\gen\CountryByRest.msgflow to BAR file.
+
+Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql to BAR file.
+
+Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_BuildReq.esql to BAR file.
+
+Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_Compute.esql to BAR file.
+
+Successfully added file CountryByRest\ListOfContinentsByName\ListOfContinentsByName_Compute.esql to BAR file.
+
+Successfully added file CountryByRest\postListOfContinentsByName.subflow to BAR file.
+
+Successfully added file CountryByRest\postListOfContinentsByName_Mapping.map to BAR file.
+
+Successfully added file CountryByRest\restapi.descriptor to BAR file.
+
+Successfully added file CountryByRest\restapi.descriptor to BAR file.
+
+Successfully added file CountryByRest\restapi.descriptor to BAR file.
+
+Successfully added file CountryByRest\restapi.descriptor to BAR file.
+
+Successfully added file CountryByRest\swagger.json to BAR file.
+
+Successfully added file CountryByRest\swagger.json to BAR file.
+
+Successfully added file CountryLib to BAR file.

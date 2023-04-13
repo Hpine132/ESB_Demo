@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CountrySchema" xmlns:tns="http://www.example.org/CountrySchema" elementFormDefault="qualified" xmlns:Q1="http://www.oorsprong.org/websamples.countryinfo">
+
+    <import schemaLocation="../CountryLib/CountryInfoService_1_InlineSchema1.xsd" namespace="http://www.oorsprong.org/websamples.countryinfo"></import>
+    <element name="ListOfCurrenciesByCode">
+    	<complexType></complexType>
+    </element>
+
+    <element name="ListOfCurrenciesByName">
+    	<complexType></complexType>
+    </element>
+
+
+    <element name="ListOfCurrenciesByCodeRes">
+    	<complexType>
+    		<sequence>
+    			<element name="ListOfCurrenciesByCodeResResult" type="Q1:ArrayOftCurrency"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="ListOfCurrenciesByNameRes"><complexType></complexType></element>
+</schema>
