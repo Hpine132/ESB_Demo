@@ -1,0 +1,81 @@
+BROKER SCHEMA "Exception".ESQLs
+
+DECLARE ns1 NAMESPACE  'http://www.pjico.com.vn/common/exceptionhandling/errorreport/1';
+DECLARE ns NAMESPACE 'http://www.pjico.com.vn/common/exceptionhandling/exception/1';
+DECLARE soa NAMESPACE 'http://www.pjico.com.vn/common/envelope/soaenvelope/1';
+DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+
+
+CREATE COMPUTE MODULE createException
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.Properties = InputRoot.Properties;
+		
+		DECLARE Place INTEGER;
+		DECLARE LastPlace INTEGER;
+		DECLARE FlowName CHARACTER;
+		DECLARE NodeName CHARACTER;
+		DECLARE Label CHARACTER;
+		DECLARE	ErrorMsg CHARACTER;
+		DECLARE MessageID CHARACTER;
+		DECLARE ClientIP CHARACTER;
+		
+		Create LASTCHILD of OutputRoot DOMAIN('JSON') NAME 'JSON';
+		SET OutputRoot.JSON.ExceptionList = InputExceptionList;
+		DECLARE exBLOB BLOB ASBITSTREAM(OutputRoot.JSON.ExceptionList);
+		DECLARE exJSON CHAR CAST(exBLOB AS CHAR CCSID InputRoot.Properties.CodedCharSetId);
+		DELETE FIELD OutputRoot.JSON;
+		
+		DECLARE vErrorDetailsSub CHAR;
+		DECLARE lengthErrorDetails INT LENGTH(exJSON);
+		IF lengthErrorDetails > 4000 THEN
+			SET vErrorDetailsSub = SUBSTRING (exJSON FROM (lengthErrorDetails - 4000) FOR 4000);
+		ELSE
+			SET vErrorDetailsSub = exJSON;
+		END IF;
+		
+		DECLARE inReq REFERENCE TO InputRoot.XMLNSC;
+		MOVE inReq LASTCHILD;
+		DECLARE refEnvHeader REFERENCE TO Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader;
+		
+-- 		SET OutputRoot.XMLNSC.ns:Exception.soa:SOAEnvelope = Environment.Variables.SOAVariables.soa:SOAEnvelope;
+-- 		DELETE FIELD OutputRoot.XMLNSC.ns:Exception.soa:SOAEnvelope.soa:ServiceBody.*;
+ 		
+ 		SET MessageID = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:MessageId;
+--		SET OutputRoot.XMLNSC.ns:Exception.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:MessageId = MessageID;
+		
+		DECLARE rootEx REFERENCE TO InputExceptionList.*[1];
+		
+		DECLARE exLabel CHARACTER rootEx.Label;
+		DECLARE x INTEGER POSITION('.' IN exLabel REPEAT -1);
+		SET FlowName = SUBSTRING(exLabel FROM 1 FOR x - 1);
+		SET NodeName = SUBSTRING(exLabel FROM x + 1);
+		
+--		DECLARE additionalInformation REFERENCE TO InputRoot.XMLNSC.*:*[1].common:Header.common:Common.common:AdditionalInformation;
+--		
+--		IF Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP') <> ''  THEN
+--			SET ClientIP = Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP');
+--		ELSE
+--			SET ClientIP = Environment.Variables.SOAVariables.HTTPInputHeader."X-Remote-Addr";
+--		END IF;
+		SET ClientIP = Environment.Variables.SOAVariables.HTTPInputHeader."X-Remote-Addr";
+		
+		SET OutputRoot.XMLNSC.Exception.MessageId = refEnvHeader.soa:SOACommonDetail.common:MessageId;
+		SET OutputRoot.XMLNSC.Exception.TransactionId = refEnvHeader.soa:SOACommonDetail.common:TransactionId;
+		SET OutputRoot.XMLNSC.Exception.MessageTimeStamp = refEnvHeader.soa:SOACommonDetail.common:MessageTimestamp;
+		SET OutputRoot.XMLNSC.Exception.ServiceName = refEnvHeader.soa:SOACommonDetail.soa:ServiceName;
+		SET OutputRoot.XMLNSC.Exception.OperationName = refEnvHeader.soa:SOACommonDetail.soa:OperationName;
+		SET OutputRoot.XMLNSC.Exception.ServiceVersion = refEnvHeader.soa:SOACommonDetail.common:ServiceVersion;
+		
+		SET OutputRoot.XMLNSC.Exception.HostName = InputRoot.HTTPInputHeader.Host;
+		SET OutputRoot.XMLNSC.Exception.ClientIP = ClientIP;
+		SET OutputRoot.XMLNSC.Exception.NodeName = NodeName;
+		SET OutputRoot.XMLNSC.Exception.FLowName = FlowName;
+		SET OutputRoot.XMLNSC.Exception.ErrorCode = InputRoot.XMLNSC.*.*:ResponseStatus.*:GlobalErrorCode;
+		SET OutputRoot.XMLNSC.Exception.ErrorMsg = InputRoot.XMLNSC.*.*:ResponseStatus.*:GlobalErrorDescription;
+		SET OutputRoot.XMLNSC.Exception.ErrorDetails = vErrorDetailsSub;
+		SET OutputRoot.XMLNSC.Exception.Data = cast(bitstream(InputBody) as CHAR CCSID InputRoot.Properties.CodedCharSetId);
+	
+	RETURN TRUE;
+END;
+END MODULE;

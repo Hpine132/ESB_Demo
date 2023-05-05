@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1" xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1" xmlns:Q1="http://www.pjico.com.vn/common/envelope/serviceenvelope/1" xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1" xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1" xmlns:Q2="http://www.pjico.com.vn/common/envelope/commonheader/1" xmlns:Q3="http://www.pjico.com.vn/entity/vn/com/isurance/1" xmlns:Q4="http://www.pjico.com.vn/entity/vn/com/account/1">
+    <import schemaLocation="../../../schema/Common/Envelope/CommonHeader.xsd" namespace="http://www.pjico.com.vn/common/envelope/commonheader/1"></import>
+    <import schemaLocation="../../../schema/Vn/com/account.xsd" namespace="http://www.pjico.com.vn/entity/vn/com/account/1"></import>
+    <import schemaLocation="../../../schema/Vn/com/insurance.xsd" namespace="http://www.pjico.com.vn/entity/vn/com/isurance/1"></import>
+    <import
+		schemaLocation="../../../schema/Common/Envelope/SOAEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1">
+	</import>
+	<import
+		schemaLocation="../../../schema/Common/Envelope/ServiceEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+	</import>
+	<import schemaLocation="../../../schema/Vn/com/party.xsd"
+		namespace="http://www.pjico.com.vn/entity/vn/com/party/1">
+	</import>
+
+
+
+
+
+
+	<import schemaLocation="../../../schema/Vn/com/com.xsd" namespace="http://www.pjico.com.vn/entity/vn/com/1"></import>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <element name="UploadReq" type="tns:UploadReqType"></element>
+
+    <element name="UploadRes" type="tns:UploadResType"></element>
+    
+    <complexType name="UploadReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq" type="tns:UploadReqBodyType"
+    					maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UploadResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes" type="tns:UploadResBodyType"
+    					maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="UploadReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="DocName" type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="DocContent" type="base64Binary" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="DocumentAttribute" type="tns:DocumentAttributesInfo" maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UploadResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="CreateFolderReq" type="tns:CreateFolderReqType"></element>
+
+    <element name="CreateFolderRes" type="tns:CreateFolderResType"></element>
+
+
+    <complexType name="CreateFolderReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:CreateFolderReqBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="CreateFolderReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FolderAttrutes" type="tns:DocumentAttributesInfo"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+
+    	</sequence>
+    </complexType>
+
+    <complexType name="CreateFolderResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:CreateFolderResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="CreateFolderResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ChangeStatusFolderReq"
+    	type="tns:ChangeStatusFolderReqType">
+    </element>
+    
+    <element name="ChangeStatusFolderRes"
+    	type="tns:ChangeStatusFolderResType">
+    </element>
+    
+    <complexType name="ChangeStatusFolderReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:ChangeStatusFolderReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="ChangeStatusFolderResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:ChangeStatusFolderResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="ChangeStatusFolderReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="DocumenInfo" type="com-com:DocumentType" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="Reason" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfChange" type="string" maxOccurs="1" minOccurs="0"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="ChangeStatusFolderResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="MoveFolderReq" type="tns:MoveFolderReqType"></element>
+    
+    <element name="MoveFolderRes" type="tns:MoveFolderResType"></element>
+    
+    <complexType name="MoveFolderReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:MoveFolderReqBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="MoveFolderResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:MoveFolderResBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="MoveFolderReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PathFolderMove" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PathCurrentFolder" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MoveFolderResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrMess" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IdDoc" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ChangeStatusAgencyReq"
+    	type="tns:ChangeStatusAgencyReqType">
+    </element>
+    
+    <element name="ChangeStatusAgencyRes"
+    	type="tns:ChangeStatusAgencyResType">
+    </element>
+    
+    <complexType name="ChangeStatusAgencyReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:ChangeStatusAgencyReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="ChangeStatusAgencyResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:ChangeStatusAgencyResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="ChangeStatusAgencyReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="UnitInfo" type="com-com:UnitType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IdNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AgencyInfo" type="com-com:AgencyInfoType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ResponsibleUnit" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SignedDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LiquidationDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Reason" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocumentInfo" type="com-com:DocumentType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="InsuranceInfo" type="Q3:PolicyBaseType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChangeStatusAgencyResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="CreateAgencyReq" type="tns:CreateAgencyReqType"></element>
+    
+    <element name="CreateAgencyRes" type="tns:CreateAgencyResType"></element>
+    
+    <complexType name="CreateAgencyReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:CreateAgencyReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="CreateAgencyResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:CreateAgencyResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CreateAgencyReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="UnitInfo" type="com-com:UnitType" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="AgencyInfo" type="com-com:AgencyInfoType" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="ResponsibleUnit" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SignedDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LiquidationDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Reason" type="string" maxOccurs="1" minOccurs="0"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="CreateAgencyResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChangeStatusDocumentReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:ChangeStatusDocumentReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="ChangeStatusDocumentReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="DocumentId" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="DocumentStatus" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Reason" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfChange" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChangeStatusDocumentResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:ChangeStatusDocumentResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="ChangeStatusDocumentResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ChangeStatusDocumentReq" type="tns:ChangeStatusDocumentReqType"></element>
+
+    <element name="ChangeStatusDocumentRes" type="tns:ChangeStatusDocumentResType"></element>
+
+    <complexType name="DocumentAttributesInfo">
+    	<sequence>
+    		<element name="UnitInfo" type="com-com:UnitType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PartyInfo" type="com-party:PartyType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DepartmentInfo"
+    			type="com-com:DepartmentInfoType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="InsuranceInfo" type="Q3:PolicyBaseType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="BusinessCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfChange" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="InspectionType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CargoShipName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="GoodsName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AgencyInfo" type="com-com:AgencyInfoType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ResponsibleUnit" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SignedDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LiquidationDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Reason" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ContractNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="VehicleInfo" type="Q3:VehicleInfoType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ProvidedDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Product" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ContractDay" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Amount" type="com-com:AmountInfo"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Fee" type="Q4:FeeInfoType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ClaimNumber" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ComplainantName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Denounce" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PrevenProfit" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Cheat" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DamageDay" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DamageReason" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ClaimMoney" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Ref" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="YearFile" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ReinsuranceUnitCode" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="HeathProduct" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MediumType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MediumName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ServiceName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ProfileType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocumentInfo" type="com-com:DocumentType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DecisionNumber" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="InternalControlDay" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Content" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TestControl" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TestControlPeriod" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="TestControlElement" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DispatchNumber" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FolderDynamicTCKT" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AdditionalInformation"
+    			type="Q2:NameValuePairsType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="DownloadReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ECMID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="DownloadReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq" type="tns:DownloadReqBodyType"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="DownloadResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Code" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrMess" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FileName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FileContent" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="DownloadResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes" type="tns:DownloadResBodyType" maxOccurs="1" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="DownloadReq" type="tns:DownloadReqType"></element>
+
+    <element name="DownloadRes" type="tns:DownloadResType"></element>
+
+    <complexType name="UpdatePropertyReq">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:UpdatePropertyReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdatePropertyReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocContent" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DocumentAttribute"
+    			type="tns:DocumentAttributesInfo" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DocumentID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdatePropertyResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UpdatePropertyResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdatePropertyResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrorCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorDesc" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DocumentID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UpdatePropertyReq" type="tns:UpdatePropertyReq"></element>
+
+    <element name="UpdatePropertyRes" type="tns:UpdatePropertyResType"></element>
+</schema>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ApplicationInsuranceService" targetNamespace="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1" xmlns:app="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.pjico.com.vn/entity/vn/applicationinsurance/applicationinsuranceservice/1">
+  <wsdl:types>
+     <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/applicationinsurance/applicationinsuranceservice/1"
+    		schemaLocation="../service/vn/applicationinsurance/applicationinsuranceService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1">
+	<xsd:element name="InquiryInsuranceHealthcare">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryInsuranceHealthcareResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="ProvideLifeInsuranceRequest">
+    <wsdl:part element="xsd1:ProvideLifeInsuranceReq" name="req" />
+  </wsdl:message>
+  <wsdl:message name="ProvideLifeInsuranceResponse">
+    <wsdl:part element="xsd1:ProvideLifeInsuranceRes" name="res" />
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredCarInsuranceRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:ProvideRequiredCarInsuranceReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredCarInsuranceResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:ProvideRequiredCarInsuranceRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideCarMaterialInsuranceRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:ProvideCarMaterialInsuranceReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideCarMaterialInsuranceResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:ProvideCarMaterialInsuranceRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvidePrivateCompanyInsuranceRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:ProvidePrivateCompanyInsuranceReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvidePrivateCompanyInsuranceResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:ProvidePrivateCompanyInsuranceRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceRequest">
+  	<wsdl:part name="req" element="xsd1:InquiryInsuranceReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceResponse">
+  	<wsdl:part name="res" element="xsd1:InquiryInsuranceRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryReinsuranceRequest">
+  	<wsdl:part name="req" element="xsd1:InquiryReinsuranceReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryReinsuranceResponse">
+  	<wsdl:part name="res" element="xsd1:InquiryReinsuranceRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceHEALTHCARERequest">
+  	<wsdl:part name="parameters" element="app:InquiryInsuranceHEALTHCARE"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceHEALTHCAREResponse">
+  	<wsdl:part name="parameters" element="app:InquiryInsuranceHEALTHCAREResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideCarMaterialRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:ProvideCarMaterialInsuranceReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideCarMaterialResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:ProvideCarMaterialInsuranceRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredCarInsuranceBANCASRequest">
+  	<wsdl:part name="parameters" element="app:ProvideRequiredCarInsuranceBANCAS"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredCarInsuranceBANCASResponse">
+  	<wsdl:part name="parameters" element="app:ProvideRequiredCarInsuranceBANCASResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredMotorcycleInsuranceRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:ProvideRequiredMotorcycleInsuranceReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideRequiredMotorcycleInsuranceResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:ProvideRequiredMotorcycleInsuranceRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideInsuranceBancasRequest">
+  	<wsdl:part name="req" element="xsd1:ProvideInsuranceBancasReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProvideInsuranceBancasResponse">
+  	<wsdl:part name="res" element="xsd1:ProvideInsuranceBancasRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceHealthcareRequest">
+  	<wsdl:part name="req" element="xsd1:InquiryInsuranceHealthcareReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryInsuranceHealthcareResponse">
+  	<wsdl:part name="res" element="xsd1:InquiryInsuranceHealthcareRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ApplicationInsuranceService">
+    <wsdl:operation name="ProvideLifeInsurance">
+      <wsdl:input message="app:ProvideLifeInsuranceRequest"/>
+      <wsdl:output message="app:ProvideLifeInsuranceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ProvideRequiredCarInsurance">
+    	<wsdl:input message="app:ProvideRequiredCarInsuranceRequest"></wsdl:input>
+    	<wsdl:output message="app:ProvideRequiredCarInsuranceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvideCarMaterialInsurance">
+    	<wsdl:input message="app:ProvideCarMaterialInsuranceRequest"></wsdl:input>
+    	<wsdl:output message="app:ProvideCarMaterialInsuranceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvidePrivateCompanyInsurance">
+    	<wsdl:input message="app:ProvidePrivateCompanyInsuranceRequest"></wsdl:input>
+    	<wsdl:output message="app:ProvidePrivateCompanyInsuranceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryInsurance">
+    	<wsdl:input message="app:InquiryInsuranceRequest"></wsdl:input>
+    	<wsdl:output message="app:InquiryInsuranceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryReinsurance">
+    	<wsdl:input message="app:InquiryReinsuranceRequest"></wsdl:input>
+    	<wsdl:output message="app:InquiryReinsuranceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvideInsuranceBancas">
+    	<wsdl:input message="app:ProvideInsuranceBancasRequest"></wsdl:input>
+    	<wsdl:output message="app:ProvideInsuranceBancasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryInsuranceHealthcare">
+    	<wsdl:input message="app:InquiryInsuranceHealthcareRequest"></wsdl:input>
+    	<wsdl:output message="app:InquiryInsuranceHealthcareResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicationInsuranceServiceSOAP"
+  	type="app:ApplicationInsuranceService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="ProvideLifeInsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/ProvideLifeInsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ProvideRequiredCarInsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/ProvideRequiredCarInsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ProvideCarMaterialInsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/ProvideCarMaterialInsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ProvidePrivateCompanyInsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/ProvidePrivateCompanyInsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryInsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/InquiryInsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryReinsurance">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/InquiryReinsurance" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+
+  	<wsdl:operation name="ProvideInsuranceBancas">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/ProvideInsuranceBancas" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryInsuranceHealthcare">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/applicationsvcs/1/InquiryInsuranceHealthcare" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicationInsuranceService">
+    <wsdl:port binding="app:ApplicationInsuranceServiceSOAP" name="ApplicationInsuranceServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -129,5 +129,6 @@
 	<natures>
 		<nature>com.ibm.etools.msgbroker.tooling.libraryNature</nature>
 		<nature>com.ibm.etools.msgbroker.tooling.messageBrokerProjectNature</nature>
+		<nature>com.ibm.etools.msgbroker.tooling.sharedLibraryNature</nature>
 	</natures>
 </projectDescription>

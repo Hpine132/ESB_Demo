@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.pjico.com.vn/common/logging/enginelog/1"
+	 targetNamespace="http://www.pjico.com.vn/common/logging/enginelog/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:element name="EngineLog">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ServiceName" type="xsd:string"/>
+				<xsd:element name="Message" type="xsd:string"/>
+				<xsd:element name="Category" type="xsd:string"/>
+				<xsd:element name="TrackingId" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

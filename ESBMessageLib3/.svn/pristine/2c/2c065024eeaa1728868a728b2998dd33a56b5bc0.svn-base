@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1"
+	 targetNamespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/commonheader/1" schemaLocation="CommonHeader.xsd"/>
+	<xs:complexType name="SOAEnvelopType">
+		<xs:sequence>
+			<xs:element ref="com-soa:SOAServiceHeader"/>
+			<xs:element name="ServiceBody" type="com-soa:ServiceBodyType"/>
+			<xs:element name="Other" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##any" processContents="lax"/>
+	</xs:complexType>
+	<xs:element name="SOAEnvelope" type="com-soa:SOAEnvelopType"/>
+	<xs:element name="SOAServiceHeader" type="com-soa:SOAServiceHeaderType"/>
+	<xs:complexType name="SOAServiceHeaderType">
+		<xs:sequence>
+			<xs:element name="SOACommonDetail" type="com-soa:SOACommonDetailType"/>
+			<xs:element name="ClientDetail" type="com-soa:ClientDetailType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SOACommonDetailType">
+		<xs:complexContent>
+			<xs:extension base="com-header:CommonType">
+				<xs:sequence>
+					<xs:element name="SOAMessageID" type="xs:string"/>
+					<xs:element name="ServiceName" type="xs:string"/>
+					<xs:element name="OperationName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ClientDetailType">
+		<xs:complexContent>
+			<xs:extension base="com-header:ClientType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ServiceBodyType">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##any" processContents="lax"/>
+	</xs:complexType>
+	<xs:element name="SOACommonDetail" type="com-soa:SOACommonDetailType"/>
+</xs:schema>

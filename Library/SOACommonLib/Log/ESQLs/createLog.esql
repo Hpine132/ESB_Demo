@@ -1,0 +1,197 @@
+BROKER SCHEMA  Log.ESQLs
+
+DECLARE soa NAMESPACE 'http://www.pjico.com.vn/common/envelope/soaenvelope/1';
+DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+
+DECLARE ecm NAMESPACE 'http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1';
+
+DECLARE conn NAMESPACE 'http://www.pjico.com.vn/entity/vn/system/systemservice/1';
+
+
+CREATE COMPUTE MODULE createLog
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.Properties = InputRoot.Properties;
+		SET OutputRoot.Properties.CodedCharSetId = 1208;
+--		DECLARE refEnv REFERENCE TO Environment.Variables.SOAVariables.UserDefined.AdditionalInformation;
+		CREATE LASTCHILD OF OutputRoot DOMAIN ('XMLNSC');
+		SET OutputRoot.XMLNSC = Environment.Variables.SOAVariables;
+		
+		DECLARE refEnvHeader REFERENCE TO OutputRoot.XMLNSC.soa:SOAEnvelope.soa:SOAServiceHeader;
+		DECLARE refEnvClientDetail REFERENCE TO refEnvHeader.soa:ClientDetail;
+		DECLARE refServiceBody REFERENCE TO OutputRoot.XMLNSC.soa:SOAEnvelope.soa:ServiceBody;
+		DECLARE refInputAdditional REFERENCE TO refEnvHeader.soa:SOACommonDetail.common:AdditionalInformation;
+		DECLARE inCCSID INT InputProperties.CodedCharSetId;                     
+		DECLARE inEncoding INT InputProperties.Encoding;
+		
+		SET OutputRoot.XMLNSC.DataLog.MessageId = refEnvHeader.soa:SOACommonDetail.common:MessageId;
+		SET OutputRoot.XMLNSC.DataLog.TransactionId = refEnvHeader.soa:SOACommonDetail.common:TransactionId;
+		SET OutputRoot.XMLNSC.DataLog.SourceId = refEnvClientDetail.common:SourceAppID;
+		SET OutputRoot.XMLNSC.DataLog.TargetId = refEnvClientDetail.common:TargetAppIDs.common:TargetAppID;
+		--1. 20210127: PhucVV2: Update time log server to database
+		--2. Jira 2021012702
+		--3. Content: Update time log server to database
+		--4. 20210127.SOACommonLib.PhucVV2.createBackendLogResponse
+		--start Jira 2021012702 block 3
+		DECLARE messageTimestamp CHARACTER;			
+		DECLARE timePatternMT CHARACTER 'yyyy-MM-dd''T''HH:mm:ss.SSS';		
+		SET messageTimestamp = CAST (CURRENT_TIMESTAMP AS CHARACTER FORMAT timePatternMT);
+		SET OutputRoot.XMLNSC.DataLog.MessageTimestamp = messageTimestamp;
+		--SET OutputRoot.XMLNSC.DataLog.MessageTimestamp = refEnvHeader.soa:SOACommonDetail.common:MessageTimestamp;
+		--end Jira 2021012702 block 3
+		SET OutputRoot.XMLNSC.DataLog.ServiceVersion = refEnvHeader.soa:SOACommonDetail.common:ServiceVersion;
+			
+		DECLARE clientIP CHAR;
+		--DECLARE getClientIP CHAR Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP');	
+		SET clientIP = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:HTTPInputHeader."X-Forwarded-For";
+		
+		IF clientIP IS NULL THEN 
+			IF Service.Utils.ESQLs.GetAdditionalInfor(refInputAdditional,'CLIENTIP') IS NOT NULL  THEN
+				SET clientIP = Service.Utils.ESQLs.GetAdditionalInfor(refInputAdditional,'CLIENTIP');
+			ELSE
+				SET clientIP = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:HTTPInputHeader."X-Remote-Addr";
+			END IF;	
+		END IF;
+		
+		SET OutputRoot.XMLNSC.DataLog.ClientIP = COALESCE(clientIP,  Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:HTTPInputHeader."X-Remote-Addr");
+		SET OutputRoot.XMLNSC.DataLog.ServiceName = refEnvHeader.soa:SOACommonDetail.soa:ServiceName;
+		SET OutputRoot.XMLNSC.DataLog.OperationName = refEnvHeader.soa:SOACommonDetail.soa:OperationName;
+		DECLARE  OperationName CHARACTER refEnvHeader.soa:SOACommonDetail.soa:OperationName;
+		DECLARE HostName CHAR;
+		CALL Service.Utils.ESQLs.getUDFConfig('{ESBPolicy}:SOAConfig','HostName') INTO HostName;
+		SET OutputRoot.XMLNSC.DataLog.HostName = HostName;
+		
+		DECLARE timePattern CHARACTER 'yyyyMMddHHmmssSSS';
+		DECLARE transactionDetailBlob BLOB;
+		DECLARE inputAdditionalBlob BLOB;
+		DECLARE bodyName CHAR FIELDNAME(InputRoot.XMLNSC.*[CARDINALITY(InputRoot.XMLNSC.*[])]);				
+		IF ENDSWITH(bodyName, 'Req') THEN
+			SET OutputRoot.XMLNSC.DataLog.Status = 'Request';
+            IF refServiceBody.ecm:UploadReq.ecm:BodyReq.ecm:DocContent IS NOT NULL THEN
+                SET refServiceBody.ecm:UploadReq.ecm:BodyReq.ecm:DocContent = '*****';
+            END IF;
+            IF refServiceBody.conn:DigitalSignReq.conn:BodyReq.conn:DataBase64 IS NOT NULL THEN
+                SET refServiceBody.conn:DigitalSignReq.conn:BodyReq.conn:DataBase64 = '*****';
+            END IF;
+            IF refServiceBody.conn:DigitalSignReq.conn:BodyReq.conn:Image IS NOT NULL THEN
+                SET refServiceBody.conn:DigitalSignReq.conn:BodyReq.conn:Image = '*****';
+            END IF;
+			SET transactionDetailBlob = ASBITSTREAM(refServiceBody CCSID 1208 ENCODING 546);
+			
+			DECLARE additionalInfoRef REFERENCE TO refServiceBody.*[1].common:Header.common:Common.common:AdditionalInformation;
+			IF additionalInfoRef IS NULL THEN
+				SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = '';	
+			ELSE
+				SET inputAdditionalBlob = ASBITSTREAM(additionalInfoRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);	
+				SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = CAST(inputAdditionalBlob AS CHAR CCSID 1208 Encoding 546);
+			END IF;
+			DECLARE TransactionDetail CHARACTER CAST(transactionDetailBlob AS CHAR CCSID 1208 Encoding 546);
+			DECLARE OperationNameConf CHARACTER;
+			DECLARE OperationConfValue CHARACTER;
+			CALL Service.Utils.ESQLs.getUDFConfig('{ESBPolicy}:SOAConfig','OperationName') INTO OperationNameConf;
+
+			IF CONTAINS(OperationNameConf,OperationName) THEN
+				CALL Service.Utils.ESQLs.getUDFConfig('{ESBPolicy}:SOAConfig',OperationName) INTO OperationConfValue;
+				IF OperationConfValue IS NOT NULL THEN
+					CALL Service.Utils.ESQLs.maskData(OperationConfValue, TransactionDetail) INTO TransactionDetail;
+				END IF;
+			END  IF;
+			SET OutputRoot.XMLNSC.DataLog.TransactionDetail = TransactionDetail;
+		ELSE
+--			SET OutputRoot.Properties.MessageSet = '{ESBMessageLib}';
+--			SET OutputRoot.Properties.ContentType = 'text/xml;charset=UTF-8';
+			SET OutputRoot.XMLNSC.DataLog.Status = 'Response';
+			DECLARE currentTimeStampStart,  currentTimeStampEnd CHARACTER;
+			SET currentTimeStampStart = Environment.Variables.SOAVariables.StartTimeDuration;
+			SET currentTimeStampEnd = CAST (CURRENT_TIMESTAMP AS CHARACTER FORMAT timePattern);
+			SET OutputRoot.XMLNSC.DataLog.Timeduration = Service.Utils.ESQLs.subDateTime(currentTimeStampStart, currentTimeStampEnd, timePattern);
+			SET OutputRoot.XMLNSC.DataLog.ResponseStatus = InputRoot.XMLNSC.*[1].common:ResponseStatus.common:Status;
+			
+
+			IF InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[1].common:ErrorCode IS NOT NULL  
+				AND InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[1].common:ErrorCode <> '' THEN
+				DECLARE ErrorCode CHARACTER '';
+				DECLARE SourceAppID CHARACTER '';
+				DECLARE ErrorCodeSub CHARACTER '';
+				DECLARE ErrorMessage CHARACTER '';
+				DECLARE ErrorMessageSub CHARACTER '';
+				FOR ErrorInfo AS InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[] DO
+					SET SourceAppID = COALESCE(ErrorInfo.common:SourceAppID, '');
+					SET ErrorCodeSub = COALESCE(ErrorInfo.common:ErrorCode, '');
+					SET ErrorCode = (ErrorCode || '_') || SourceAppID;
+					SET ErrorCode = (ErrorCode || ':') || ErrorCodeSub;
+					SET OutputRoot.XMLNSC.DataLog.ErrorCode = ErrorCode;		
+					
+					SET ErrorMessageSub = COALESCE(ErrorInfo.common:ErrorDesc, '');
+					SET ErrorMessage = (ErrorMessage || '_') || SourceAppID;
+					SET ErrorMessage = (ErrorMessage || ':') || ErrorMessageSub;
+					SET OutputRoot.XMLNSC.DataLog.ErrorMessage = ErrorMessage;	
+				END FOR;
+			ELSE
+				SET OutputRoot.XMLNSC.DataLog.ErrorCode = InputRoot.XMLNSC.*[1].common:ResponseStatus.common:GlobalErrorCode;
+				SET OutputRoot.XMLNSC.DataLog.ErrorMessage = InputRoot.XMLNSC.*[1].common:ResponseStatus.common:GlobalErrorDescription;
+
+			END IF;
+
+			--IF InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[1].common:ErrorDesc IS NOT NULL
+			--	AND InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[1].common:ErrorDesc <> '' THEN
+			--	DECLARE ErrorMessage CHARACTER '';
+			--	DECLARE SourceAppID CHARACTER '';
+			--	DECLARE ErrorMessageSub CHARACTER '';
+			--	FOR ErrorInfo AS InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[] DO
+			--		SET ErrorMessage = (ErrorMessage || '_') || COALESCE(ErrorInfo.common:SourceAppID, '');-- ||':'||COALESCE(ErrorInfo.common:ErrorDesc, '');
+			--		SET ErrorMessage = (ErrorMessage || ':') || COALESCE(ErrorInfo.common:ErrorDesc, '');
+			---		--SET OutputRoot.XMLNSC.DataLog.ErrorMessage = InputRoot.XMLNSC.*[1].common:ResponseStatus.common:ErrorInfo[1].common:ErrorDesc;
+			--		SET OutputRoot.XMLNSC.DataLog.ErrorMessage = ErrorMessage;
+			--	END FOR;
+			--ELSE
+			--	SET OutputRoot.XMLNSC.DataLog.ErrorMessage = InputRoot.XMLNSC.*[1].common:ResponseStatus.common:GlobalErrorDescription;
+			--END IF;
+			
+			
+--			SET OutputRoot.JSON = InputRoot.XMLNSC;
+--			IF OutputRoot.JSON.conn:CreateQRCodeRes.conn:BodyRes.conn:QrResult IS NOT NULL THEN 
+--                DECLARE outRef REFERENCE TO OutputRoot.JSON;
+--		        CREATE LASTCHILD OF OutputRoot.JSON AS outRef  DOMAIN 'JSON';
+--                CREATE LASTCHILD OF outRef  AS outRef  NAME 'Data';
+--                SET OutputRoot.JSON.JSON.Data.conn:CreateQRCodeRes = InputRoot.XMLNSC.conn:CreateQRCodeRes;
+--                SET OutputRoot.JSON.JSON.Data.conn:CreateQRCodeRes.conn:BodyRes.conn:QrResult = '*****';
+--                
+--                SET transactionDetailBlob = ASBITSTREAM(outRef CCSID 1208 ENCODING 546);
+--			    DECLARE additionalInfoRef REFERENCE TO InputRoot.XMLNSC.*[1].common:Header.common:Common.common:AdditionalInformation;	
+--			    DELETE FIELD OutputRoot.JSON;
+--			    IF additionalInfoRef IS NULL THEN
+--				    SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = '';	
+--			    ELSE
+--				    SET inputAdditionalBlob = ASBITSTREAM(additionalInfoRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);	
+--				    SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = CAST(inputAdditionalBlob AS CHAR CCSID 1208 Encoding 546);
+--			    END IF;					
+--			    SET OutputRoot.XMLNSC.DataLog.TransactionDetail = CAST(transactionDetailBlob AS CHAR CCSID 1208 Encoding 546);
+--			ELSE
+	            SET transactionDetailBlob = ASBITSTREAM(InputRoot.XMLNSC CCSID 1208 ENCODING 546);
+			    DECLARE additionalInfoRef REFERENCE TO InputRoot.XMLNSC.*[1].common:Header.common:Common.common:AdditionalInformation;	
+			    DELETE FIELD OutputRoot.JSON;
+			    IF additionalInfoRef IS NULL THEN
+				    SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = '';	
+			    ELSE
+				    SET inputAdditionalBlob = ASBITSTREAM(additionalInfoRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);	
+				    SET OutputRoot.XMLNSC.DataLog.AdditionalInfo = CAST(inputAdditionalBlob AS CHAR CCSID 1208 Encoding 546);
+			    END IF;					
+			    SET OutputRoot.XMLNSC.DataLog.TransactionDetail = CAST(transactionDetailBlob AS CHAR CCSID 1208 Encoding 546);
+		
+			END IF;
+            
+			
+--		END IF;
+			
+		
+	
+--		DELETE FIRSTCHILD OF OutputRoot.XMLNSC;
+--		DELETE FIRSTCHILD OF OutputRoot.XMLNSC;
+		DELETE FIELD OutputRoot.XMLNSC.soa:SOAEnvelope;
+		DELETE FIELD OutputRoot.XMLNSC.UserDefined;
+		DELETE FIELD OutputRoot.XMLNSC.StartTimeDuration;
+		RETURN TRUE;
+	END;
+
+END MODULE;

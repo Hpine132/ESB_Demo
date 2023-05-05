@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1" xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1" xmlns:Q1="http://www.pjico.com.vn/common/envelope/serviceenvelope/1" xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1" xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1" xmlns:Q2="http://www.pjico.com.vn/common/envelope/commonheader/1">
+	<import
+		schemaLocation="../../../schema/Common/Envelope/SOAEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1">
+	</import>
+	<import
+		schemaLocation="../../../schema/Common/Envelope/ServiceEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+	</import>
+	<import schemaLocation="../../../schema/Vn/com/party.xsd"
+		namespace="http://www.pjico.com.vn/entity/vn/com/party/1">
+	</import>
+
+
+
+
+
+
+	<import schemaLocation="../../../schema/Vn/com/com.xsd" namespace="http://www.pjico.com.vn/entity/vn/com/1"></import>
+
+
+	<complexType name="UploadClaimReqType">
+		<complexContent>
+			<extension base="Q1:BaseServiceEnvelopeRequestType">
+				<sequence>
+					<element name="BodyReq"
+						type="tns:UploadClaimReqBodyType" maxOccurs="1" minOccurs="0">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="UploadClaimReqBodyType">
+		<sequence>
+			<element name="FunctionCode" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="File" type="base64Binary" maxOccurs="1" minOccurs="0"></element>
+			<element name="departmentCode" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="departmentName" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="unitName" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="documentType" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="customerType" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="customerCode" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="customerName" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="idNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="insuranceType" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="documentName" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="insuranceNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="businessCode" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="cargoShipName" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="profileType" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="unitCode" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="goodsName" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="documentCreator" type="string" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="UploadClaimResType">
+		<complexContent>
+			<extension base="Q1:BaseServiceEnvelopeResponseType">
+				<sequence>
+					<element name="BodyRes"
+						type="tns:UploadClaimResBodyType" maxOccurs="1" minOccurs="0">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="UploadClaimResBodyType">
+		<sequence>
+			<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+    <element name="UploadClaimReq" type="tns:UploadClaimReqType"></element>
+
+    <element name="UploadClaimRes" type="tns:UploadClaimResType"></element>
+
+    <complexType name="UploadPolicyReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:UploadPolicyReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UploadPolicyReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="UploadPolicyResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UploadPolicyResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UploadPolicyResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UploadPolicyReq" type="tns:UploadPolicyReqType"></element>
+
+    <element name="UploadPolicyRes" type="tns:UploadPolicyResType"></element>
+
+    <complexType name="UploadEndorsementReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:UploadEndorsementReqBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UploadEndorsementReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UploadEndorsementRes">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UploadEndorsementResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UploadEndorsementResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UploadEndorsementReq" type="tns:UploadEndorsementReqType"></element>
+
+    <element name="UploadEndorsementRes" type="tns:UploadEndorsementRes"></element>
+
+    <complexType name="DownloadReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:DownloadReqBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="DownloadReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="DownloadReq" type="tns:DownloadReqType"></element>
+
+    <element name="DownloadRes" type="tns:DownloadResType"></element>
+
+    <complexType name="DownloadResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:DownloadResBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="DownloadResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdateClaimReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyType"
+    					type="tns:UpdateClaimReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdateClaimReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdateClaimResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UpdateClaimResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdateClaimResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrMess" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IdDoc" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UpdateClaimReq" type="tns:UpdateClaimReqType"></element>
+
+    <element name="UpdateClaimRes" type="tns:UpdateClaimResType"></element>
+
+
+    <complexType name="UpdatePolicyReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:UpdatePolicyReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdatePolicyReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdatePolicyResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UpdatePolicyResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdatePolicyResBodyType">
+    	<sequence>
+    		<element name="FucntionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UpdatePolicyReq" type="tns:UpdatePolicyReqType"></element>
+
+    <element name="UpdatePolicyRes" type="tns:UpdatePolicyResType"></element>
+
+    <complexType name="UpdateEndorsementReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="tns:UpdateEndorsementReqBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdateEndorsementReqBodyType">
+    	<sequence>
+    		<element name="FuntionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdateEndorsementResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes"
+    					type="tns:UpdateEndorsementResBodyType" maxOccurs="1"
+    					minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="UpdateEndorsementResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UpdateEndorsementReq" type="tns:UpdateEndorsementReqType"></element>
+
+    <element name="UpdateEndorsementRes" type="tns:UpdateEndorsementResType"></element>
+</schema>

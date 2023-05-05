@@ -1,0 +1,150 @@
+
+
+BROKER SCHEMA Log.ESQLs
+
+DECLARE qr NAMESPACE 'http://tempuri.org/';
+
+
+CREATE COMPUTE MODULE createBackendLogResponse
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.Properties = InputRoot.Properties;
+		DECLARE timePattern CHARACTER 'yyyyMMddHHmmssSSS';
+		SET OutputRoot.Properties.CodedCharSetId = 1208;
+		--DECLARE SaveTargetLog CHARACTER 'off';
+		--DECLARE refEnv REFERENCE TO Environment.Variables.SOAVariables.UserDefined.AdditionalInformation;
+		--CALL Service.Utils.ESQLs.getUDFConfig('SOAConfig','SaveTargetLog',refEnv) INTO SaveTargetLog;
+		--IF (SaveTargetLog = 'on') THEN
+		CREATE LASTCHILD OF OutputRoot DOMAIN('XMLNSC') NAME 'XMLNSC';
+		DECLARE _inAdditionalInfoRef REFERENCE TO Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation;
+
+		SET OutputRoot.XMLNSC.ns44:LogData.TransID = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:ServiceBody.*[1].*:Header.common:Common.common:TransactionId;
+		SET OutputRoot.XMLNSC.ns44:LogData.MessageID = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:ServiceBody.*[1].*:Header.common:Common.common:MessageId;
+		SET OutputRoot.XMLNSC.ns44:LogData.IIBMessageID = '';
+		SET OutputRoot.XMLNSC.ns44:LogData.TargetID = Service.Utils.ESQLs.GetAdditionalInfo(_inAdditionalInfoRef,'TARGETID');
+		SET OutputRoot.XMLNSC.ns44:LogData.TargetService = Service.Utils.ESQLs.GetAdditionalInfo(_inAdditionalInfoRef,'TARGETSERVICE');
+		SET OutputRoot.XMLNSC.ns44:LogData.MessageType = 'Response';
+		DECLARE currentTimeStampStart, currentTimeStampEnd CHARACTER;
+		SET currentTimeStampStart = CAST (Environment.Variables.BackEndLog.MessageTimestampStart AS CHARACTER FORMAT timePattern);
+		SET currentTimeStampEnd = CAST (CURRENT_TIMESTAMP AS CHARACTER FORMAT timePattern);
+		SET OutputRoot.XMLNSC.ns44:LogData.TimeDuration = Service.Utils.ESQLs.subDateTime(currentTimeStampStart, currentTimeStampEnd, timePattern);
+		--1. 20210127: PhucVV2: Update time log server to database
+		--2. Jira 2021012702
+		--3. Content: Update time log server to database
+		--4. 20210127.SOACommonLib.PhucVV2.createBackendLogResponse
+		--start Jira 2021012702 block 2
+		DECLARE messageTimestamp CHARACTER;			
+		DECLARE timePatternMT CHARACTER 'yyyy-MM-dd''T''HH:mm:ss.SSS';		
+		SET messageTimestamp = CAST (CURRENT_TIMESTAMP AS CHARACTER FORMAT timePatternMT);
+		SET OutputRoot.XMLNSC.ns44:LogData.MessageTimestamp = messageTimestamp;
+		--SET OutputRoot.XMLNSC.ns44:LogData.MessageTimestamp = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:ServiceBody.*[1].*:Header.common:Common.common:MessageTimestamp;
+		--end Jira 2021012702 block 2
+		DECLARE logType CHARACTER Environment.Variables.ServiceCallout.LogType;
+
+		CASE logType
+		WHEN 'DB' THEN
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Environment.Variables.Log.Message;
+		WHEN 'SOAP' THEN
+			/*DECLARE Message CHAR;
+			
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				SET OutputRoot.JSON = InputRoot.XMLNSC;
+			    SET OutputRoot.JSON.qr:createPolQRCodeResponse.qr:createPolQRCodeResult = '*****';
+				DECLARE MessageRef REFERENCE TO OutputRoot.JSON;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(MessageRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				SET Message = CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+				--Xu ly trong truong hop dau vao là String XML 
+				SET Message = REPLACE(Message, '&lt;', '<');
+				SET Message = REPLACE(Message, '&gt;', '>');
+				--Ket thuc xu ly trong truong hop dau vao là String XML
+			    DELETE FIELD OutputRoot.JSON; 
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+			END IF;
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;*/
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				DECLARE MessageRef REFERENCE TO InputRoot.XMLNSC;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(MessageRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				SET Message = CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+				--Xu ly trong truong hop dau vao là String XML 
+				SET Message = REPLACE(Message, '&lt;', '<');
+				SET Message = REPLACE(Message, '&gt;', '>');
+				--Ket thuc xu ly trong truong hop dau vao là String XML 
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+			END IF;
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+		WHEN 'JOLT' THEN
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				SET OutputRoot.XMLNSC.JoltResponse = Environment.Variables.ServiceCallout.ResponseDetail.ResponseData.JoltResponse;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(OutputRoot.XMLNSC.JoltResponse OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				DECLARE messageAsChar CHAR CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+				SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = messageAsChar;
+				DELETE FIELD OutputRoot.XMLNSC.JoltResponse;
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+				SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+			END IF;	
+		WHEN 'JSON' THEN
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				DECLARE MessageRef REFERENCE TO InputRoot.JSON;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(MessageRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				SET Message = CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+			END IF;
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+		WHEN 'OCSP' THEN
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ResponseData.PKIResponse;
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+			END IF;
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+		WHEN 'TCP' THEN
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				SET OutputRoot.XMLNSC.TcpResponse = Environment.Variables.ServiceCallout.ResponseDetail.ResponseData;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(OutputRoot.XMLNSC.TcpResponse OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				SET Message = CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+				DELETE FIELD OutputRoot.XMLNSC.TcpResponse;
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+			END IF;
+			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;	
+		WHEN 'QUEUE' THEN
+			DECLARE Message CHAR;
+			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+				SET OutputRoot.XMLNSC.JoltResponse = Environment.Variables.ServiceCallout.ResponseDetail.ResponseData.JoltResponse;
+				DECLARE messageAsBitStream BLOB ASBITSTREAM(OutputRoot.XMLNSC.JoltResponse OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+				DECLARE messageAsChar CHAR CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+				SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = messageAsChar;
+				DELETE FIELD OutputRoot.XMLNSC.JoltResponse;
+			ELSE
+				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+				SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+			END IF;	
+		END CASE;
+
+--		IF (logType = 'DB') THEN
+--			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail.ResultSetProcedure = Environment.Variables.ResultSetProcedure;
+--		ELSE
+--			DECLARE Message CHAR;
+--			IF (Environment.Variables.ServiceCallout.Status = '0') THEN
+--				DECLARE MessageRef REFERENCE TO InputRoot.XMLNSC;
+--				DECLARE messageAsBitStream BLOB ASBITSTREAM(MessageRef OPTIONS FolderBitStream CCSID 1208 ENCODING 546);
+--				SET Message = CAST(messageAsBitStream AS CHAR CCSID 1208 Encoding 546);
+--			ELSE
+--				SET Message = Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+--			END IF;
+--			SET OutputRoot.XMLNSC.ns44:LogData.TransactionDetail = Message;
+--		END IF;
+		--END IF;
+		RETURN TRUE;
+	END;
+
+END MODULE;

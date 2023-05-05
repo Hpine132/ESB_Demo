@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" overrideConfigurableProperties="false" includeESQL="false">
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1681711469108" workspaceResource="/Country/IBMdefined/org/w3/www/_2003/_05/soapenvelope/soapenv12.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd.&#xA;Successfully added file Country\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681284585098" workspaceResource="/Country/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.&#xA;Successfully added file Country\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681284585083" workspaceResource="/Country/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.&#xA;Successfully added file Country\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681284629756" workspaceResource="/Country/IBMdefined/soap.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\IBMdefined\soap.xsd.&#xA;Successfully added file Country\IBMdefined\soap.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\soap.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681898078739" workspaceResource="/Country/ListOfContinentsByName/ESQLs/ListOfContinentsByName_BuildReq.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildReq.esql.&#xA;Dependent ESQL file ListOfContinentsByName/ESQLs/ListOfContinentsByName_BuildResult.esql is added to the BAR file.&#xA;&#xA;Successfully added file Country\ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildReq.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildReq.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681893362952" workspaceResource="/Country/ListOfContinentsByName/ESQLs/ListOfContinentsByName_BuildResult.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildResult.esql.&#xA;Dependent ESQL file ListOfContinentsByName/ESQLs/ListOfContinentsByName_BuildReq.esql is added to the BAR file.&#xA;&#xA;Successfully added file Country\ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildResult.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName\ESQLs\ListOfContinentsByName_BuildResult.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681893528659" workspaceResource="/Country/ListOfContinentsByName/Map/ListOfContinentsByName_Mapping.map">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\ListOfContinentsByName\Map\ListOfContinentsByName_Mapping.map.&#xA;Successfully added file Country\ListOfContinentsByName\Map\ListOfContinentsByName_Mapping.map to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName/Map/ListOfContinentsByName_Mapping.map"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681893596298" workspaceResource="/Country/ListOfContinentsByName/Map/ListOfContinentsByName_MappingRes.map">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\ListOfContinentsByName\Map\ListOfContinentsByName_MappingRes.map.&#xA;Successfully added file Country\ListOfContinentsByName\Map\ListOfContinentsByName_MappingRes.map to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName/Map/ListOfContinentsByName_MappingRes.map"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1682501103918" workspaceResource="/Country/ListOfContinentsByName/SubFlow/ListOfContinentsByName.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\ListOfContinentsByName\SubFlow\ListOfContinentsByName.subflow.&#xA;Successfully added file Country\ListOfContinentsByName\SubFlow\ListOfContinentsByName.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ListOfContinentsByName\SubFlow\ListOfContinentsByName.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681895456440" workspaceResource="/Country/Register/ESQLs/MappingRegister.map">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\Register\ESQLs\MappingRegister.map.&#xA;Successfully added file Country\Register\ESQLs\MappingRegister.map to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Register/ESQLs/MappingRegister.map"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681893453696" workspaceResource="/Country/Register/ESQLs/postRegister_Compute2.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\Register\ESQLs\postRegister_Compute2.esql.&#xA;Successfully added file Country\Register\ESQLs\postRegister_Compute2.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Register\ESQLs\postRegister_Compute2.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681959898300" workspaceResource="/Country/Register/ESQLs/postRegister_Compute3.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\Register\ESQLs\postRegister_Compute3.esql.&#xA;Dependent ESQL file Register/ESQLs/postRegister_Compute2.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file Country\Register\ESQLs\postRegister_Compute3.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Register\ESQLs\postRegister_Compute3.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681888822105" workspaceResource="/Country/application.descriptor">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\application.descriptor.&#xA;Successfully added file Country\application.descriptor to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file Country\application.descriptor to BAR file.&#xA;" severity="0"/>
+      <barEntry name="application.descriptor"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1682501355030" workspaceResource="/Country/country_flow.msgflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\country_flow.msgflow.&#xA;Successfully added file Country\country_flow.msgflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="country_flow.msgflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681813488235" workspaceResource="/Country/country_flow_routeToLabel.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file Country\country_flow_routeToLabel.esql.&#xA;Successfully added file Country\country_flow_routeToLabel.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="country_flow_routeToLabel.esql"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>

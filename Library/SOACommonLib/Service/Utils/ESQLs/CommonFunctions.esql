@@ -1,0 +1,411 @@
+
+BROKER SCHEMA Service.Utils.ESQLs
+
+CREATE FUNCTION ConvertXML2Blob (
+IN bodyData REFERENCE
+) RETURNS CHARACTER
+BEGIN
+	DECLARE inputMsgBlob BLOB ASBITSTREAM(bodyData OPTIONS FolderBitStream CCSID 1208);
+	DECLARE strBodyReq CHARACTER CAST(inputMsgBlob AS CHAR CCSID 1208);
+	RETURN strBodyReq;
+END;
+
+CREATE FUNCTION validateInput(IN inputName CHARACTER, IN inputValue CHARACTER,
+	IN isNotNull boolean ,IN isNotEmpty boolean, IN maxLength INT) RETURNS CHARACTER
+BEGIN
+	IF inputName IS NULL OR LENGTH(inputName)=0 THEN
+		RETURN inputName||' can not null or is empty';
+	END IF;
+	IF isNotNull THEN
+		IF inputValue IS NULL THEN
+			RETURN inputValue ||' can not null';
+		END IF;
+	END IF;
+	IF isNotEmpty THEN
+		IF LENGTH(inputValue)= 0 THEN
+			RETURN inputValue ||' can not Empty';
+		END IF;
+	END IF;
+	IF LENGTH(inputValue) > maxLength THEN
+		RETURN inputValue ||' length can not > maxLength'   ;
+	ELSE 
+		RETURN 'OK';
+	END IF;
+END;
+---------------------------------------------------------------
+CREATE FUNCTION InputValidateEx (IN i INTEGER,IN inputName CHARACTER,IN inputValue CHARACTER
+	,IN isNotNull BOOLEAN,IN isNotEmpty BOOLEAN,IN maxLength INTEGER
+	,IN TypeValidateContent INTEGER, IN ValidateDetail CHARACTER,IN data REFERENCE)
+BEGIN 
+	SET data.Check[i].inputName = inputName;
+	SET data.Check[i].inputValue = inputValue;
+	SET data.Check[i].isNotNull = isNotNull;
+	SET data.Check[i].isNotEmpty = isNotEmpty;
+	SET data.Check[i].maxLength = maxLength;
+	SET data.Check[i].TypeValidateContent = TypeValidateContent;
+	SET data.Check[i].ValidateDetail = ValidateDetail;
+END; 
+
+CREATE FUNCTION InputValidateEx2 (IN i INTEGER,IN inputName CHARACTER,IN inputValue CHARACTER 
+	, IN maxLength INTEGER, IN TypeValidateContent INTEGER, IN ValidateDetail CHARACTER,IN data REFERENCE)
+BEGIN 
+	SET data.Check[i].inputName = inputName;
+	SET data.Check[i].inputValue = inputValue;
+	SET data.Check[i].maxLength = maxLength;
+	SET data.Check[i].TypeValidateContent = TypeValidateContent;
+	SET data.Check[i].ValidateDetail = ValidateDetail;
+END;
+
+CREATE FUNCTION InputValidateEx3 (IN i INTEGER,IN inputName CHARACTER,IN inputValue CHARACTER 
+	, IN isNotAppear BOOLEAN, IN maxLength INTEGER, IN TypeValidateContent INTEGER, IN ValidateDetail CHARACTER,IN data REFERENCE)
+BEGIN 
+	SET data.Check[i].inputName = inputName;
+	SET data.Check[i].inputValue = inputValue;
+	SET data.Check[i].isNotAppear = isNotAppear;
+	SET data.Check[i].maxLength = maxLength;
+	SET data.Check[i].TypeValidateContent = TypeValidateContent;
+	SET data.Check[i].ValidateDetail = ValidateDetail;
+END;
+
+CREATE FUNCTION InputValidate (IN i INTEGER,IN inputName CHARACTER,IN inputValue CHARACTER
+	,IN isNotNull BOOLEAN ,IN isNotEmpty BOOLEAN,IN maxLength INTEGER
+	,IN data REFERENCE)
+BEGIN 
+	SET data.Check[i].inputName = inputName;
+	SET data.Check[i].inputValue = inputValue;
+	SET data.Check[i].isNotNull = isNotNull;
+	SET data.Check[i].isNotEmpty = isNotEmpty;
+	SET data.Check[i].maxLength = maxLength;
+END; 
+
+
+----------------------------------------------
+-- FUNCTION validateInput array 
+
+CREATE FUNCTION validateRequest(IN data REFERENCE) RETURNS CHARACTER
+BEGIN
+
+DECLARE i INTEGER 1;
+FOR source AS data.Check[] DO
+	IF data.Check[i].inputName IS NULL OR LENGTH(data.Check[i].inputName)=0 THEN
+		RETURN data.Check[i].inputName||' can not null or is empty';
+	END IF;
+	IF data.Check[i].isNotNull THEN
+		IF data.Check[i].inputValue IS NULL THEN
+			RETURN data.Check[i].inputName ||' can not null';
+		END IF;
+	END IF;
+	IF data.Check[i].isNotEmpty THEN
+		IF LENGTH(data.Check[i].inputValue)= 0 THEN
+			RETURN data.Check[i].inputName ||' can not Empty';
+		END IF;
+	END IF;
+	IF data.Check[i].isNotAppear THEN
+		IF data.Check[i].inputValue IS NULL THEN
+			RETURN data.Check[i].inputName ||' is not Appear';
+		END IF;
+	END IF;
+	IF data.Check[i].inputValue IS NOT NULL AND LENGTH(data.Check[i].inputValue) > data.Check[i].maxLength THEN
+		RETURN data.Check[i].inputName ||' length can not > '||CAST(data.Check[i].maxLength AS CHARACTER);
+	END IF;
+	IF data.Check[i].TypeValidateContent = 1 THEN 
+		IF CONTAINS(data.Check[i].ValidateDetail,'#'||data.Check[i].inputValue||'#') <> true THEN
+			RETURN  data.Check[i].inputName ||' content is not in '||data.Check[i].ValidateDetail;  
+		END IF;	
+	END IF;
+	IF data.Check[i].TypeValidateContent = 2 THEN
+		DECLARE validateContent BOOLEAN;
+		CALL Service.Utils.ESQLs.validateInputRegex(data.Check[i].inputValue, data.Check[i].ValidateDetail) INTO validateContent;
+		IF validateContent = FALSE THEN
+			RETURN  data.Check[i].inputName ||' content is invalid.'; 
+		END IF;
+	END IF;
+    IF data.Check[i].TypeValidateContent = 3 THEN
+		DECLARE validateContent BOOLEAN;
+		CALL Service.Utils.ESQLs.validateInputRegex(data.Check[i].inputValue, data.Check[i].ValidateDetail) INTO validateContent;
+		IF LENGTH(data.Check[i].inputValue) > 0 AND validateContent = FALSE THEN
+			RETURN  data.Check[i].inputName ||' content is invalid.'; 
+		END IF;
+    END IF;
+
+	SET i = i + 1;
+END FOR;
+DELETE FIELD data;
+return 'OK';
+END;
+
+-----------------------------------------------
+
+CREATE FUNCTION GetAdditionalInfor(
+IN AddInf REFERENCE, IN indx CHARACTER) RETURNS CHARACTER
+BEGIN
+	DECLARE result CHARACTER;	
+	DECLARE I INTEGER 1;
+	DECLARE J INTEGER CARDINALITY(AddInf.[]);
+
+	WHILE I <= J DO
+		IF AddInf.*:NameValuePairs[I].*:Name = TRIM(indx) THEN
+			SET result = AddInf.*:NameValuePairs[I].*:Value;
+			RETURN result;
+		END IF;
+		SET I = I + 1;
+	END WHILE;
+	RETURN result;
+END;
+
+
+CREATE FUNCTION GetAdditionalInfo(
+IN AddInf REFERENCE, IN indx CHARACTER) RETURNS CHARACTER
+BEGIN
+	DECLARE result CHARACTER;
+	DECLARE I INTEGER 1;
+	DECLARE J INTEGER CARDINALITY(AddInf.[]);
+
+	WHILE I <= J DO
+		IF AddInf.*:NameValuePairs[I].*:Name = TRIM(indx) THEN
+			SET result = AddInf.*:NameValuePairs[I].*:Value;
+		END IF;
+		SET I = I + 1;
+	END WHILE;
+	RETURN result;
+END;
+
+
+CREATE FUNCTION ParseXMLdateTime(IN dateTime CHARACTER) RETURNS TIMESTAMP
+BEGIN
+	DECLARE pos, lenDateTime INTEGER;
+	SET pos = POSITION('.' IN dateTime);
+	SET lenDateTime = LENGTH(dateTime);
+
+	IF pos > 0 THEN
+		IF (lenDateTime - pos) = 0 THEN
+			SET pos = pos - 1;
+		ELSEIF (lenDateTime - pos) > 1 AND (lenDateTime - pos) < 4 THEN
+			SET pos = lenDateTime;
+		ELSE
+			SET pos = pos + 3;
+			IF pos > 20 THEN
+				SET pos = 19;
+			END IF;
+		END IF;
+	ELSE
+		SET pos = 19;
+	END IF;
+	DECLARE iBDateTime CHARACTER;
+	SET iBDateTime = LEFT(dateTime,pos);
+
+	RETURN CAST(iBDateTime AS TIMESTAMP FORMAT 'I');
+	--RETURN CAST(dateTime AS TIMESTAMP FORMAT 'I');
+END;
+
+CREATE FUNCTION AddLeadingString(IN Str CHAR, IN StrLen INT, IN LChar CHAR) RETURNS CHAR
+BEGIN
+	IF LENGTH(Str)>StrLen THEN
+		RETURN LEFT(Str, StrLen);
+	ELSEIF LENGTH(Str)=StrLen THEN
+		RETURN Str;
+	ELSE
+		RETURN REPLICATE(LChar, StrLen-LENGTH(Str)) || Str;
+	END IF;
+END;
+
+
+CREATE FUNCTION AddTrailingString(IN Str CHAR, IN StrLen INT, IN LChar CHAR) RETURNS CHAR
+BEGIN
+	IF LENGTH(Str)>StrLen THEN
+		RETURN LEFT(Str, StrLen);
+	ELSEIF LENGTH(Str)=StrLen THEN
+		RETURN Str;
+	ELSE
+		RETURN Str || REPLICATE(LChar, StrLen-LENGTH(Str));
+	END IF;
+END;
+
+CREATE FUNCTION IfNullEmpty(IN Str CHAR) RETURNS CHAR
+BEGIN
+	IF Str IS NULL THEN
+		RETURN '';
+	ELSE
+		RETURN Str;
+	END IF;
+END;
+
+CREATE FUNCTION hasValue(IN Str CHAR) RETURNS BOOLEAN
+BEGIN
+	IF Str IS NOT NULL AND LENGTH(Str) > 0 THEN
+		RETURN TRUE;
+	ELSE
+		RETURN FALSE;
+	END IF;
+END;
+
+CREATE FUNCTION getUserDefinedConfig(IN Service CHAR, IN Key CHAR) RETURNS CHARACTER
+BEGIN
+	-- DECLARE result CHAR broker.configurableservice.getValue(Service,Key);
+	-- RETURN result;
+
+	DECLARE Property2 CHARACTER;
+	SET Property2 = getPolicyProperty(Service, Key);
+	RETURN Property2;
+END;
+
+CREATE FUNCTION getUDFConfig(IN Service CHAR, IN Key CHAR) RETURNS CHARACTER
+BEGIN
+	DECLARE Property2 CHARACTER;
+	SET Property2 = getPolicyProperty(Service, Key);
+	RETURN Property2;
+END;
+
+CREATE FUNCTION castFloatToDecimal(IN sourceValue FLOAT) RETURNS DECIMAL
+BEGIN
+	RETURN CAST(sourceValue AS DECIMAL);
+END;
+
+CREATE FUNCTION castStringToDecimal(IN sourceValue CHAR) RETURNS DECIMAL
+BEGIN
+	RETURN CAST(sourceValue AS DECIMAL);
+END;
+
+CREATE FUNCTION subDateTime(IN strDateStart CHAR, IN strDateEnd CHAR, IN formatDate CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.DateUtil.subDateTime";
+
+CREATE FUNCTION getPolicyProperty( IN policyName CHARACTER, IN propertyName CHARACTER )
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.PolicyUtils.getPolicy";
+
+CREATE FUNCTION stringJoin (IN Str1 CHAR, IN Str2 CHAR)
+RETURNS CHAR
+BEGIN
+	RETURN Str1||'##'||Str2;
+END;
+
+CREATE FUNCTION stringJoinInvestBilateral (IN refNo CHAR, IN valueDate CHAR, IN currency CHAR
+, IN amount CHAR, IN fromBankNo CHAR, IN targetBankNo CHAR, IN remark CHAR)
+RETURNS CHAR
+BEGIN
+	RETURN refNo||','||valueDate||'#'||currency||'#'||amount||','||fromBankNo||','||targetBankNo||','||remark;
+END;
+
+CREATE FUNCTION getTransIdOrgBilateralFT (IN fxxx CHAR)
+RETURNS CHAR
+BEGIN
+	DECLARE contend CHAR SUBSTRING(fxxx AFTER 'noi dung goc:');
+	DECLARE pos INT POSITION(',' IN contend);
+	DECLARE result CHAR SUBSTRING(contend FROM 1 FOR pos-1);
+	RETURN result;
+END;
+
+CREATE PROCEDURE authenLDAPWithJava( IN directyServer CHAR, IN userName CHAR, IN password CHAR)
+RETURNS INTEGER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.authenLDAP";
+
+
+CREATE FUNCTION authenLDAP( IN directyServer CHAR, IN userName CHAR, IN password CHAR) RETURNS INT
+BEGIN
+	DECLARE result INT ;
+	CALL authenLDAPWithJava(directyServer, userName, password) INTO result;
+	RETURN result;
+END;
+-----------------------------------------------
+-----------------authenLDAPEx-------------
+-----------------------------------------------
+
+CREATE PROCEDURE authenLDAPWithJavaEx( IN directyServer CHAR, IN userName CHAR, IN password CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.authenLDAPEx";
+
+
+CREATE FUNCTION authenLDAPEx( IN directyServer CHAR, IN userName CHAR, IN password CHAR) RETURNS CHARACTER
+BEGIN
+	DECLARE result CHARACTER ;
+	CALL authenLDAPWithJavaEx(directyServer, userName, password) INTO result;
+	RETURN result;
+END;
+-----------------------------------------------
+-----------------authenEncryptPassEx-------------
+-----------------------------------------------
+
+CREATE PROCEDURE authenLDAPEncryptPassWithJavaEx( IN directyServer CHAR, IN LDAPKEY CHAR, IN userName CHAR, IN password CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.authenLDAPEx";
+
+
+CREATE FUNCTION authenLDAPEncryptPassEx( IN directyServer CHAR, IN ldapKey CHAR, IN userName CHAR, IN password CHAR) RETURNS CHARACTER
+BEGIN
+	DECLARE result CHARACTER ;
+	CALL authenLDAPEncryptPassWithJavaEx(directyServer, ldapKey, userName, password) INTO result;
+	RETURN result;
+END;
+-----------------------------------------------
+-----------------checkUserLDAPWith-------------
+-----------------------------------------------
+
+CREATE PROCEDURE checkUserLDAPEncryptPassWithJava( IN directyServer CHAR, IN ldapKey CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.checkUserLDAP";
+
+
+CREATE FUNCTION checkUserLDAPEncryptPass( IN directyServer CHAR, IN ldapKey CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR) RETURNS CHARACTER
+BEGIN
+ 	DECLARE result CHARACTER ;
+ 	CALL checkUserLDAPEncryptPassWithJava(directyServer, ldapKey, baseDN, userNameAdmin, passAdmin, userName) INTO result;
+	RETURN result;
+END;
+
+-----------------------------------------------
+-----------------------------------------------
+-----------------checkUserLDAPWith-------------
+-----------------------------------------------
+
+CREATE PROCEDURE checkUserLDAPWithJava( IN directyServer CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.checkUserLDAP";
+
+
+CREATE FUNCTION checkUserLDAP( IN directyServer CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR) RETURNS CHARACTER
+BEGIN
+ 	DECLARE result CHARACTER ;
+ 	CALL checkUserLDAPWithJava(directyServer, baseDN, userNameAdmin, passAdmin, userName) INTO result;
+	RETURN result;
+END;
+
+-----------------------------------------------
+-----------------authenLDAPSEx-------------
+-----------------------------------------------
+
+CREATE PROCEDURE authenLDAPSWithJavaEx( IN directyServer CHAR, IN userName CHAR, IN password CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.authenLDAPSEx";
+
+
+CREATE FUNCTION authenLDAPSEx( IN directyServer CHAR, IN userName CHAR, IN password CHAR) RETURNS CHARACTER
+BEGIN
+	DECLARE result CHARACTER ;
+	CALL authenLDAPSWithJavaEx(directyServer, userName, password) INTO result;
+	RETURN result;
+END;
+-----------------------------------------------
+-----------------checkUserLDAPSWith-------------
+-----------------------------------------------
+
+CREATE PROCEDURE checkUserLDAPSWithJava( IN directyServer CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR)
+RETURNS INTEGER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.ldap.LDAP.checkUserLDAPS";
+
+
+CREATE FUNCTION checkUserLDAPS( IN directyServer CHAR, IN baseDN CHAR, IN userNameAdmin CHAR, IN passAdmin CHAR, IN userName CHAR) RETURNS INT
+BEGIN
+ 	DECLARE result INT ;
+ 	CALL checkUserLDAPSWithJava(directyServer, baseDN, userNameAdmin, passAdmin, userName) INTO result;
+	RETURN result;
+END;

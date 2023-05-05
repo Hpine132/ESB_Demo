@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.pjico.com.vn/entity/vn/loan/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:com-envelope="http://www.pjico.com.vn/common/envelope/serviceenvelope/1" xmlns:loan="http://www.pjico.com.vn/entity/vn/loan/1">
+	<xsd:complexType name="GuaranteeInfoType">
+		<xsd:sequence>
+			<xsd:element name="GuaRef" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="LetterNo" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="GuaType" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="GuaTypeName" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Guarantor" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="ReleaseDate" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="ActiveDate" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="ExpiryDate" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Amount" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="RemainAmount" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="CurrencyCode" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Guarantee" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Beneficiary" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Reference" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="InterestInfoType">
+		<xsd:sequence>
+			<xsd:element name="InterestPaymentDate" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+            <xsd:element name="PastDueType" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+            <xsd:element name="InterestPaymentType" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="RelatedPrincipal" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Flag" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="PeriodFrom" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="PeriodTo" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Days" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="Rate" type="xsd:string" maxOccurs="1"
+				minOccurs="0">
+			</xsd:element>
+			<xsd:element name="InterestAmount" type="xsd:string"
+				maxOccurs="1" minOccurs="0">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PrincipalInfoType">
+		<xsd:sequence>
+			<xsd:element name="RepaymentType" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+			<xsd:element name="RepaymentScheduleDate"
+				type="xsd:string" maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="ScheduleAmount" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+			<xsd:element name="PreviouslyRepaidAmount"
+				type="xsd:string" maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="RepaymentAmount" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,131 @@
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLib\Service\Utils\CommonProcedure.esql.
+Successfully added file SourceServiceLib\Service\Utils\CommonProcedure.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLib\library.descriptor.
+Successfully added file SourceServiceLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file SourceServiceLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLib\library.descriptor.
+Successfully added file SourceServiceLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file SourceServiceLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\.classpath.
+Successfully added file SourceServiceLibJava\.classpath to BAR file.
+Elapsed time: 0.601 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\google-auth-library-oauth2-http-1.8.1.jar.
+Successfully added file SourceServiceLibJava\lib\google-auth-library-oauth2-http-1.8.1.jar to BAR file.
+Elapsed time: 0 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\gson-2.9.0.jar.
+Successfully added file SourceServiceLibJava\lib\gson-2.9.0.jar to BAR file.
+Elapsed time: 0.004 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\opencensus-api-0.31.1.jar.
+Successfully added file SourceServiceLibJava\lib\opencensus-api-0.31.1.jar to BAR file.
+Elapsed time: 0.001 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\grpc-context-1.47.0.jar.
+Successfully added file SourceServiceLibJava\lib\grpc-context-1.47.0.jar to BAR file.
+Elapsed time: 0 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\google-http-client-gson-1.42.0.jar.
+Successfully added file SourceServiceLibJava\lib\google-http-client-gson-1.42.0.jar to BAR file.
+Elapsed time: 0.001 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\opencensus-contrib-http-util-0.31.1.jar.
+Successfully added file SourceServiceLibJava\lib\opencensus-contrib-http-util-0.31.1.jar to BAR file.
+Elapsed time: 0 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\json-simple-2.3.0.jar.
+Successfully added file SourceServiceLibJava\lib\json-simple-2.3.0.jar to BAR file.
+Elapsed time: 0 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:51 ICT 2023
+
+Processing file SourceServiceLibJava\lib\ojdbc6.jar.
+Successfully added file SourceServiceLibJava\lib\ojdbc6.jar to BAR file.
+Elapsed time: 0.002 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:52 ICT 2023
+
+Processing file SourceServiceLibJava\lib\guava-31.1-jre.jar.
+Successfully added file SourceServiceLibJava\lib\guava-31.1-jre.jar to BAR file.
+Elapsed time: 0.008 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:52 ICT 2023
+
+Processing file SourceServiceLibJava\lib\google-auth-library-credentials-1.8.1.jar.
+Successfully added file SourceServiceLibJava\lib\google-auth-library-credentials-1.8.1.jar to BAR file.
+Elapsed time: 0.001 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:52 ICT 2023
+
+Processing file SourceServiceLibJava\lib\google-http-client-1.42.2.jar.
+Successfully added file SourceServiceLibJava\lib\google-http-client-1.42.2.jar to BAR file.
+Elapsed time: 0 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:52 ICT 2023
+
+Processing file SourceServiceLibJava\lib\jpos.jar.
+Successfully added file SourceServiceLibJava\lib\jpos.jar to BAR file.
+Elapsed time: 0.009 second(s).

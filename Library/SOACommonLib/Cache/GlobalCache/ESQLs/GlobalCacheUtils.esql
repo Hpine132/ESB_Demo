@@ -1,0 +1,24 @@
+BROKER SCHEMA Cache.GlobalCache.ESQLs
+
+
+--CREATE FUNCTION getCacheValue(IN chrMapName CHARACTER, IN chrKey CHARACTER) RETURNS
+--BEGIN
+--
+--	DECLARE chrResult CHARACTER;
+--	SET chrResult = getGlobalCacheValue(chrMapName,chrKey);
+--	/*
+--	IF (TRIM(chrResult) IS NULL OR TRIM(chrResult) ='' ) THEN
+--		THROW USER EXCEPTION MESSAGE 2999 VALUES('Failed to retrieve cache') ;
+--	END IF;
+--	*/
+--	RETURN chrResult;
+--END;
+
+--CREATE PROCEDURE getGlobalCacheValue(IN chrMapName CHARACTER, IN chrKey CHARACTER)
+--RETURNS CHARACTER
+--LANGUAGE JAVA
+--EXTERNAL NAME "utils.soa.GlobalCache.getValue";
+
+CREATE PROCEDURE getCacheValue(IN mapName CHARACTER, IN key CHARACTER, INOUT ou REFERENCE)
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.GlobalCache.getValue";

@@ -1,0 +1,45 @@
+BROKER SCHEMA ErrorHandlers.Java.ESQLs
+DECLARE com NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+CREATE COMPUTE MODULE FilterFailure
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rootEx REFERENCE TO InputExceptionList.*[1];
+		DECLARE ex REFERENCE TO rootEx;
+		CALL Service.Utils.ESQLs.moveToFinalException(ex);
+		SET Environment.Variables.ServiceCallout.Status = '1';
+		CASE ex.Number
+		-- Connect timeout
+		WHEN 3150 THEN
+			SET Environment.Variables.ServiceCallout.ErrorCode = '3150';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Text;
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(68, '3150', extractSOAPRequestNodeName(ex.Text));
+		-- Read timeout
+		WHEN 3151 THEN
+			SET Environment.Variables.ServiceCallout.ErrorCode = '3151';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Text;
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(68, '3151', extractSOAPRequestNodeName(ex.Text));
+		-- Others
+		WHEN 3691 THEN
+			SET Environment.Variables.ServiceCallout.ErrorCode = '3691';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Insert[1].Text;
+		ELSE
+			SET Environment.Variables.ServiceCallout.ErrorCode = '004';	
+			DECLARE I INTEGER 1;
+			DECLARE insertRecords INTEGER;
+			SET insertRecords = CARDINALITY (ex.Insert[]);
+			IF insertRecords <> 0 THEN
+				WHILE I < insertRecords DO
+					IF CONTAINS (ex.Insert[I].Text, 'java.') THEN
+						SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Insert[I].Text;
+					END IF;
+					SET I = I + 1;
+				END WHILE;
+			ELSE
+				SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Text;
+			END IF;
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(004, CAST(ex.Number AS CHARACTER), 
+		END CASE;
+		
+		RETURN TRUE;
+	END;
+END MODULE;

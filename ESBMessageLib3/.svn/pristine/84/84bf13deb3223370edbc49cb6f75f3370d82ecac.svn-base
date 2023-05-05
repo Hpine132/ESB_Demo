@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="PaymentService" targetNamespace="http://www.pjico.com.vn/entity/vn/pmt/paymentsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/pmt/paymentsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/PaymentService/">
+      <xsd:element name="InquiryBill">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InquiryBillResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/payment/paymentservice/1"
+    		schemaLocation="../service/vn/payment/paymentService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/payment/paymentservice/1"><xsd:element name="in" type="xsd:string"></xsd:element><xsd:element name="out" type="xsd:string"></xsd:element><xsd:element name="in1" type="xsd:string"></xsd:element><xsd:element name="out1" type="xsd:string"></xsd:element><xsd:element name="in2" type="xsd:string"></xsd:element><xsd:element name="out2" type="xsd:string"></xsd:element><xsd:element name="in3" type="xsd:string"></xsd:element><xsd:element name="out3" type="xsd:string"></xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="InquiryBillRequest">
+    <wsdl:part element="tns:InquiryBillReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryBillResponse">
+    <wsdl:part element="tns:InquiryBillRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryPaymentFeeRequest">
+  	<wsdl:part name="req" element="tns:InquiryPaymentFeeReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryPaymentFeeResponse">
+  	<wsdl:part name="res" element="tns:InquiryPaymentFeeRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCommissionPaymentRequest">
+  	<wsdl:part name="req" element="tns:InquiryCommissionPaymentReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCommissionPaymentResponse">
+  	<wsdl:part name="res" element="tns:InquiryCommissionPaymentRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarMaterialRequest">
+  	<wsdl:part name="req" element="tns:CalculateCarMaterialReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarMaterialResponse">
+  	<wsdl:part name="res" element="tns:CalculateCarMaterialRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarResponsibilityRequest">
+  	<wsdl:part name="req" element="tns:CalculateCarResponsibilityReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarResponsibilityResponse">
+  	<wsdl:part name="res" element="tns:CalculateCarResponsibilityRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PaymentService">
+    <wsdl:operation name="InquiryBill">
+      <wsdl:input message="tns:InquiryBillRequest"/>
+      <wsdl:output message="tns:InquiryBillResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryPaymentFee">
+    	<wsdl:input message="tns:InquiryPaymentFeeRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryPaymentFeeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryCommissionPayment">
+    	<wsdl:input message="tns:InquiryCommissionPaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryCommissionPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCarMaterial">
+    	<wsdl:input message="tns:CalculateCarMaterialRequest"></wsdl:input>
+    	<wsdl:output message="tns:CalculateCarMaterialResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCarResponsibility">
+    	<wsdl:input message="tns:CalculateCarResponsibilityRequest"></wsdl:input>
+    	<wsdl:output message="tns:CalculateCarResponsibilityResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentServiceSOAP" type="tns:PaymentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InquiryBill">
+      <soap:operation soapAction="http://www.example.org/PaymentService/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentService">
+    <wsdl:port binding="tns:PaymentServiceSOAP" name="PaymentServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

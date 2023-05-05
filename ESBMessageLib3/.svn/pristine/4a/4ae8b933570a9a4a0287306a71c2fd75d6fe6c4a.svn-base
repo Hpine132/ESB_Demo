@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="employeeService" targetNamespace="http://www.pjico.com.vn/entity/vn/employee/employeessvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/employee/employeessvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/employeeService/">
+      <xsd:element name="InquiryEmployeeDebt">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InquiryEmployeeDebtResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/employee/employeeservice/1"
+    		schemaLocation="../service/vn/employee/employeeService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="InquiryEmployeeDebtRequest">
+    <wsdl:part element="tns:InquiryEmployeeDebtReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryEmployeeDebtResponse">
+    <wsdl:part element="tns:InquiryEmployeeDebtRes" name="res"/>
+  </wsdl:message>
+  <wsdl:portType name="employeeService">
+    <wsdl:operation name="InquiryEmployeeDebt">
+      <wsdl:input message="tns:InquiryEmployeeDebtRequest"/>
+      <wsdl:output message="tns:InquiryEmployeeDebtResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="employeeServiceSOAP" type="tns:employeeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InquiryEmployeeDebt">
+      <soap:operation soapAction="http://www.example.org/employeeService/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="employeeService">
+    <wsdl:port binding="tns:employeeServiceSOAP" name="employeeServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

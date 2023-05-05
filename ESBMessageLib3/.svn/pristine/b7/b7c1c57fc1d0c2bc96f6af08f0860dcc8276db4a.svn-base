@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="CustomerService" targetNamespace="http://www.pjico.com.vn/entity/vn/customer/customersvcs/1" xmlns:cussv="http://www.pjico.com.vn/entity/vn/customer/customersvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/CustomerService/">
+      <xsd:element name="CreateCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/customer/customersvcs/1"
+    		schemaLocation="../service/vn/customer/customerService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/customer/customersvcs/1">
+	<xsd:element name="InquiryCustomer">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryCustomerResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryAgencyContract">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryAgencyContractResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateCustomerRequest">
+    <wsdl:part element="cussv:CreateCustomerReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerResponse">
+    <wsdl:part element="cussv:CreateCustomerRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryCustomerRequest">
+  	<wsdl:part name="req" element="cussv:InquiryCustomerReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCustomerResponse">
+  	<wsdl:part name="res" element="cussv:InquiryCustomerRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryAgencyContractRequest">
+  	<wsdl:part name="req" element="cussv:InquiryAgencyContractReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryAgencyContractResponse">
+  	<wsdl:part name="res" element="cussv:InquiryAgencyContractRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CustomerService">
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input message="cussv:CreateCustomerRequest"/>
+      <wsdl:output message="cussv:CreateCustomerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryCustomer">
+    	<wsdl:input message="cussv:InquiryCustomerRequest"></wsdl:input>
+    	<wsdl:output message="cussv:InquiryCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryAgencyContract">
+    	<wsdl:input message="cussv:InquiryAgencyContractRequest"></wsdl:input>
+    	<wsdl:output message="cussv:InquiryAgencyContractResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerServiceSOAP" type="cussv:CustomerService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://www.example.org/CustomerService/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerService">
+    <wsdl:port binding="cussv:CustomerServiceSOAP" name="CustomerServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

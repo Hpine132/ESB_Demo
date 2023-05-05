@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="PaymentService" targetNamespace="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1" xmlns:pay="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.pjico.com.vn/entity/vn/payment/paymentservice/1">
+  <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/payment/paymentservice/1"
+    		schemaLocation="../service/vn/payment/paymentService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="InquiryBillRequest">
+    <wsdl:part element="xsd1:InquiryBillReq" name="req" />
+  </wsdl:message>
+  <wsdl:message name="InquiryBillResponse">
+    <wsdl:part element="xsd1:InquiryBillRes" name="res" />
+  </wsdl:message>
+  <wsdl:message name="InquiryPaymentFeeRequest">
+  	<wsdl:part name="req" element="xsd1:InquiryPaymentFeeReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryPaymentFeeResponse">
+  	<wsdl:part name="res" element="xsd1:InquiryPaymentFeeRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCommissionPaymentRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:InquiryCommissionPaymentReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCommissionPaymentResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:InquiryCommissionPaymentRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarMaterialRequest">
+  	<wsdl:part name="req" element="xsd1:CalculateCarMaterialReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarMaterialResponse">
+  	<wsdl:part name="res" element="xsd1:CalculateCarMaterialRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarResponsibilityRequest">
+  	<wsdl:part name="req"
+  		element="xsd1:CalculateCarResponsibilityReq">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CalculateCarResponsibilityResponse">
+  	<wsdl:part name="res"
+  		element="xsd1:CalculateCarResponsibilityRes">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperation4Request">
+  	<wsdl:part name="parameters" element="pay:NewOperation4"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperation4Response">
+  	<wsdl:part name="parameters" element="pay:NewOperation4Response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PaymentService">
+    <wsdl:operation name="InquiryBill">
+      <wsdl:input message="pay:InquiryBillRequest"/>
+      <wsdl:output message="pay:InquiryBillResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryPaymentFee">
+    	<wsdl:input message="pay:InquiryPaymentFeeRequest"></wsdl:input>
+    	<wsdl:output message="pay:InquiryPaymentFeeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryCommissionPayment">
+    	<wsdl:input message="pay:InquiryCommissionPaymentRequest"></wsdl:input>
+    	<wsdl:output message="pay:InquiryCommissionPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCarMaterial">
+    	<wsdl:input message="pay:CalculateCarMaterialRequest"></wsdl:input>
+    	<wsdl:output message="pay:CalculateCarMaterialResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCarResponsibility">
+    	<wsdl:input message="pay:CalculateCarResponsibilityRequest"></wsdl:input>
+    	<wsdl:output message="pay:CalculateCarResponsibilityResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentServiceSOAP" type="pay:PaymentService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="InquiryBill">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1/InquiryBill" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryPaymentFee">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1/InquiryPaymentFee" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryCommissionPayment">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1/InquiryCommissionPayment" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CalculateCarMaterial">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1/CalculateCarMaterial" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CalculateCarResponsibility">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/paymentsvcs/1/CalculateCarResponsibility" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentService">
+    <wsdl:port binding="pay:PaymentServiceSOAP" name="PaymentServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

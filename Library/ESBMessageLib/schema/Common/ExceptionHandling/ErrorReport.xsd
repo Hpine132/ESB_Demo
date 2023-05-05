@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:cmd-err="http://www.pjico.com.vn/common/exceptionhandling/errorreport/1"
+	 targetNamespace="http://www.pjico.com.vn/common/exceptionhandling/errorreport/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:complexType name="ErrorReportType">
+		<xs:sequence>
+			<xs:element name="ErrorCode" type="xs:string"/>
+			<xs:element name="ErrorMsg" type="xs:string"/>
+			<xs:element name="ErrorDetails" type="xs:string" minOccurs="0"/>
+			<xs:element name="Data" type="xs:string" form="unqualified" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CorrelationValue" type="xs:string"/>
+	<xs:element name="ErrorReport" type="cmd-err:ErrorReportType"/>
+</xs:schema>

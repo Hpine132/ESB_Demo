@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><launchConfiguration type="com.ibm.etools.mft.debug.internal.mbLaunchConfigurationDelegate">
-<stringAttribute key="BRName" value="TEST_SERVER"/>
+<stringAttribute key="BRName" value="TEST_SERVER1"/>
 <stringAttribute key="ConnectionInfo" value="localhost:7600"/>
 <stringAttribute key="EGName" value=""/>
 <stringAttribute key="com.ibm.debug.wsa.attr_vm_name" value="IBM J9 VM"/>

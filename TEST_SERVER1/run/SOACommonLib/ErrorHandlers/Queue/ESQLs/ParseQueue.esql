@@ -1,0 +1,12 @@
+BROKER SCHEMA ErrorHandlers.Queue.ESQLs
+
+CREATE COMPUTE MODULE ParseQueue
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		SET Environment.Variables.ServiceCallout = InputRoot.XMLNSC.Data;
+		SET Environment.Variables.ServiceCallout.LogType = 'QUEUE';
+		RETURN TRUE;
+	END;
+END MODULE;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="AssessmentService" targetNamespace="http://www.pjico.com.vn/entity/vn/ass/assessmentsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/ass/assessmentsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.pjico.com.vn/entity/vn/assessment/assessmentservice/1">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/assessment/assessmentservice/1"
+    		schemaLocation="../service/vn/assessment/assessmentService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateAssessmentRequest">
+    <wsdl:part element="xsd1:CreateAssessmentReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="CreateAssessmentResponse">
+    <wsdl:part element="xsd1:CreateAssessmentRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryAssessmentRequest">
+  	<wsdl:part name="req" element="xsd1:InquiryAssessmentReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryAssessmentResponse">
+  	<wsdl:part name="res" element="xsd1:InquiryAssessmentRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AssessmentService">
+    <wsdl:operation name="CreateAssessment">
+      <wsdl:input message="tns:CreateAssessmentRequest"/>
+      <wsdl:output message="tns:CreateAssessmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryAssessment">
+    	<wsdl:input message="tns:InquiryAssessmentRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryAssessmentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AssessmentServiceSOAP"
+  	type="tns:AssessmentService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="CreateAssessment">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ass/assessmentsvcs/1/CreateAssessment" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="InquiryAssessment">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ass/assessmentsvcs/1/InquiryAssessment" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  </wsdl:binding>
+  <wsdl:service name="AssessmentService">
+    <wsdl:port binding="tns:AssessmentServiceSOAP" name="AssessmentServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1"
+	 xmlns:com-acct="http://www.pjico.com.vn/entity/vn/com/account/1"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 targetNamespace="http://www.pjico.com.vn/entity/vn/com/account/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/1" schemaLocation="com.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/commonheader/1" schemaLocation="../../Common/Envelope/CommonHeader.xsd"/>
+	<xs:complexType name="AcctBasicType">
+		<xs:sequence>
+			<xs:element name="AcctNo" type="xs:string" maxOccurs="1"
+				minOccurs="0" />
+			<xs:element name="AcctType" type="xs:string" minOccurs="0" />
+			<xs:element name="AcctTypeName" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="AcctName" type="xs:string" minOccurs="0" />
+			<xs:element name="AcctAlias" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+			<xs:element name="AltAcct" type="xs:string" minOccurs="0" />
+			<xs:element name="Currency" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+			<xs:element name="CurrencyName" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="EquivalentAmount" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="EquivalentAmountInLocal" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctDetailType">
+		<xs:sequence>
+			<xs:element name="CIFNo" type="xs:string" minOccurs="0" />
+			<xs:element name="Account" type="com-acct:AcctBasicType"
+				minOccurs="0" />
+			<xs:element name="AccountStatus" type="xs:string"
+				minOccurs="0" />
+            <xs:element name="AccountStopFlag" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="AccountPayStopFlag" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="AccountCurrency" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="ProductInfo"
+				type="com-acct:ProductInfoType" minOccurs="0" />
+			<xs:element name="BranchInfo" type="com-com:BranchInfoType"
+				minOccurs="0" />
+			<xs:element name="OpenDate" type="xs:string" minOccurs="0" />
+			<xs:element name="ValueDate" type="xs:string" minOccurs="0" />
+			<xs:element name="CloseDate" type="xs:string" minOccurs="0" />
+			<xs:element name="Description" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="AccountClass" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Amount" type="com-acct:AmountType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="AdditionInformation"
+				type="com-header:AdditionalInformationType" minOccurs="0"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountType">
+		<xs:sequence>
+			<xs:element name="Amount" type="xs:string" minOccurs="0" />
+			<xs:element name="FloatAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CreditLineAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="MinimumBalance" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="HoldAmount" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="CurrentBalance" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="AvailableBalance" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+			<xs:element name="MonthlyAverageBalance" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Currency" type="xs:string" minOccurs="0" />
+
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctBalanceType">
+		<xs:sequence>
+			<xs:element name="AccountBalance" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountCurrency" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountAvailBalance" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountOverdraftLimit" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountBlockedAmount" type="xs:string" minOccurs="0"/>
+			<xs:element name="AverageBalPerMonth" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FeeInfoType">
+		<xs:sequence>
+			<xs:element name="FeeCategory" type="xs:string"
+				maxOccurs="1" minOccurs="0" />
+			<xs:element name="Amount" type="xs:string" maxOccurs="1"
+				minOccurs="0" />
+			<xs:element name="DebitEquivalentAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CreditEquivalentAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="BankCodeFee" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Code" type="xs:string" minOccurs="0" />
+
+			<xs:element name="Type" type="xs:string" minOccurs="0" />
+			<xs:element name="CommType" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="ChargeTo" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="SharePercent" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+			<xs:element name="VAT" type="xs:string" minOccurs="0" />
+			<xs:element name="VatDebitEquivalentAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+			<xs:element name="VatCreditEquivalentAmount"
+				type="xs:string" maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VATType">
+		<xs:sequence>
+			<xs:element name="VATAmount" type="xs:string" minOccurs="0"/>
+			<xs:element name="VATCurrency" type="xs:string" minOccurs="0"/>
+			<xs:element name="VATCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransactionAmountType">
+		<xs:sequence>
+			<xs:element name="TransactionAmount" type="xs:string" minOccurs="0"/>
+			<xs:element name="TransactionAmountType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>e.g: Debit / Credit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctTransactionType">
+		<xs:sequence>
+			<xs:element name="FTReferenceNo" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="TransactionAmount"
+				type="com-acct:TransactionAmountType" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="TransactionAcct"
+				type="com-acct:AcctBasicType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TransactionCode" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="EntryNo" type="xs:string" minOccurs="0" />
+			<xs:element name="TransactionRemark" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="ValueDate" type="xs:string" minOccurs="0" />
+			<xs:element name="TransactionDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="DateTime" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="AcctBalance"
+				type="com-acct:AcctBalanceType" minOccurs="0" />
+			<xs:element name="TransactionType" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductInfoType">
+		<xs:sequence>
+			<xs:element name="ProductId" type="xs:string"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Category id</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductCode" type="xs:string"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Product code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductName" type="xs:string"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Product description
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductShortName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="ProductType" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="ProductTypeName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="ProductDesc" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctType">
+		<xs:sequence>
+			<xs:element name="AcctId" type="xs:string" minOccurs="0" />
+			<xs:element name="AcctInfo" type="com-acct:AcctDetailType"
+				minOccurs="0" />
+			<xs:element name="AcctEnvr" type="com-acct:AcctEnvrType"
+				minOccurs="0" />
+			<xs:element name="AcctStatus" type="com-acct:AcctStatusType"
+				minOccurs="0" />
+
+			<xs:element name="LoanInfo" type="com-acct:LoanInfoType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DepositInfo" type="com-acct:DepositInfoType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctEnvrType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseEnvrType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DepositAcctType">
+	</xs:complexType>
+	<xs:complexType name="AcctStatusType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseStatusType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DepositInfoType">
+		<xs:sequence>
+			<xs:element name="PayInOption" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="TdAmount" type="xs:string" minOccurs="0" />
+			<xs:element name="TdOffsetAcct"
+				type="com-acct:AcctBasicType" minOccurs="0" />
+			<xs:element name="OffsetBrn" type="com-com:BranchInfoType"
+				minOccurs="0" />
+			<xs:element name="Brn" type="com-com:BranchInfoType"
+				minOccurs="0" />
+			<xs:element name="Acct" type="com-acct:AcctBasicType"
+				minOccurs="0" />
+
+
+
+			<xs:element name="CalcAcct" type="com-acct:AcctBasicType"
+				minOccurs="0" />
+			<xs:element name="BookAcct" type="com-acct:AcctBasicType"
+				minOccurs="0" />
+			<xs:element name="PrincLiqAcct" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="BookBrn" type="com-com:BranchInfoType"
+				minOccurs="0" />
+			<xs:element name="PrincLiqBranch" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="BookCcy" type="xs:string" minOccurs="0" />
+			<xs:element name="ChargeBookAcct"
+				type="com-acct:AcctBasicType" minOccurs="0" />
+			<xs:element name="ChargeBookBrn"
+				type="com-com:BranchInfoType" minOccurs="0" />
+			<xs:element name="MovePricToUnclaimed" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="MoveIntToUnclaimed" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="AutoRollover" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="CloseOnMaturity" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="RolloverType" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="RolloverAmt" type="com-acct:AmountType"
+				minOccurs="0" />
+			<xs:element name="RolloverDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="TenorDays" type="xs:string" minOccurs="0" />
+			<xs:element name="TenorMonths" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="TenorYears" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="ChgStartDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="InterestRate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestDue" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestPaidToCustomer" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+			<xs:element name="OpeningDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CollateralFlag" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="MaturityDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="ExtendedMaturityDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="LastRenewalDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="FinalDepositPossibleDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="RenewalOption" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="RenewalPeriod" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="RenewalPeriodType" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="AccountStatus" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DepositNo" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LoanInfoType">
+		<xs:sequence>
+			<xs:element name="LoanAmount" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="OutstandingAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="TotalDisburseAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="AvailableDisburseAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="StartDate" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="EndDate" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="IdContracts" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="NoDisburse" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="DateOfDisbures" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DateOfMaturity" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestType" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestRate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+            <xs:element name="BaseRate" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="SpreadRate" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="NextRepaymentDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="GroupDebt" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="DisbursementMethod" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="TypeOfLoan" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="TypeOfDisburse" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="NumberRecordNote" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DisburseList"
+				type="com-acct:DisburseListType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NoteInfoType">
+		<xs:sequence>
+			<xs:element name="DisburseNo" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="DateOfDisbures" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DateOfMaturity" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Currency" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="Amount" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="OutstandingAmount" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestRateType" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="InterestRate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="BaseRate" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="SpreadRate" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="NxtInterestPayDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="NxtOriginalPayDate" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CurrencyType">
+		<xs:sequence>
+			<xs:element name="CurrencyId" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="Currency" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="CurrencyName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DisburseListType">
+		<xs:sequence>
+			<xs:element name="DisburseInfo" type="com-acct:NoteInfoType" maxOccurs="unbounded" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TermInfoType">
+		<xs:sequence>
+			<xs:element name="Term" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="TermType" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1"
+	 xmlns:com-envelope="http://www.pjico.com.vn/common/envelope/serviceenvelope/1"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 xmlns:cmd-log="http://www.pjico.com.vn/common/logging/log/1"
+	 targetNamespace="http://www.pjico.com.vn/common/logging/log/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1" schemaLocation="../Envelope/SOAEnvelope.xsd"/>
+	<import namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1" schemaLocation="../Envelope/ServiceEnvelope.xsd"/>
+	<complexType name="logType">
+		<sequence>
+			<element name="LogCategory" type="string"/>
+			<element ref="com-soa:SOAEnvelope"/>
+		</sequence>
+	</complexType>
+	<element name="log" type="cmd-log:logType"/>
+	<element name="SOAEnvelope" type="com-soa:SOAEnvelopType"/>
+	<complexType name="SOAEnvelopeType">
+		<sequence>
+			<element ref="com-soa:SOAEnvelope"/>
+		</sequence>
+	</complexType>
+</schema>

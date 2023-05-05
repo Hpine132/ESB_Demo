@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CountrySchema" xmlns:tns="http://www.example.org/CountrySchema" elementFormDefault="qualified" xmlns:Q1="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+
+    <import schemaLocation="../../Common/Envelope/ServiceEnvelope.xsd" namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1"></import>
+    <element name="Req" type="tns:ReqType"></element>
+    
+    <element name="Res" type="tns:ResType"></element>
+    
+    <complexType name="ReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="ReqBody" type="tns:BodyReqType" maxOccurs="1" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="ResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="ResBody" type="tns:ResBodyType" maxOccurs="1" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    
+    <complexType name="InputType">
+    	<sequence>
+    		<element name="email" type="string"></element>
+    		<element name="password" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ResBodyType">
+    	<sequence>
+    		<element name="list" type="tns:ListType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="user" type="tns:UserType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ListType">
+    	<sequence>
+    		<element name="tContinents" type="tns:NewType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="UserType">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="token" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="NewType">
+    	<sequence>
+    		<element name="sCode" type="string"></element>
+    		<element name="sName" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BodyReqType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Input" type="tns:InputType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

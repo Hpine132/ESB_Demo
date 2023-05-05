@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="CountryService" targetNamespace="http://www.example.org/CountryService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/CountryService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/CountrySchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="CountryServiceSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+
+  <wsdl:types>
+  	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import namespace="http://www.example.org/CountrySchema"
+  			schemaLocation="../schema/Vn/country/CountrySchema.xsd">
+  		</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="ListOfContinentsByNameRequest">
+    <wsdl:part element="xsd1:Req" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="ListOfContinentsByNameResponse">
+    <wsdl:part element="xsd1:Res" name="res"/>
+  </wsdl:message>
+  <wsdl:portType name="CountryService">
+    <wsdl:operation name="ListOfContinentsByName">
+      <wsdl:input message="tns:ListOfContinentsByNameRequest"/>
+      <wsdl:output message="tns:ListOfContinentsByNameResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CountryServiceSOAP" type="tns:CountryService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="ListOfContinentsByName">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/CountryService/ListOfContinentsByName" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CountryService">
+    <wsdl:port binding="tns:CountryServiceSOAP" name="CountryServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,54 @@
+BROKER SCHEMA Register.ESQLs
+
+
+CREATE COMPUTE MODULE postRegister_Compute3
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		SET OutputRoot.Properties = InputRoot.Properties;
+		DECLARE bodyReqRef REFERENCE TO InputRoot.XMLNSC.ns:Req.ns:ReqBody;
+		DELETE FIELD OutputRoot.HTTPResponseHeader."content-encoding";
+		
+		DECLARE DataReq REFERENCE TO OutputRoot.JSON.DataReq;
+		CALL Service.Utils.ESQLs.InputValidate(1, 'E_TYPE', bodyReqRef.ns:Input.ns:email, true, true, 999, DataReq);
+		CALL Service.Utils.ESQLs.InputValidate(2, 'P_TYPE', bodyReqRef.ns:Input.ns:password, true, true, 999, DataReq);
+		
+		DECLARE  ErrorDesc CHARACTER;
+		SET ErrorDesc = Service.Utils.ESQLs.validateRequest(DataReq);
+		DELETE FIELD OutputRoot.JSON.DataReq;
+		
+		IF ErrorDesc <> 'OK' THEN
+			SET OutputRoot.XMLNSC.ns:Res.ns118:Header = InputRoot.XMLNSC.ns:Res.ns118:Header;
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:Status = '1';
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:GlobalErrorCode = '002';
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:GlobalErrorDescription = 'Invalid input data';
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:ErrorInfo[1].ns118:SourceAppID  = 'ESB';
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:ErrorInfo[1].ns118:ErrorCode = '002';
+			SET OutputRoot.XMLNSC.ns:Res.ns118:ResponseStatus.ns118:ErrorInfo[1].ns118:ErrorDesc = ErrorDesc;
+			PROPAGATE TO TERMINAL 'out2' FINALIZE NONE DELETE NONE; 
+		--Build Request, set all field to call Jolt service
+		ELSE
+		-- build req
+			SET OutputRoot.JSON.Data.email = InputRoot.XMLNSC.ns:Req.ns:ReqBody.ns:Input.ns:email;
+			SET OutputRoot.JSON.Data.password = InputRoot.XMLNSC.ns:Req.ns:ReqBody.ns:Input.ns:password;
+			PROPAGATE TO TERMINAL 'out1' FINALIZE NONE DELETE NONE;
+			RETURN TRUE;
+		END IF;
+		RETURN FALSE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

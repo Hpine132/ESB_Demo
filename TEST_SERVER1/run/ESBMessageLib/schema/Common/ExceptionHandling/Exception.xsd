@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1"
+	 xmlns="http://www.pjico.com.vn/common/exceptionhandling/exception/1"
+	 xmlns:cmd-err="http://www.pjico.com.vn/common/exceptionhandling/errorreport/1"
+	 targetNamespace="http://www.pjico.com.vn/common/exceptionhandling/exception/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/common/exceptionhandling/errorreport/1" schemaLocation="ErrorReport.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1" schemaLocation="../Envelope/SOAEnvelope.xsd"/>
+	<xs:complexType name="ExceptionBodyType">
+		<xs:sequence>
+			<xs:element name="HostName" type="xs:string" />
+			<xs:element name="ClientIP" type="xs:string"></xs:element>
+			<xs:element name="NodeName" type="xs:string" />
+			<xs:element name="FLowName" type="xs:string" />
+			<xs:element name="ErrorReport"
+				type="cmd-err:ErrorReportType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExceptionBody" type="ExceptionBodyType"/>
+	<xs:element name="Exception">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="com-soa:SOAEnvelope" minOccurs="0"/>
+				<xs:element ref="ExceptionBody"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,155 @@
+BROKER SCHEMA Service.Common.ESQLs
+PATH ErrorHandlers.Common.ESQLs;
+
+DECLARE DBSchema EXTERNAL CHARACTER '';
+
+DECLARE SOA_USER EXTERNAL CHARACTER '';
+DECLARE SOA_ROLE_USER EXTERNAL CHARACTER '';
+DECLARE SOA_ROLE EXTERNAL CHARACTER '';
+DECLARE SOA_ROLE_PERMISSION EXTERNAL CHARACTER '';
+DECLARE SOA_PERMISSION EXTERNAL CHARACTER '';
+DECLARE SOASecurity EXTERNAL CHARACTER '';
+
+CREATE COMPUTE MODULE SOAHandleSecurity_ExtractAndVerifyIdentity
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE Datasource CHAR ;
+		SET OutputRoot = InputRoot; 
+		DECLARE enableSecurity,SecurityType CHARACTER;
+		DECLARE aVerify INTEGER 0;
+--		DECLARE refEnv REFERENCE TO Environment.Variables.SOAVariables.UserDefined.AdditionalInformation;
+		CALL Service.Utils.ESQLs.getUDFConfig('{ESBPolicy}:SOAConfig','SOASecurity') INTO enableSecurity;
+		IF UPPER(enableSecurity) = 'ON' THEN
+			DECLARE inClientRef REFERENCE TO InputRoot.XMLNSC.*[1].common:Header.common:Client;
+			DECLARE UserName CHARACTER inClientRef.common:UserDetail.common:UserId;
+			
+			--Cast Pass from Base64 to String
+			DECLARE UserPassword CHARACTER CAST(inClientRef.common:UserDetail.common:UserPassword AS CHARACTER CCSID 1208);
+			
+			--Check Pass null
+			IF (UserPassword = '' OR UserPassword IS NULL) THEN 
+				--CALL throwSOAException(002, '999', 'Service authenticate fail');
+				CALL throwSOAException(999, NULL, NULL);
+			END IF;
+			DECLARE inCCSID INT InputProperties.CodedCharSetId;
+   			DECLARE inEncoding INT InputProperties.Encoding;
+--			DECLARE PassBlob BLOB BASE64DECODE(PassBase64);
+--			DECLARE UserPassword CHARACTER CAST(PassBlob AS CHARACTER CCSID inCCSID Encoding inEncoding);
+			DECLARE ServiceName CHAR Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.soa:OperationName; 	
+			CREATE FIELD OutputLocalEnvironment.Variables.Users;
+			DECLARE userRow REFERENCE TO  OutputLocalEnvironment.Variables.Users;
+			
+			--Get Value From Cache
+			CALL Cache.GlobalCache.ESQLs.getCacheValue('USER_SERVICE',UserName,userRow);
+			IF userRow.* IS NULL THEN
+--				DECLARE SchemaName CHAR;
+--				CALL Service.Utils.ESQLs.getUDFConfig('EXConfig','EX.Schema',refEnv) INTO SchemaName;
+--				CALL Service.Utils.ESQLs.select_user_service(UserName,OutputLocalEnvironment.Variables.Users[]) IN Database.{Datasource}.{SchemaName};
+				--SET userRow = OutputLocalEnvironment.Variables.Users[1];
+				IF userRow.* IS NULL THEN
+					--CALL throwSOAException(002, '999', 'Service authenticate fail');
+					CALL throwSOAException(999, NULL, NULL);
+				END IF;
+			END IF;
+			DECLARE SecurityType CHAR userRow.SECURITYTYPE;
+
+			--Authen follow SecurityType
+			IF UPPER(SecurityType) = 'DB' THEN
+				DECLARE hashPassword CHAR;
+				CALL Service.Utils.ESQLs.hashValueWithJava(UserPassword) INTO hashPassword;
+				DECLARE authenResult CHAR;
+				SET authenResult = authenticate(UserName, UPPER(hashPassword));
+				IF authenResult IS NOT NULL AND authenResult <> '0' THEN
+					SET aVerify = authorize(ServiceName);
+					IF aVerify <> 0 THEN
+						RETURN TRUE;
+					ELSE
+						--CALL throwSOAException(010, '010', 'Service authorize fail');
+						CALL throwSOAException(010, NULL, NULL);
+					END IF;
+					RETURN TRUE;
+				ELSE
+					--CALL throwSOAException(999, '999', 'Service authenticate fail');
+					CALL throwSOAException(999, NULL, NULL);
+				END IF;
+			ELSE 
+--				IF UPPER(SecurityType) = 'LDAP' THEN
+--					DECLARE result INT;
+--					CALL LDAP.ESQLs.authenLDAP(UserName,UserPassword) INTO result;
+--					IF result = 1 THEN
+--						SET aVerify = authorize(ServiceName);
+--						IF aVerify <> 0 THEN
+--							RETURN TRUE;
+--						ELSE
+--							CALL throwSOAException(002, '999', 'Service authorize fail');
+--						END IF;
+--						RETURN TRUE;
+--					ELSE
+--						CALL throwSOAException(002, '999', 'Service authenticate fail');
+--					END IF;
+--				ELSE
+--					CALL throwSOAException(002, '999', 'Service authenticate fail');
+--				END IF;
+			END IF;
+		ELSE
+			RETURN TRUE;
+		END IF;
+
+		RETURN FALSE;
+	END;
+	CREATE FUNCTION authenticate (IN UserName CHARACTER, IN UserPassword CHARACTER) RETURNS CHAR
+	BEGIN
+		DECLARE userRow REFERENCE TO  OutputLocalEnvironment.Variables.Users;
+		IF userRow.* IS NULL 
+			THEN RETURN '0';
+		END IF;
+		DECLARE clientIP CHAR;
+		DECLARE additionalInformation REFERENCE TO InputRoot.XMLNSC.*:*[1].common:Header.common:Common.common:AdditionalInformation;
+		--DECLARE getClientIP CHAR Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP');	
+		SET clientIP = InputRoot.HTTPInputHeader."X-Forwarded-For";
+		
+		IF clientIP IS NULL THEN 
+			IF Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP') IS NOT NULL  THEN
+				SET clientIP = Service.Utils.ESQLs.GetAdditionalInfor(additionalInformation,'CLIENTIP');
+			ELSE
+				SET clientIP = InputRoot.HTTPInputHeader."X-Remote-Addr";
+			END IF;	
+		END IF;
+		
+		--IF CONTAINS(userRow.IPADDRESS,'#'||clientIP||'#') = FALSE THEN 
+		--	RETURN '0';
+		DECLARE checkip BOOLEAN;
+		--CALL Service.Utils.ESQLs.checkIP(clientIP, userRow.IPADDRESS) INTO checkip;
+		--IF checkip = FALSE THEN 
+		--	RETURN '0';
+		--END IF;
+		--IF UPPER(userRow.PASSWORD) <> UPPER(UserPassword) THEN
+		--	RETURN '0';
+		--END IF;
+		
+		IF clientIP = '127.0.0.1' THEN
+		ELSE
+			CALL Service.Utils.ESQLs.checkIP(clientIP, userRow.IPADDRESS) INTO checkip;
+			IF checkip = FALSE THEN 
+				RETURN '0';
+			END IF;
+		END IF;
+		IF UPPER(userRow.PASSWORD) <> UPPER(UserPassword) THEN
+			RETURN '0';
+		END IF;
+		
+		RETURN userRow.USERID;
+	END;
+	----------------
+
+	---------------------------
+	CREATE FUNCTION authorize (IN PERMISSIONNAME CHARACTER) RETURNS INTEGER
+	BEGIN
+		DECLARE userRow REFERENCE TO  OutputLocalEnvironment.Variables.Users;
+		IF CONTAINS(userRow.SERVICEID,PERMISSIONNAME) THEN 
+			RETURN 1;
+		END IF;
+		RETURN 0;
+	END;
+	
+END MODULE;

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="ListOfContinentsByName.Map" version="8.0.5.0" xmlns:map="ListOfContinentsByName.Map">
+    <input path="mbsharedlib://ESBMessageLib/schema/Vn/country/CountrySchema.xsd"/>
+    <output path="mbsharedlib://ESBMessageLib/schema/Vn/country/CountrySchema.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://www.example.org/CountrySchema"/>
+        <namespace kind="supplement" prefix="in2" uri="http://www.pjico.com.vn/common/envelope/commonheader/1"/>
+        <namespace kind="supplement" prefix="in3" uri="http://www.pjico.com.vn/common/envelope/serviceenvelope/1"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.w3.org/2003/05/soap-envelope"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="ListOfContinentsByName_Mapping">
+        <input namespace="http://www.example.org/CountrySchema" path="mb:msg(Req,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Req"/>
+        <output namespace="http://www.example.org/CountrySchema" path="mb:msg(Res,assembly,XMLNSC,Properties)" var="MessageAssembly"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_Req/Properties"/>
+            <output path="$MessageAssembly/Properties"/>
+            <override>
+                <assign value="{ESBMessageLib}">
+                    <output path="$MessageAssembly/Properties/MessageSet"/>
+                </assign>
+            </override>
+        </move>
+        <local>
+            <input path="$ComIbmMessageAssembly_Req/Req/Header"/>
+            <output path="$MessageAssembly/Res/Header"/>
+            <move>
+                <input path="Common"/>
+                <output path="Common"/>
+            </move>
+            <move>
+                <input path="Client"/>
+                <output path="Client"/>
+            </move>
+        </local>
+        <assign value="FunctionCodeNotMap">
+            <output path="$MessageAssembly/Res/ResponseStatus/Status"/>
+        </assign>
+        <assign value="404">
+            <output path="$MessageAssembly/Res/ResponseStatus/GlobalErrorCode"/>
+        </assign>
+        <assign value="404 not found">
+            <output path="$MessageAssembly/Res/ResponseStatus/GlobalErrorDescription"/>
+        </assign>
+        <assign value="error">
+            <output path="$MessageAssembly/Res/ResBody/list/tContinents/sCode"/>
+        </assign>
+        <assign value="error">
+            <output path="$MessageAssembly/Res/ResBody/list/tContinents/sName"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>

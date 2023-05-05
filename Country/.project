@@ -3,7 +3,11 @@
 	<name>Country</name>
 	<comment></comment>
 	<projects>
+		<project>CountrySharedLib</project>
 		<project>CountryLib</project>
+		<project>ESBMessageLib</project>
+		<project>SOACommonLib</project>
+		<project>SourceServiceLib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

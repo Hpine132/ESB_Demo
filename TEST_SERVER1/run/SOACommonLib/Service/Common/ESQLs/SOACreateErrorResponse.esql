@@ -1,0 +1,163 @@
+BROKER SCHEMA Service.Common.ESQLs
+DECLARE ns1 NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+
+
+CREATE COMPUTE MODULE createErrorResponse
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		
+		DECLARE inReq REFERENCE TO InputRoot;
+		DECLARE refEnvHeader REFERENCE TO Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader;
+		DECLARE OperationName CHAR;
+		DECLARE ServiceName CHAR;
+		DECLARE CheckSoapDomain BOOLEAN EXISTS(InputRoot.SOAP.*[]);
+		IF (EXISTS(InputRoot.SOAP.*[])) THEN 
+			MOVE inReq LASTCHILD;
+			MOVE inReq LASTCHILD;
+			SET OperationName = InputRoot.SOAP.Context.operation;
+			SET ServiceName = InputRoot.SOAP.Context.service;
+		ELSE	
+			IF (EXISTS(InputRoot.XMLNSC.*[])) THEN 
+				MOVE inReq LASTCHILD;
+				SET ServiceName = refEnvHeader.soa:SOACommonDetail.soa:ServiceName;	
+				SET OperationName  = refEnvHeader.soa:SOACommonDetail.soa:OperationName;
+			END IF;
+		END IF;
+		
+		DELETE LASTCHILD OF OutputRoot;
+
+		DECLARE rootEx REFERENCE TO InputExceptionList.*[1];
+		DECLARE ex REFERENCE TO rootEx;
+		CALL Service.Utils.ESQLs.moveToFinalException(ex);
+		
+		DECLARE GlobalCode CHARACTER '001';
+		DECLARE GlobalDesc CHARACTER '';
+		DECLARE errCode CHARACTER '';
+		DECLARE errDetails CHARACTER '';
+
+		CASE ex.Catalog
+		WHEN 'SOAEXCEPTION' THEN
+			SET GlobalCode = CAST(ex.Number AS CHARACTER FORMAT '000');
+			SET errCode = ex.Insert[1].Text;
+			SET errDetails = ex.Insert[2].Text;
+		ELSE
+			DECLARE exNum INTEGER ex.Number;
+			-- LDAP fail
+			IF exNum = 2702 THEN
+				SET GlobalCode = '001';
+				SET errCode = exNum;
+				SET errDetails = SUBSTRING(ex.Text FROM 1 FOR 250);
+--				MQOutput error
+			ELSEIF exNum = 2666 THEN
+				SET GlobalCode = '001';
+				SET errCode = ex.Insert[3].Text;
+				SET errDetails = ex.Text || ': ' || ex.Insert[6].Text;
+--				MQGet error
+			ELSEIF exNum = 3114 THEN
+				SET GlobalCode = '001';
+				SET errCode = ex.Insert[4].Text;
+				SET errDetails = ex.Text || ': ' || ex.Insert[2].Text;
+			-- Child SQL Exception
+			ELSEIF exNum = 2322 THEN
+				DECLARE sqlType CHAR ex.Insert[1].Text;
+				DECLARE sqlErr CHAR ex.Insert[3].Text;
+				CASE sqlType
+				WHEN 'IM002' THEN
+					SET GlobalCode = '001';
+					SET errCode = sqlType;
+				ELSE
+					CASE sqlErr
+					WHEN '[IBM][ODBC 20101 driver]252' THEN
+						SET GlobalCode = '68';
+					ELSE
+						DECLARE s CHAR SUBSTRING(sqlErr FROM 44);
+						SET s = SUBSTRING(s BEFORE ':');
+						CASE s
+							WHEN 'ORA-12203' THEN
+							SET GlobalCode = '005';
+							ELSE
+								SET GlobalCode = '004';
+							END CASE;
+							SET errCode = s;
+						END CASE;
+					END CASE;
+				IF LENGTH(errCode) = 0 THEN
+					SET errCode = ex.Number;
+				END IF;
+				SET errDetails = sqlErr;
+				-- Validation error
+			ELSEIF exNum = 5026 AND ENDSWITH(UPPER(rootEx.Label), 'VALIDATE') THEN
+				SET GlobalCode = '002';
+				SET errCode = ex.Number;
+				SET errDetails = ex.Insert[5].Text;
+				-- Parsing error
+			ELSEIF exNum = 5025 THEN
+				SET GlobalCode = '002';
+				SET errCode = ex.Number;
+				SET errDetails = ex.Insert[5].Text;
+				SET OutputRoot = InputRoot;
+				PROPAGATE TO TERMINAL 'out1' FINALIZE NONE DELETE NONE;
+				DELETE LASTCHILD OF OutputRoot;
+				-- Invalid service version
+			ELSEIF exNum = 4011 AND ENDSWITH(ex.Label, 'routeToOperationLabel') THEN
+				SET GlobalCode = '007';
+			ELSE
+				SET errCode = ex.Number;
+				IF FieldName(ex)= 'RecoverableException' or FieldName(ex) =
+					'DatabaseException' or
+					FieldName(ex) = 'ConversionException' or FieldName(ex) =
+					'ParserException' or FieldName(ex) = 'UserException'
+					THEN
+					SET errDetails = SUBSTRING(ex.Insert.Text FROM 1 FOR 250);
+				ELSE
+					SET errDetails = ex.Text;
+				END IF;
+			END IF;
+		END CASE;
+		
+		DECLARE respName CHARACTER;
+		SET respName = FIELDNAME(inReq.*[1]);
+		SET respName = LEFT(respName, LENGTH(respName) - LENGTH('Req')) || 'Res';
+
+		CREATE FIRSTCHILD OF OutputRoot.XMLNSC NAME respName;
+		DECLARE outRes REFERENCE TO OutputRoot.XMLNSC.*[1];
+		SET outRes NAMESPACE = FIELDNAMESPACE(inReq.*[1]);
+		CREATE LASTCHILD OF outRes FROM inReq.*[1].*:Header;
+		
+		SET outRes.ns1:ResponseStatus.ns1:Status = '1';
+		SET outRes.ns1:ResponseStatus.ns1:GlobalErrorCode = GlobalCode;
+		DECLARE GlobalErrorDescription REFERENCE TO Environment.Variables.ErrorDetails;
+		CALL Cache.GlobalCache.ESQLs.getCacheValue('SOAERRORCODE',GlobalCode,GlobalErrorDescription);
+		SET outRes.ns1:ResponseStatus.ns1:GlobalErrorDescription = GlobalErrorDescription.ERRDESCEN;
+		SET outRes.ns1:ResponseStatus.ns1:ErrorInfo.ns1:ErrorCode = errCode;
+		SET outRes.ns1:ResponseStatus.ns1:ErrorInfo.ns1:ErrorDesc = errDetails;
+		
+		--------------
+		
+		SET refEnvHeader.soa:SOACommonDetail = inReq.*.common:Header.common:Common;
+		SET refEnvHeader.soa:ClientDetail = inReq.*.common:Header.common:Client;
+
+		IF refEnvHeader.soa:SOACommonDetail.common:MessageId IS NULL THEN
+			SET refEnvHeader.soa:SOACommonDetail.common:MessageId = UUIDASCHAR;
+		END IF;	   
+
+		SET refEnvHeader.soa:SOACommonDetail.soa:ServiceName = ServiceName;
+		SET refEnvHeader.soa:SOACommonDetail.soa:OperationName = OperationName;
+		SET Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:ServiceBody.*[1] = inReq.*;
+		RETURN TRUE;
+	END;
+END MODULE;
+
+CREATE COMPUTE MODULE createErrorTimeoutResponse
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+		SET OutputRoot.SOAP.Context.Namespace.(SOAP.NamespaceDecl)xmlns:soapenv = soapenv;
+		
+		SET OutputRoot.SOAP.Body.soapenv:Fault.faultcode = '68';
+		SET OutputRoot.SOAP.Body.soapenv:Fault.faultstring = 'SOA Timeout';
+		SET OutputRoot.SOAP.Body.soapenv:Fault.faultactor = 'ESB';
+		SET OutputRoot.SOAP.Body.soapenv:Fault.detail.Text = 'ESB webserviceTimeout';
+	END;	
+END MODULE;

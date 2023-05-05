@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="ListOfContinentsByName.Map" version="8.0.5.0" xmlns:map="ListOfContinentsByName.Map">
+    <input path="mbsharedlib://ESBMessageLib/schema/Vn/country/CountrySchema.xsd"/>
+    <output path="mbsharedlib://ESBMessageLib/schema/Vn/country/CountrySchema.xsd" var="var"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="io" uri="http://www.example.org/CountrySchema"/>
+        <namespace kind="supplement" prefix="io3" uri="http://www.pjico.com.vn/common/envelope/serviceenvelope/1"/>
+        <namespace kind="supplement" prefix="io2" uri="http://www.pjico.com.vn/common/envelope/commonheader/1"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.w3.org/2003/05/soap-envelope"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="ListOfContinentsByName_MappingRes">
+        <input namespace="http://www.example.org/CountrySchema" path="mb:msg(Res,assembly,XMLNSC,Properties)" var="MessageAssembly"/>
+        <output namespace="http://www.example.org/CountrySchema" path="$var/mb:msg(Res,assembly,XMLNSC,Properties)" var="MessageAssembly1"/>
+        <move>
+            <input path="$MessageAssembly/Properties"/>
+            <output path="$MessageAssembly1/Properties"/>
+            <override>
+                <assign value="{ESBMessageLib}">
+                    <output path="$MessageAssembly1/Properties/MessageSet"/>
+                </assign>
+            </override>
+        </move>
+        <local>
+            <input path="$MessageAssembly/Res/Header"/>
+            <output path="$MessageAssembly1/Res/Header"/>
+            <move>
+                <input path="Common"/>
+                <output path="Common"/>
+            </move>
+            <move>
+                <input path="Client"/>
+                <output path="Client"/>
+            </move>
+        </local>
+        <local>
+            <input path="$MessageAssembly/Res/ResponseStatus"/>
+            <output path="$MessageAssembly1/Res/ResponseStatus"/>
+            <move>
+                <input path="Status"/>
+                <output path="Status"/>
+            </move>
+            <move>
+                <input path="GlobalErrorCode"/>
+                <output path="GlobalErrorCode"/>
+            </move>
+            <move>
+                <input path="GlobalErrorDescription"/>
+                <output path="GlobalErrorDescription"/>
+            </move>
+            <move>
+                <input path="ErrorInfo"/>
+                <output path="ErrorInfo"/>
+            </move>
+        </local>
+        <move>
+            <input path="$MessageAssembly/Res/ResBody/list"/>
+            <output path="$MessageAssembly1/Res/ResBody/list"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

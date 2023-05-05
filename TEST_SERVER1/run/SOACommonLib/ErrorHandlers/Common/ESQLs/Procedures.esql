@@ -1,0 +1,40 @@
+BROKER SCHEMA ErrorHandlers.Common.ESQLs
+	
+CREATE PROCEDURE mapSOAException(IN globalCode INTEGER, IN errCode CHARACTER NULLABLE, IN errDesc CHARACTER NULLABLE) RETURNS INTEGER
+	BEGIN
+		CALL throwSOAException(globalCode, errCode, errDesc);
+	END;
+
+CREATE PROCEDURE throwSOAException(IN globalCode INTEGER, IN errCode CHARACTER NULLABLE, IN errDesc CHARACTER NULLABLE)
+	BEGIN
+		THROW USER EXCEPTION CATALOG 'SOAEXCEPTION' MESSAGE globalCode VALUES (errCode, errDesc);
+	END;
+
+CREATE PROCEDURE moveToFinalException(INOUT rootEx REFERENCE)
+	BEGIN
+		IF ENDSWITH(FIELDNAME(rootEx),'Exception') THEN
+			WHILE (rootEx.Number is not null) DO
+				move rootEx lastchild;
+			END WHILE;
+			MOVE rootEx PARENT;
+		END IF;
+	END;
+	
+CREATE PROCEDURE throwGeneralException(INOUT rootEx REFERENCE)
+	BEGIN
+		DECLARE ex REFERENCE TO rootEx;
+		CALL moveToFinalException(ex);
+		
+		CASE ex.Catalog
+		-- Rethrow SOAEXCEPTION
+		WHEN 'SOAEXCEPTION' THEN
+			CALL rethrowSOAException(ex);
+		ELSE
+			CALL throwSOAException(001, CAST(ex.Number AS CHARACTER), ex.Text);
+		END CASE;
+	END;
+	
+CREATE PROCEDURE rethrowSOAException(INOUT ex REFERENCE)
+	BEGIN
+		CALL throwSOAException(ex.Number, ex.Insert[1].Text, ex.Insert[2].Text);
+	END;

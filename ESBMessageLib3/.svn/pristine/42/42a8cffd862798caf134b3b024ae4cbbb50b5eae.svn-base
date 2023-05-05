@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 targetNamespace="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 version="1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">Unique Application Identification to identify Traget application or system within an organization, e.g "SmartLender", "Murex, "Ipay"</xsd:documentation>
+	</xsd:annotation>
+
+	<!--	<element name="Msgs" type="com-header:MsgsType"/> -->
+	<xsd:element name="ServiceVersion" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Version of the service to invoke</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TransactionId" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">The transaction ID of the application. It might be
+-	Session id of the web application.
+-	A sequence idicates unique number of the client.
+-	Login session id
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConversationId" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">This ID can be used by Service Client to correlate respond message, in which case the value of the response correlationId is the same as the value of request messageID.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageType" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en"> Name of of the transaction in the Body payload.  This is usefull for audit trail purpose where the Body payload is encrypted or ambiguous</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ObjectId" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en"> Identification of the Object in context,  The Object could be a loan application, a  Credit Check Request, request for exchange rate request, in which case the ObjectId will be loan Id, Credit Check Id, or exchange rate Transaction Id et.c.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ObjectTimestamp" type="xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en"> The timestamp of the object being created.  This timestamp can be the same or different than the timestamp of when the message being sent. This timestamp can be earlier than MessageTimestamp if the object in context was created and being queued in messaging system</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MessageTimestamp" type="xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">The timestamp of the message being created, and sent to messaging system</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SourceAppID" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Unique Application Identification to identify Source/Client application or system within an organization</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TargetAppID" type="xsd:string"/>
+	<xsd:element name="UserId" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">User Identification for identification purposes</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UserRole" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">User Role for Authorization purposes</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UserPassword" type="xsd:base64Binary">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">User password for authentication purposes</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NameValuePairs" type="com-header:NameValuePairsType"/>
+	<xsd:complexType name="NameValuePairsType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="Value" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AdditionalInformation" type="com-header:AdditionalInformationType"/>
+	<xsd:complexType name="AdditionalInformationType">
+		<xsd:sequence>
+			<xsd:element ref="com-header:NameValuePairs" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Other" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="TargetAppIDs">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="com-header:TargetAppID" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UserDetail">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">User information related to authentication and authorization, The context can be a user representing a server Id in chain-trust authentication or a person login name in end-to-end authentication</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="com-header:UserId" minOccurs="1" maxOccurs="1"/>
+				<xsd:element ref="com-header:UserRole" minOccurs="0"/>
+				<xsd:element ref="com-header:UserPassword" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Client" type="com-header:ClientType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">information provided by a client application when invoking a Service, the information assists audit trail and debugging purposes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Common" type="com-header:CommonType"/>
+	<xsd:complexType name="CommonType">
+		<xsd:annotation>
+			<xsd:documentation>Common Detail presence in either request or response message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com-header:ServiceVersion" maxOccurs="1" minOccurs="1"/>
+			<xsd:element name="MessageId" type="xsd:string" maxOccurs="1" minOccurs="1">
+
+			</xsd:element>
+			<xsd:element ref="com-header:TransactionId" minOccurs="0"/>
+			<xsd:element ref="com-header:MessageTimestamp" maxOccurs="1" minOccurs="1"/>
+			<xsd:element ref="com-header:AdditionalInformation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Additional information that is not  provided by standard header can be extended with Other element</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Header" type="com-header:HeaderType"/>
+	<xsd:complexType name="HeaderType">
+		<xsd:sequence>
+			<xsd:element ref="com-header:Common" maxOccurs="1" minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Common information applicable to all applications</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="com-header:Client" maxOccurs="1" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ResponseStatus" type="com-header:ResponseStatusType"/>
+	<xsd:complexType name="ResponseStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Additional response information for Response message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Status" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+			<xsd:element name="GlobalErrorCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GlobalErrorDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ErrorInfo" type="com-header:ResponseStatusErroInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ResponseStatusErroInfoType">
+		<xsd:sequence>
+			<xsd:element ref="com-header:SourceAppID" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="ErrorCode" type="xsd:string" maxOccurs="1" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Error code returned by "SourceAppID" System.  This Error Code is unique to each System.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ErrorDesc" type="xsd:string" maxOccurs="1" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Error Message returned by "SourceAppID"  System.  This Message is unique to each System.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ClientType">
+		<xsd:sequence>
+			<xsd:element ref="com-header:SourceAppID" maxOccurs="1" minOccurs="0"/>
+			<xsd:element ref="com-header:TargetAppIDs" minOccurs="0"/>
+			<xsd:element ref="com-header:UserDetail" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ResponseStatusErrorInfo" type="com-header:ResponseStatusErroInfoType"/>
+</xsd:schema>

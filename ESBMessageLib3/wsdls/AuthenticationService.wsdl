@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="AuthenticationService" targetNamespace="http://www.pjico.com.vn/entity/vn/app/authenticationsvcs/1" xmlns:authen="http://www.pjico.com.vn/entity/vn/app/authenticationsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.pjico.com.vn/entity/vn/authentication/authenticationservice/1">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/authentication/authenticationservice/1"
+    		schemaLocation="../service/vn/authentication/authenticationService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="GetTokenRequest">
+    <wsdl:part element="xsd1:GetTokenReq" name="req" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenResponse">
+    <wsdl:part element="xsd1:GetTokenRes" name="res" />
+  </wsdl:message>
+  <wsdl:portType name="AuthenticationService">
+    <wsdl:operation name="GetToken">
+      <wsdl:input message="authen:GetTokenRequest"/>
+      <wsdl:output message="authen:GetTokenResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthenticationServiceSOAP"
+  	type="authen:AuthenticationService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="GetToken">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/authenticationsvcs/1/GetToken" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthenticationService">
+    <wsdl:port binding="authen:AuthenticationServiceSOAP" name="AuthenticationServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

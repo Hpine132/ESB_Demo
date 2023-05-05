@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ECMService" targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/ECMService/">
+
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1"
+    		schemaLocation="../service/vn/ecm/ecmService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1">
+	<xsd:element name="UploadPolicy">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UploadPolicyResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UploadEndorsement">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UploadEndorsementResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Download">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DownloadResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateClaim">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateClaimResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdatePolicy">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdatePolicyResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateEndorsement">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateEndorsementResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="UploadClaimRequest">
+    <wsdl:part element="tns:UploadClaimReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="UploadClaimResponse">
+    <wsdl:part element="tns:UploadClaimRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="UploadPolicyRequest">
+  	<wsdl:part name="req" element="tns:UploadPolicyReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UploadPolicyResponse">
+  	<wsdl:part name="res" element="tns:UploadPolicyRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UploadEndorsementRequest">
+  	<wsdl:part name="req" element="tns:UploadEndorsementReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UploadEndorsementResponse">
+  	<wsdl:part name="res" element="tns:UploadEndorsementRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DownloadRequest">
+  	<wsdl:part name="req" element="tns:DownloadReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DownloadResponse">
+  	<wsdl:part name="res" element="tns:DownloadRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateClaimRequest">
+  	<wsdl:part name="req" element="tns:UpdateClaimReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateClaimResponse">
+  	<wsdl:part name="res" element="tns:UpdateClaimRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdatePolicyRequest">
+  	<wsdl:part name="req" element="tns:UpdatePolicyReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdatePolicyResponse">
+  	<wsdl:part name="res" element="tns:UpdatePolicyRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateEndorsementRequest">
+  	<wsdl:part name="req" element="tns:UpdateEndorsementReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateEndorsementResponse">
+  	<wsdl:part name="res" element="tns:UpdateEndorsementRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ECMService">
+    <wsdl:operation name="UploadClaim">
+      <wsdl:input message="tns:UploadClaimRequest"/>
+      <wsdl:output message="tns:UploadClaimResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPolicy">
+    	<wsdl:input message="tns:UploadPolicyRequest"></wsdl:input>
+    	<wsdl:output message="tns:UploadPolicyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadEndorsement">
+    	<wsdl:input message="tns:UploadEndorsementRequest"></wsdl:input>
+    	<wsdl:output message="tns:UploadEndorsementResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+    	<wsdl:input message="tns:DownloadRequest"></wsdl:input>
+    	<wsdl:output message="tns:DownloadResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClaim">
+    	<wsdl:input message="tns:UpdateClaimRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateClaimResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePolicy">
+    	<wsdl:input message="tns:UpdatePolicyRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdatePolicyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEndorsement">
+    	<wsdl:input message="tns:UpdateEndorsementRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateEndorsementResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ECMServiceSOAP" type="tns:ECMService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="UploadClaim">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1/UploadClaim" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="UploadPolicy">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1/UploadPolicy" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="UploadEndorsement">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1/UploadEndorsement" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="Download">
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmservice/1/Download" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ECMService">
+    <wsdl:port binding="tns:ECMServiceSOAP" name="ECMServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

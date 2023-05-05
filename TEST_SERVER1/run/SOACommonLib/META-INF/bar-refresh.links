@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" overrideConfigurableProperties="false" includeESQL="false">
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql.&#xA;Dependent ESQL file utils/soa/GlobalCache.java is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Common/ESQLs/ComputeModules.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql.&#xA;Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Common\ESQLs\ComputeModules.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Common/ESQLs/Procedures.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Common\ESQLs\Procedures.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\Procedures.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Common\ESQLs\Procedures.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTP/ESQLs/FilterFailure.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTP\ESQLs\FilterFailure.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTP/ESQLs/FilterFault.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFault.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFault.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTP\ESQLs\FilterFault.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTP/ESQLs/HTTP_Process.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTP/Subflows/HandleHTTP.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTPXml/ESQLs/FilterFailure.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTPXml/ESQLs/FilterFault.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTPXml/ESQLs/HTTP_Process.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/HTTPXml/Subflows/HandleHTTPXml.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Java/ESQLs/FilterError.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterError.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterError.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Java\ESQLs\FilterError.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Java/ESQLs/FilterFailure.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Java\ESQLs\FilterFailure.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Java/ESQLs/JavaProcess.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\JavaProcess.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\JavaProcess.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Java\ESQLs\JavaProcess.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Java/Subflows/HandleJava.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Java\Subflows\HandleJava.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Java\Subflows\HandleJava.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Java\Subflows\HandleJava.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Queue/ESQLs/HandleQueueTimeout.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Queue/ESQLs/HandleWarningQueue.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Queue/ESQLs/ParseQueue.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\ParseQueue.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\ParseQueue.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Queue\ESQLs\ParseQueue.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Queue/Subflows/HandleQueue.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Queue\Subflows\HandleQueue.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Queue\Subflows\HandleQueue.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Queue\Subflows\HandleQueue.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/SOAP/ESQLs/FilterFailure.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\SOAP\ESQLs\FilterFailure.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/SOAP/ESQLs/FilterFault.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFault.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFault.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\SOAP\ESQLs\FilterFault.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/SOAP/ESQLs/SOAP_Process.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql.&#xA;Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/SOAP/Subflows/HandleSOAP.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/SOAP/Subflows/HandleSOAPNew.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/ErrorHandlers/Subflows/HandleGenericErrors.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\ErrorHandlers\Subflows\HandleGenericErrors.subflow.&#xA;Successfully added file SOACommonLib\ErrorHandlers\Subflows\HandleGenericErrors.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="ErrorHandlers\Subflows\HandleGenericErrors.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Exception/ESQLs/createException.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Exception\ESQLs\createException.esql.&#xA;Successfully added file SOACommonLib\Exception\ESQLs\createException.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Exception\ESQLs\createException.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Exception/Subflows/publishException.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Exception\Subflows\publishException.subflow.&#xA;Successfully added file SOACommonLib\Exception\Subflows\publishException.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Exception\Subflows\publishException.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/IBMdefined/org/w3/www/xml/_1998/namespace/xml.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.&#xA;Successfully added file SOACommonLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.&#xA;Successfully added file SOACommonLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/IBMdefined/soap.xsd">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\IBMdefined\soap.xsd.&#xA;Successfully added file SOACommonLib\IBMdefined\soap.xsd to BAR file.&#xA;" severity="0"/>
+      <barEntry name="IBMdefined\soap.xsd"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/ESQLs/createBackendLogRequest.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql.&#xA;Dependent ESQL file Log/ESQLs/createLog.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\ESQLs\createBackendLogRequest.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/ESQLs/createBackendLogResponse.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql.&#xA;Dependent ESQL file Log/ESQLs/createBackendLogRequest.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Log/ESQLs/createLog.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\ESQLs\createBackendLogResponse.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/ESQLs/createLog.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\ESQLs\createLog.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Log\ESQLs\createLog.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\ESQLs\createLog.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/Subflows/publishBackendLogEnd.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\Subflows\publishBackendLogEnd.subflow.&#xA;Successfully added file SOACommonLib\Log\Subflows\publishBackendLogEnd.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\Subflows\publishBackendLogEnd.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/Subflows/publishBackendLogStart.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\Subflows\publishBackendLogStart.subflow.&#xA;Successfully added file SOACommonLib\Log\Subflows\publishBackendLogStart.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\Subflows\publishBackendLogStart.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Log/Subflows/publishLog.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Log\Subflows\publishLog.subflow.&#xA;Successfully added file SOACommonLib\Log\Subflows\publishLog.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Log\Subflows\publishLog.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/SOACommonLib/SOAHandleReplyException.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\SOACommonLib\SOAHandleReplyException.esql.&#xA;Successfully added file SOACommonLib\SOACommonLib\SOAHandleReplyException.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="SOACommonLib\SOAHandleReplyException.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/ESQLs/SOACreateErrorResponse.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\ESQLs\SOACreateErrorResponse.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/ESQLs/SOADynamicLabel.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql.&#xA;Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\ESQLs\SOADynamicLabel.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/ESQLs/SOAHandleException.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql.&#xA;Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\ESQLs\SOAHandleException.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/ESQLs/SOAHandleSecurity.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\ESQLs\SOAHandleSecurity.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/ESQLs/SOASetupSOAVariables.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\ESQLs\SOASetupSOAVariables.esql.&#xA;Successfully added file SOACommonLib\Service\Common\ESQLs\SOASetupSOAVariables.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\ESQLs\SOASetupSOAVariables.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/Subflows/SOAHandleException.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\Subflows\SOAHandleException.subflow.&#xA;Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleException.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\Subflows\SOAHandleException.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1682501084560" workspaceResource="/SOACommonLib/Service/Common/Subflows/SOAHandleRequest.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\Subflows\SOAHandleRequest.subflow.&#xA;Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleRequest.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\Subflows\SOAHandleRequest.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1682501109871" workspaceResource="/SOACommonLib/Service/Common/Subflows/SOAHandleResponse.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\Subflows\SOAHandleResponse.subflow.&#xA;Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleResponse.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\Subflows\SOAHandleResponse.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Common/Subflows/SOAHandleSecurity.subflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Common\Subflows\SOAHandleSecurity.subflow.&#xA;Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleSecurity.subflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Common\Subflows\SOAHandleSecurity.subflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Utils/ESQLs/CommonComputeModules.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Utils\ESQLs\CommonComputeModules.esql.&#xA;Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonComputeModules.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Utils\ESQLs\CommonComputeModules.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Utils/ESQLs/CommonFilterModules.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Utils\ESQLs\CommonFilterModules.esql.&#xA;Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFilterModules.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Utils\ESQLs\CommonFilterModules.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Utils/ESQLs/CommonFunctions.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql.&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Utils\ESQLs\CommonFunctions.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/Service/Utils/ESQLs/CommonProcedures.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql.&#xA;Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.&#xA;&#xA;Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.&#xA;&#xA;Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Utils\ESQLs\CommonProcedures.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/broker/configurableservice/ConfigurableService.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\broker\configurableservice\ConfigurableService.esql.&#xA;Successfully added file SOACommonLib\broker\configurableservice\ConfigurableService.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="broker\configurableservice\ConfigurableService.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/broker/system/Procedures.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\broker\system\Procedures.esql.&#xA;Successfully added file SOACommonLib\broker\system\Procedures.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="broker\system\Procedures.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680082396000" workspaceResource="/SOACommonLib/library.descriptor">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonLib\library.descriptor.&#xA;Successfully added file SOACommonLib\library.descriptor to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file SOACommonLib\library.descriptor to BAR file.&#xA;" severity="0"/>
+      <barEntry name="library.descriptor"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681202121247" workspaceResource="/SOACommonJava/.classpath">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonJava\.classpath.&#xA;Successfully added file SOACommonJava\.classpath to BAR file.&#xA;Elapsed time: 0.023 second(s).&#xA;" severity="0"/>
+      <barEntry name="SOACommonJava.jar"/>
+    </deployable>
+    <deployable workspaceResource="/SOACommonJava/utils/soa/GlobalCache.java"/>
+    <deployable deployed="true" barResourceTimeStamp="1642774618000" workspaceResource="/SOACommonJava/lib/json-simple-2.3.0.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SOACommonJava\lib\json-simple-2.3.0.jar.&#xA;Successfully added file SOACommonJava\lib\json-simple-2.3.0.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/json-simple-2.3.0.jar"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>

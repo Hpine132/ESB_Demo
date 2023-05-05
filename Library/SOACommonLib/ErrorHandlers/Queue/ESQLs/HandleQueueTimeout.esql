@@ -1,0 +1,17 @@
+BROKER SCHEMA ErrorHandlers.Queue.ESQLs
+
+
+
+CREATE COMPUTE MODULE HandleQueueTimeout
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		SET Environment.Variables.ServiceCallout.Status = '3150';	
+		SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = 'Timeout when get message from queue ' 
+		|| InputLocalEnvironment.WrittenDestination.MQ.DestinationData.queueName;
+		SET Environment.Variables.ServiceCallout.LogType = 'QUEUE';
+		RETURN TRUE;
+	END;
+
+END MODULE;

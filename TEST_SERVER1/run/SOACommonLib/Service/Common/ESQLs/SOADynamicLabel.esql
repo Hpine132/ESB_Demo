@@ -1,0 +1,36 @@
+BROKER SCHEMA Service.Common.ESQLs
+
+CREATE COMPUTE MODULE routeToOperationLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE ServiceVersion CHARACTER;
+		DECLARE OperationName CHARACTER;
+		SET ServiceVersion = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:ServiceVersion;-- InputRoot.XMLNSC.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:ServiceVersion;	
+		SET OperationName  = Environment.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.soa:OperationName;--InputRoot.XMLNSC.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.soa:OperationName;
+		IF ServiceVersion IS NULL OR OperationName IS NULL THEN
+			CALL ErrorHandlers.Common.ESQLs.throwSOAException(007, NULL, NULL);
+		ELSE
+			-- Preparation
+			--CREATE LASTCHILD OF OutputLocalEnvironment.Variables FROM Environment.Variables.SOAVariables.soa:SOAEnvelope;			
+			-- Go
+			PROPAGATE TO LABEL TRIM(OperationName)||'_'||TRIM(ServiceVersion) FINALIZE NONE DELETE NONE;
+		END IF;
+	END;
+END MODULE;
+
+CREATE COMPUTE MODULE routeToExceptionLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		PROPAGATE TO LABEL 'ExceptionReply' FINALIZE NONE DELETE NONE;
+	END;
+END MODULE;
+
+CREATE COMPUTE MODULE routeToTimeoutLabel
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		PROPAGATE TO LABEL 'TimeoutReply' FINALIZE NONE DELETE NONE;
+	END;
+END MODULE;

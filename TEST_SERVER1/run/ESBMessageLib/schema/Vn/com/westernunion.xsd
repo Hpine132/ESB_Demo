@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pjico.com.vn/entity/vn/com/westernunion/1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:com-wu="http://www.pjico.com.vn/entity/vn/com/westernunion/1">
+
+    <complexType name="PartnerType">
+    	<sequence>
+    		<element name="Id" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="System" type="com-wu:SystemType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Preferences" type="com-wu:PreferencesType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ChannelPartnerType">
+    	<sequence>
+    		<element name="Id" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="System" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Preferences" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GwpGbsDeviceType">
+    	<sequence>
+    		<element name="Id" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Type" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GbsCustomerType">
+    	<sequence>
+    		<element name="ExtensionBase"
+    			type="com-wu:ChannelCustomerType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="BankAccount" type="com-wu:GbsBankDetailsType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="SenderDetails"
+    			type="com-wu:SenderDetailsType" maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ChannelCustomerType">
+    	<sequence>
+    		<element name="Name" type="com-wu:ChannelGeneralNameType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Address" type="com-wu:IsoAddressType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PreferredCustomer"
+    			type="com-wu:PreferredCustomerType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Type" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ReceiverIndexNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ReceiverFirstName" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ComplianceDetails" type="com-wu:ChannelComplicanceDetailsType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Email" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ContactPhone" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MobilePhone" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MobileDetails" type="com-wu:MobileDetailsType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="HomePhone" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Cookie" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PcSource" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Gender" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfBirth" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LanguageIsoCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="UnvBuffer" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PlaceOfBirth" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Occupation" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EmployerName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="QueueAllowed" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NotificationPreference" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="ReasonForSending" type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="NotificationLanguage" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="NotificationPhone" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Identities" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CashToMobile" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MothersMaidenName" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="SmsNotificationFlag" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OverideMobileValidation" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ProfileChanges" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IdNumber" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ComplianceDataBuffer" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AckFlag" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NegativeFileInfo" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GbsPaymentDetailsType">
+    	<sequence>
+    		<element name="GbsGwpPaymentDetails"
+    			type="com-wu:ChannelPaymentDetailsType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="PreferencesType">
+    	<sequence>
+    		<element name="Language" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrorTranslation" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SystemType">
+    	<sequence>
+    		<element name="Id" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Version" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IpAddress" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ConnectorId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="ChannelGeneralNameType">
+    	<sequence>
+    		<element name="NamePrefix" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IndividualName"
+    			type="com-wu:IndividualNameType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OrganizationName"
+    			type="com-wu:OrganisationNameType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MexicanName" type="com-wu:MexicanNameType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="NameSuffix" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="IndividualNameType">
+    	<sequence>
+    		<element name="FirstName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MiddleName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LastName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="OrganisationNameType">
+    	<sequence>
+    		<element name="BussinessName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Attention" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MexicanNameType">
+    	<sequence>
+    		<element name="GivenName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PaternalName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MaternalName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="IsoAddressType">
+    	<sequence>
+    		<element name="AddrLine1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddrLine2" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="City" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="State" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PostalCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountryIsoCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Locale" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddressType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BusinessName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Street" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountryCode"
+    			type="com-wu:CountryCurrencyInfoType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CountryCurrencyInfoType">
+    	<sequence>
+    		<element name="CpcCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IsoCountryCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IsoCurrencyCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountryName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PreferredCustomerType">
+    	<sequence>
+    		<element name="PermanentChange" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AccountNbr" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LevelCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PointsAssignedRedeemed" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="TotalPointsEarned" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CurentNumberOfReceivers" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OriginalCardType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Status" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CardClass" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ApplyDiscount" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FirstUse" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="RateModifier" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Discount" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NameAltKey" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Operation" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LastUseDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssueDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FirstUseDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NonpermanentChangeCount" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MaxNumberReceiversAllowed" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="LastModificationTime" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="LastChangeSource" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Interests" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ExpirationDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CardReplacedCount" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CardChangesCount" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AutoEnroll" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CardHasExpired" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Update" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SharePersonalData" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ReceiveMail" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OptFlag" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OptInOut" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OptInOutChangeDate" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ControlNumber" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PhonePin" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PrefCustSearchKey" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IdExpires" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChannelComplicanceDetailsType">
+    	<sequence>
+    		<element name="TemplateId" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Version" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IdDocuments" type="com-wu:IDDocumentsType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ThirdPartyDetails"
+    			type="com-wu:ThirdPartyDetailsType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfBirth" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Occupation" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ComplianceComments" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="TransactionReason" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsACitizen" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IsANordicCitizen" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CurrentAddress"
+    			type="com-wu:ComplianceAddressType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ContactPhone" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryOfBirth" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Nationality" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Gender" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CustomerTypeAlphaCode" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CustomerTypeNumericCode" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsAResident" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Location" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ValutaCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ValutaAmount" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SourceOfFunds" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SendMoneyFromSerialNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IDDescriptionCode" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IdentityType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FathersName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MemberOrAssociateToGovernment" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MoneyTransferCategory" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Other" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Province" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FiscalCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PermanentAddress"
+    			type="com-wu:ComplianceAddressType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NameOfEmployerBusiness" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="NatureOfWorkBusiness" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsTxnIndividualOrOrganization" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="RelationshipToReceiverSender" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OtherRelationshipToSender" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsThisForCommercialPurposes" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AddressValidation" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="RFC" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CURP" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DoesTheIDHaveAnExpirationDate" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsRemittanceATradeRelatedTransaction"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DoesReceiverHaveAPhoneNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="DoesTheSenderHaveID" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AddressVerificationDocumentType"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CityOfBirth" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PersonalIdnetificationNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="TaxPayersRegistrationNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IActOfMyBehalf" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ClassifierOfThePurposeOfMTNumber"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="UserEquipmentIDType" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="UserEquipmentIDData" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="EASConsumerIDKey" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ConsumerIDKey" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="WhiteListKey" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AckFlag" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ReasonForAlternateId" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AddressVerificationDocumentIssueDate"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="InternationalBankAccountNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="RoutingCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ResidencePermitType" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ResidencePermitSeriesAndNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ResidencePermitIssueDate" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="ResidencePermitExpirationDate" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="FundsSenderCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="BeneficiaryCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="BeneficiaryProfession" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="BeneficiaryNationality" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="GENIIIIndicator" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OtherOccupation" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="WasAProofOfEUCitizenshipProvided"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="WasAResidentPermitProvided" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="STDPhoneNumberCode" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MobilePhoneNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MaritalStatus" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="WUCOMELectronicValidation" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OtherPartySorRAddress"
+    			type="com-wu:ComplianceAddressType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CitizenshipType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OtherPurposeOfTransaction" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MaidenName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OtherSourceOfFunds" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AddressVerificationIssuer" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="StateOrProvinceOfBirth" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsFiscalCodeAvailable" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsABenificialOwner" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PoliticallyExposedPerson" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CustomerIdentificationNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="EmployeeID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CopyOfCustomerIDObtained" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="OtherPartySorRID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="OtherNatureOfWorkBusiness" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="EmployersAddressLine1" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="EmployersAddressLine2" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="QCPayoutIndicator" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="SpecialAuthorizationNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IdAddressDifferentFromForm" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PersonOrEntity" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CategoryCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PermitApprovalType" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PermitApprovalNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="BusinessPhoneNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="RelativeOrCloseFriendOfPEP" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AnnualIncome" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryOfResidence" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="StatusOfEmployment" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="IsTransferForPersonalNonCommercialPurposes"
+    			type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PrimaryIDImage" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ComplianceVerificationBuffer" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="FLASignRefNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CustmrConsentSignRefNo" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="CustmrSignRefNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TemporaryAddress" type="com-wu:TemporaryAddressType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EmploymentPositionLevel" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ComplianceAddressType">
+    	<sequence>
+    		<element name="AddrLine1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddrLine2" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="City" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PostalCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Country" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Locale" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddressType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BusinessName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Zip" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Street" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="District" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="IDDocumentType">
+    	<sequence>
+    		<element name="Type" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Data" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssueDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="HasIssueDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssuePlace" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssueCountry"
+    			type="com-wu:CountryCurrencyInfoType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ExpirationDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IDExpires" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="IDDocumentsType">
+    	<sequence>
+    		<element name="IDDocument" type="com-wu:IDDocumentType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ThirdPartyDetailsType">
+    	<sequence>
+    		<element name="Name" type="com-wu:ChannelGeneralNameType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Address" type="com-wu:ComplianceAddressType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PayWOIdIndicator" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Organization" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IdentificationNumber" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Occupation" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Amount" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryOfBirth" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GbsBankDetailsType">
+    	<sequence>
+    		<element name="ExtensionBase" type="com-wu:BankDetailsType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="PinVerificationTime" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="OpenDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AverageDailyBalance30Days" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AverageDebitsCount30Days" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AverageDailyBalance3Months" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AverageDebitsCount3Months" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AcctOwnership" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DebitCapableAccount" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BankDetailsType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BankLocation" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BranchCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SwiftBic" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BankCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SortCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AccountNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="RoutingNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AccountType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AccountHolder" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AccountPrefix" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AccountSuffix" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateCountry" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateProvince" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Comments" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PhoneNumber" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="RcvFinancialId" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SenderDetailsType">
+    	<sequence>
+    		<element name="ReturnedMailStatus" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LastChangeDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ExportStatus" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ExportDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Dup" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DeleteCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddressFlagHHomePPos" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PhoneType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ListingType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EmploymentType" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChannelPaymentDetailsType">
+    	<sequence>
+    		<element name="Origination" type="com-wu:OriginationType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Destination" type="com-wu:DestinationType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Promotion" type="com-wu:ChannelPromotionType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Taxes" type="com-wu:ChannelTaxesType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Fees" type="com-wu:ChannelFeesType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MessageCharges"
+    			type="com-wu:ChannelMessageChargesType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ExchangeRate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IdentificationQuestion"
+    			type="com-wu:IdentificationQuestionType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PaymentDigest" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MinAllowedAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MaxAllowedAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="FixOnSend" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TotalUndiscountdCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TotalDiscount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TotalDiscountedCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AdditionalSvcCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PartnerFee" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="OriginationType">
+    	<sequence>
+    		<element name="PrincipalAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="GrossAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CurrencyIsoCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountryIsoCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="DestinationType">
+    	<sequence>
+    		<element name="ExpectedPayoutAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ActualPayoutAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CurrencyIsoCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountryIsoCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="City" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ExpectedPayoutMethod" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChannelPromotionType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Description" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Discount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Status" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChannelTaxesType">
+    	<sequence>
+    		<element name="TaxAmount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TaxRate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MunicipalTax" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateTax" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CountyTax" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ChannelFeesType">
+    	<sequence>
+    		<element name="BaseCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DeliveryCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="OtherCharges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Charges" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ExchangeFee" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ConversionFee" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SecondExchangeFee" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="ChannelMessageChargesType">
+    	<sequence>
+    		<element name="MsgBaseRate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MsgBaseCnt" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MsgMargRate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="RateSpecial" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="IdentificationQuestionType">
+    	<sequence>
+    		<element name="Question" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Answer" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Bypass" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GbsServiceOptionType">
+    	<sequence>
+    		<element name="WUProduct" type="com-wu:WUProductType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="TransactionType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PaymentDetails"
+    			type="com-wu:GbsPaymentDetailsType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AdditionalServiceOptions"
+    			type="com-wu:GbsOptionalServicesType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="WUProductType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Type" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="RoutingCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ServiceType" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Message" type="com-wu:MessageType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MessageType">
+    	<sequence>
+    		<element name="MessageDetails" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BaseWordLimit" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IncrWordLimit" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Lines" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GbsOptionalServicesType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Discount" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DiscountSurcharge" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Taxes" type="com-wu:ChannelTaxesType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Promotion" type="com-wu:ChannelPromotionType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Surcharge" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GbsServiceOptionsType">
+    	<sequence>
+    		<element name="ServiceOption"
+    			type="com-wu:GbsServiceOptionType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TransactionInfoType">
+    	<sequence>
+    		<element name="SenderIPAddress" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="HistoricalIP1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="HistoricalIP2" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="HistoricalIP3" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="HistoricalIP4" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BlackBoxBuffer" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BankOOBAResult" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PartnerActionParamType">
+    	<sequence>
+    		<element name="DelayToAction" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DelayUnit" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AutoAction" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MoneyTransferControlType">
+    	<sequence>
+    		<element name="Date" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Mtcn" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TemporaryAddressType">
+    	<sequence>
+    		<element name="Country" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PostalCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="StateName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="City" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddrLine1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="AddrLine2" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MobileDetailsType">
+    	<sequence>
+    		<element name="CityCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Number" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SmsFlag" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,454 @@
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql.
+Dependent ESQL file utils/soa/GlobalCache.java is added to the BAR file.
+
+Successfully added file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql.
+Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Common\ESQLs\Procedures.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\Procedures.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFault.esql.
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFault.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql.
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql.
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql.
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterError.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterError.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Java\ESQLs\JavaProcess.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\JavaProcess.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Java\Subflows\HandleJava.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\Java\Subflows\HandleJava.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Queue\ESQLs\ParseQueue.esql.
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\ParseQueue.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Queue\Subflows\HandleQueue.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\Queue\Subflows\HandleQueue.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFault.esql.
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFault.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql.
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\ErrorHandlers\Subflows\HandleGenericErrors.subflow.
+Successfully added file SOACommonLib\ErrorHandlers\Subflows\HandleGenericErrors.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Exception\ESQLs\createException.esql.
+Successfully added file SOACommonLib\Exception\ESQLs\createException.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Exception\Subflows\publishException.subflow.
+Successfully added file SOACommonLib\Exception\Subflows\publishException.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.
+Successfully added file SOACommonLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.
+Successfully added file SOACommonLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\IBMdefined\soap.xsd.
+Successfully added file SOACommonLib\IBMdefined\soap.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql.
+Dependent ESQL file Log/ESQLs/createLog.esql is added to the BAR file.
+
+Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql.
+Dependent ESQL file Log/ESQLs/createBackendLogRequest.esql is added to the BAR file.
+
+Dependent ESQL file Log/ESQLs/createLog.esql is added to the BAR file.
+
+Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\ESQLs\createLog.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createLog.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\Subflows\publishBackendLogEnd.subflow.
+Successfully added file SOACommonLib\Log\Subflows\publishBackendLogEnd.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\Subflows\publishBackendLogStart.subflow.
+Successfully added file SOACommonLib\Log\Subflows\publishBackendLogStart.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Log\Subflows\publishLog.subflow.
+Successfully added file SOACommonLib\Log\Subflows\publishLog.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\SOACommonLib\SOAHandleReplyException.esql.
+Successfully added file SOACommonLib\SOACommonLib\SOAHandleReplyException.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.
+
+Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql.
+Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.
+
+Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql.
+Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Dependent ESQL file Service/Common/ESQLs/SOASetupSOAVariables.esql is added to the BAR file.
+
+Dependent ESQL file ErrorHandlers/Common/ESQLs/Procedures.esql is added to the BAR file.
+
+Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.
+
+Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\ESQLs\SOASetupSOAVariables.esql.
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOASetupSOAVariables.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\Subflows\SOAHandleException.subflow.
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleException.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\Subflows\SOAHandleRequest.subflow.
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleRequest.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\Subflows\SOAHandleResponse.subflow.
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleResponse.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Common\Subflows\SOAHandleSecurity.subflow.
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleSecurity.subflow to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Utils\ESQLs\CommonComputeModules.esql.
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonComputeModules.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Utils\ESQLs\CommonFilterModules.esql.
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFilterModules.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql.
+Dependent ESQL file Service/Utils/ESQLs/CommonProcedures.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql.
+Dependent ESQL file Cache/GlobalCache/ESQLs/GlobalCacheUtils.esql is added to the BAR file.
+
+Dependent ESQL file Service/Utils/ESQLs/CommonFunctions.esql is added to the BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\broker\configurableservice\ConfigurableService.esql.
+Successfully added file SOACommonLib\broker\configurableservice\ConfigurableService.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\broker\system\Procedures.esql.
+Successfully added file SOACommonLib\broker\system\Procedures.esql to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\library.descriptor.
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonLib\library.descriptor.
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonJava\.classpath.
+Successfully added file SOACommonJava\.classpath to BAR file.
+Elapsed time: 0.023 second(s).
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Processing file SOACommonJava\lib\json-simple-2.3.0.jar.
+Successfully added file SOACommonJava\lib\json-simple-2.3.0.jar to BAR file.
+Elapsed time: 0 second(s).

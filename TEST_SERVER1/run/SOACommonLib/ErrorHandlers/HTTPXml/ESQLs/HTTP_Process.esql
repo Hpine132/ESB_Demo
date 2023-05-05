@@ -1,0 +1,27 @@
+BROKER SCHEMA ErrorHandlers.HTTPXml.ESQLs
+
+DECLARE soa NAMESPACE 'http://www.pjico.com.vn/common/envelope/soaenvelope/1';
+CREATE COMPUTE MODULE HTTP_Process
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+--		SET OutputRoot = InputRoot;
+--		DELETE FIELD OutputRoot.SOAP;
+--		SET OutputRoot.XMLNSC.* = InputRoot.SOAP.Body.*;
+--		
+--		SET Environment.Variables.ServiceCallout.Status = '0';	
+--		SET Environment.Variables.ServiceCallout.ResponseDetail.ResponseData = InputRoot.SOAP.Body.*;
+--
+--		RETURN TRUE;
+		SET OutputRoot.Properties = InputRoot.Properties;
+		SET OutputRoot.HTTPRequestHeader = InputRoot.HTTPRequestHeader;
+		SET OutputRoot.HTTPResponseHeader = InputRoot.HTTPResponseHeader;
+		DECLARE inCCSID INT InputProperties.CodedCharSetId;                     
+		DECLARE inEncoding INT InputProperties.Encoding; 
+        --CREATE LASTCHILD OF OutputRoot DOMAIN 'XML';
+        CREATE LASTCHILD OF OutputRoot.XML PARSE(InputRoot.BLOB.BLOB OPTIONS FolderBitStream CCSID inCCSID Encoding inEncoding);
+     
+        SET Environment.Variables.ServiceCallout.Status = '0';	
+		SET Environment.Variables.ServiceCallout.ResponseDetail.ResponseData = OutputRoot.XML;
+	END;
+	
+END MODULE;

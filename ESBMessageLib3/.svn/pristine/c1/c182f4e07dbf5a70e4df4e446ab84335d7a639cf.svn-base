@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="CompensationService" targetNamespace="http://www.pjico.com.vn/entity/vn/compensation/compensationsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/compensation/compensationsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/CompensationService/">
+      <xsd:element name="InquiryCompensation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InquiryCompensationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/compensation/compensationservice/1"
+    		schemaLocation="../service/vn/compensation/compensationService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/compensation/compensationservice/1">
+	<xsd:element name="InquiryCompensationPayment">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryCompensationPaymentResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryMechanicalCompensation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryMechanicalCompensationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryHealthCompensation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="InquiryHealthCompensationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ReceiveDamageInformation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ReceiveDamageInformationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="InquiryCompensationRequest">
+    <wsdl:part element="tns:InquiryCompensationReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryCompensationResponse">
+    <wsdl:part element="tns:InquiryCompensationRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryCompensationPaymentRequest">
+  	<wsdl:part name="req" element="tns:InquiryCompensationPaymentReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCompensationPaymentResponse">
+  	<wsdl:part name="res" element="tns:InquiryCompensationPaymentRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryMechanicalCompensationRequest">
+  	<wsdl:part name="req" element="tns:InquiryMechanicalCompensationReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryMechanicalCompensationResponse">
+  	<wsdl:part name="res" element="tns:InquiryMechanicalCompensationRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryHealthCompensationRequest">
+  	<wsdl:part name="req" element="tns:InquiryHealthCompensationReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryHealthCompensationResponse">
+  	<wsdl:part name="res" element="tns:InquiryHealthCompensationRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveDamageInformationRequest">
+  	<wsdl:part name="req" element="tns:ReceiveDamageInformationReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveDamageInformationResponse">
+  	<wsdl:part name="res" element="tns:ReceiveDamageInformationRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CompensationService">
+    <wsdl:operation name="InquiryCompensation">
+      <wsdl:input message="tns:InquiryCompensationRequest"/>
+      <wsdl:output message="tns:InquiryCompensationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryCompensationPayment">
+    	<wsdl:input message="tns:InquiryCompensationPaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryCompensationPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryMechanicalCompensation">
+    	<wsdl:input message="tns:InquiryMechanicalCompensationRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryMechanicalCompensationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryHealthCompensation">
+    	<wsdl:input message="tns:InquiryHealthCompensationRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryHealthCompensationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveDamageInformation">
+    	<wsdl:input message="tns:ReceiveDamageInformationRequest"></wsdl:input>
+    	<wsdl:output message="tns:ReceiveDamageInformationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CompensationServiceSOAP" type="tns:CompensationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InquiryCompensation">
+      <soap:operation soapAction="http://www.example.org/CompensationService/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompensationService">
+    <wsdl:port binding="tns:CompensationServiceSOAP" name="CompensationServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

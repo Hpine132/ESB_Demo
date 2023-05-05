@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1"
+	 xmlns:com-acct="http://www.pjico.com.vn/entity/vn/com/account/1"
+	 xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1"
+	 xmlns:com-xfer="http://www.pjico.com.vn/entity/vn/com/xfer/1"
+	 targetNamespace="http://www.pjico.com.vn/entity/vn/com/xfer/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/party/1" schemaLocation="party.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/account/1" schemaLocation="account.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/1" schemaLocation="com.xsd"/>
+	<xs:complexType name="XferInfoType">
+		<xs:sequence>
+			<xs:element name="ReferenceNumber" type="xs:string"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Consumer Ref num
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TraceNumber" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="BookingBranch"
+				type="com-com:BranchInfoType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						EB branch number (used for revert an FT)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DebitAccount"
+				type="com-acct:AcctBasicType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Card number (used for revert payment)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DebitBranch" type="com-com:BranchInfoType"
+				minOccurs="0" />
+
+			<xs:element name="CreditAccount"
+				type="com-acct:AcctBasicType" minOccurs="0" />
+			<xs:element name="CreditBranch"
+				type="com-com:BranchInfoType" minOccurs="0" />
+			<xs:element name="Amount" type="com-acct:AmountType"
+				minOccurs="0" />
+			<xs:element name="TransactionDateTime"
+				type="xs:anySimpleType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Used for revert payment
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="SourceRequest" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+<xs:complexType name="XferType">
+				<xs:sequence>
+				<xs:element name="XferId" type="xs:string" minOccurs="0"/>
+				<xs:element name="XferInfo" type="com-xfer:XferInfoType" minOccurs="0"/>
+				<xs:element name="XferStatus" type="com-xfer:XferStatusType" minOccurs="0"/>
+				<xs:element name="XferEnvr" type="com-xfer:XferEnvrType" minOccurs="0"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XferEnvrType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseEnvrType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XferStatusType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseStatusType"/>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

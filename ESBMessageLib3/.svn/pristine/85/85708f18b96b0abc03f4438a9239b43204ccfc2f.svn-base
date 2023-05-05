@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pjico.com.vn/entity/vn/employee/employeeservice/1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1" xmlns:Q1="http://www.pjico.com.vn/common/envelope/serviceenvelope/1" xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1" xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1" xmlns:cussv="http://www.pjico.com.vn/entity/vn/employee/employeeservice/1">
+	<import
+		schemaLocation="../../../schema/Common/Envelope/SOAEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1">
+	</import>
+	<import
+		schemaLocation="../../../schema/Common/Envelope/ServiceEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+	</import>
+	<import schemaLocation="../../../schema/Vn/com/com.xsd"
+		namespace="http://www.pjico.com.vn/entity/vn/com/1">
+	</import>
+	<import schemaLocation="../../../schema/Vn/com/party.xsd" namespace="http://www.pjico.com.vn/entity/vn/com/party/1"></import>
+
+
+    <element name="InquiryEmployeeDebtReq" type="cussv:InquiryEmployeeDebtReqType"></element>
+
+    <element name="InquiryEmployeeDebtRes" type="cussv:InquiryEmployeeDebtResType"></element>
+
+
+    <complexType name="InquiryEmployeeDebtReqType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeRequestType">
+    			<sequence>
+    				<element name="BodyReq"
+    					type="cussv:InquiryEmployeeDebtReqBodyType" maxOccurs="1" minOccurs="0">
+    				</element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="InquiryEmployeeDebtResType">
+    	<complexContent>
+    		<extension base="Q1:BaseServiceEnvelopeResponseType">
+    			<sequence>
+    				<element name="BodyRes" type="cussv:InquiryEmployeeDebtResBodyType" maxOccurs="1" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="InquiryEmployeeDebtReqBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="InquiryEmployeeDebtResBodyType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

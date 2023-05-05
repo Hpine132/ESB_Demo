@@ -1,0 +1,52 @@
+BROKER SCHEMA ErrorHandlers.HTTPXml.ESQLs
+
+DECLARE com NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+CREATE COMPUTE MODULE FilterFailure
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rootEx REFERENCE TO InputExceptionList.*[1];
+		DECLARE ex REFERENCE TO rootEx;
+		CALL Service.Utils.ESQLs.moveToFinalException(ex);
+		CASE ex.Number
+		-- Connect timeout
+		WHEN 3150 THEN
+			--SET Environment.Variables.ServiceCallout.Status = '3150';
+			SET Environment.Variables.ServiceCallout.Status = '3151';
+			DECLARE exDesc CHARACTER ex.Insert[3].Text;
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = extractHTTPRequestNodeName(ex.Text)||'_'||COALESCE(exDesc, ''); 
+			--IF (exDesc = 'A remote host refused an attempted connect operation.') THEN
+			--	SET Environment.Variables.ServiceCallout.Status = 'RV_3150';
+			--END IF;	
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(68, '3150', extractSOAPRequestNodeName(ex.Text));
+		-- Read timeout
+		WHEN 3151 THEN
+			SET Environment.Variables.ServiceCallout.Status = '3151';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = extractHTTPRequestNodeName(ex.Text);
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(68, '3151', extractSOAPRequestNodeName(ex.Text));
+		-- Others
+		WHEN 3691 THEN
+			--SET Environment.Variables.ServiceCallout.Status = '3691';
+			SET Environment.Variables.ServiceCallout.Status = '3151';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Insert[1].Text;
+		ELSE
+			--SET Environment.Variables.ServiceCallout.Status = '004';
+			SET Environment.Variables.ServiceCallout.Status = '3151';	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = ex.Text;
+			--CALL ErrorHandlers.Common.ESQLs.throwSOAException(004, CAST(ex.Number AS CHARACTER), ex.Insert[CARDINALITY(ex.Insert[])].Text);
+		END CASE;
+		
+		RETURN TRUE;
+	END;
+	
+CREATE FUNCTION extractHTTPRequestNodeName(IN label CHARACTER) RETURNS CHARACTER
+BEGIN
+	DECLARE i INTEGER POSITION('/' IN label);
+	WHILE i > 0 DO
+		SET label = OVERLAY(label PLACING '' FROM 1 FOR i);
+		SET i = POSITION('/' IN label);
+	END WHILE;
+	RETURN RIGHT(label, LENGTH(label) - POSITION('.' IN label));
+END;
+	
+	
+END MODULE;

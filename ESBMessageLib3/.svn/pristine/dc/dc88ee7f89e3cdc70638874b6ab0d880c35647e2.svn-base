@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="SystemService" targetNamespace="http://www.pjico.com.vn/entity/vn/system/systemsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/system/systemsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/SystemService/">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/system/systemservice/1"
+    		schemaLocation="../service/vn/system/systemService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/system/systemservice/1"><xsd:element name="in" type="xsd:string"></xsd:element><xsd:element name="out" type="xsd:string"></xsd:element><xsd:element name="in1" type="xsd:string"></xsd:element><xsd:element name="out1" type="xsd:string"></xsd:element><xsd:element name="in2" type="xsd:string"></xsd:element><xsd:element name="out2" type="xsd:string"></xsd:element><xsd:element name="in3" type="xsd:string"></xsd:element><xsd:element name="out3" type="xsd:string"></xsd:element></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateQRCodeRequest">
+    <wsdl:part element="tns:CreateQRCodeReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="CreateQRCodeResponse">
+    <wsdl:part element="tns:CreateQRCodeRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="DigitalSignRequest">
+  	<wsdl:part name="req" element="tns:DigitalSignReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DigitalSignResponse">
+  	<wsdl:part name="res" element="tns:DigitalSignRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCategoryRequest">
+  	<wsdl:part name="req" element="tns:InquiryCategoryReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryCategoryResponse">
+  	<wsdl:part name="res" element="tns:InquiryCategoryRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryWorkshopRequest">
+  	<wsdl:part name="req" element="tns:InquiryWorkshopReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InquiryWorkshopResponse">
+  	<wsdl:part name="res" element="tns:InquiryWorkshopRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SendSMSRequest">
+  	<wsdl:part name="req" element="tns:SendSMSReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SendSMSResponse">
+  	<wsdl:part name="res" element="tns:SendSMSRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SystemService">
+    <wsdl:operation name="CreateQRCode">
+      <wsdl:input message="tns:CreateQRCodeRequest"/>
+      <wsdl:output message="tns:CreateQRCodeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DigitalSign">
+    	<wsdl:input message="tns:DigitalSignRequest"></wsdl:input>
+    	<wsdl:output message="tns:DigitalSignResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryCategory">
+    	<wsdl:input message="tns:InquiryCategoryRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryCategoryResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryWorkshop">
+    	<wsdl:input message="tns:InquiryWorkshopRequest"></wsdl:input>
+    	<wsdl:output message="tns:InquiryWorkshopResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+    	<wsdl:input message="tns:SendSMSRequest"></wsdl:input>
+    	<wsdl:output message="tns:SendSMSResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SystemServiceSOAP" type="tns:SystemService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateQRCode">
+      <soap:operation soapAction="http://www.example.org/SystemService/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemService">
+    <wsdl:port binding="tns:SystemServiceSOAP" name="SystemServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

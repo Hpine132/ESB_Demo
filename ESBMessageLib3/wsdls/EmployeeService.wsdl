@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="EmployeeService" targetNamespace="http://www.pjico.com.vn/entity/vn/app/employeesvcs/1" xmlns:empl="http://www.pjico.com.vn/entity/vn/app/employeesvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.pjico.com.vn/entity/vn/employee/employeeservice/1">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/employee/employeeservice/1"
+    		schemaLocation="../service/vn/employee/employeeService.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="InquiryEmployeeDebtRequest">
+    <wsdl:part element="xsd1:InquiryEmployeeDebtReq" name="req" />
+  </wsdl:message>
+  <wsdl:message name="InquiryEmployeeDebtResponse">
+    <wsdl:part element="xsd1:InquiryEmployeeDebtRes" name="res" />
+  </wsdl:message>
+  <wsdl:portType name="EmployeeService">
+    <wsdl:operation name="InquiryEmployeeDebt">
+      <wsdl:input message="empl:InquiryEmployeeDebtRequest"/>
+      <wsdl:output message="empl:InquiryEmployeeDebtResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmployeeServiceSOAP"
+  	type="empl:EmployeeService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="InquiryEmployeeDebt">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/app/employeesvcs/1/InquiryEmployeeDebt" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmployeeService">
+    <wsdl:port binding="empl:EmployeeServiceSOAP" name="EmployeeServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

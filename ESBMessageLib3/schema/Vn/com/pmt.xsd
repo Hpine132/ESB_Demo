@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1"
+	 xmlns:com-acct="http://www.pjico.com.vn/entity/vn/com/account/1"
+	 xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1"
+	 xmlns:com-pmt="http://www.pjico.com.vn/entity/vn/com/pmt/1"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 targetNamespace="http://www.pjico.com.vn/entity/vn/com/pmt/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/1" schemaLocation="../com/com.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/account/1" schemaLocation="../com/account.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/party/1" schemaLocation="../com/party.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/commonheader/1" schemaLocation="../../Common/Envelope/CommonHeader.xsd"/>
+	<xs:complexType name="PmtType">
+		<xs:sequence>
+			<xs:element name="PmtId" type="xs:string" minOccurs="0"/>
+			<xs:element name="PmtInfo" type="com-pmt:PmtInfoType" minOccurs="0"/>
+			<xs:element name="PmtEnvr" type="com-pmt:PmtEnvrType" minOccurs="0"/>
+			<xs:element name="PmtStatus" type="com-pmt:PmtStatusType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PmtInfoType">
+		<xs:sequence>
+			<xs:element name="PmtDebtor" type="com-pmt:DebtorCreditorType" minOccurs="0"/>
+			<xs:element name="PmtCreditor" type="com-pmt:DebtorCreditorType" minOccurs="0"/>
+			<xs:element name="ProcessingCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TransactionAmount" type="com-acct:AmountType" minOccurs="0"/>
+			<xs:element name="PaymentAmount" type="com-acct:AmountType" minOccurs="0"/>
+			<xs:element name="TransmissionTime" type="xs:string" minOccurs="0"/>
+			<xs:element name="TraceNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustomerCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="ServiceCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="PmtInstruction" type="xs:string" minOccurs="0"/>
+			<xs:element name="PmtFee" type="com-acct:FeeInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PmtOtherInfor" type="com-header:NameValuePairsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PmtEnvrType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseEnvrType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PmtStatusType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseStatusType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DebtorCreditorType">
+		<xs:sequence>
+			<xs:element name="Acct" type="com-acct:AcctBasicType" minOccurs="0"/>
+			<xs:element name="Info" type="com-party:PartyType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	
+    <xs:complexType name="MerchantInfoType">
+    	<xs:sequence>
+    		<xs:element name="MerchantId" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="MerchantAccNo" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="MerchantAccName" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="MerchantType" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EcomTransInfoType">
+    	<xs:sequence>
+    		<xs:element name="ApplicationId" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ChannelId" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ClientIp" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="Language" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ProviderId" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ReqTransId" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ReqTransTime" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ErrorCode" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="ErrorDesc" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="ResTransId" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ResTransTime" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+
+
+    		<xs:element name="InitialCode" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ServiceId" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+
+    		<xs:element name="Signature" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="Version" type="xs:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+
+
+
+    		<xs:element name="UserIdCreated" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="UserNameCreated" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="UserIdVerify" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="UserNameVerify" type="xs:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EcomAccountType">
+    	<xs:sequence>
+    		<xs:element name="Account" type="com-acct:AcctBasicType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="Address" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="Currency" type="com-acct:CurrencyType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="MobileContact"
+    			type="com-com:PhoneInfoType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="MobileOtp" type="com-com:PhoneInfoType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="EmailContact" type="com-com:EmailType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="PinInfo" type="com-com:PinInfoType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="BranchExecute"
+    			type="com-com:BranchInfoType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+</xs:schema>

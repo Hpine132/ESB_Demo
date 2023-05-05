@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ECMService" targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1"
+    		schemaLocation="../service/vn/ecm/ecmService.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1">
+
+</xsd:schema></wsdl:types>
+  <wsdl:message name="UploadRequest">
+    <wsdl:part element="tns:UploadReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="UploadResponse">
+    <wsdl:part element="tns:UploadRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusAgencyRequest">
+  	<wsdl:part name="req" element="tns:ChangeStatusAgencyReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusAgencyResponse">
+  	<wsdl:part name="res" element="tns:ChangeStatusAgencyRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusFolderRequest">
+  	<wsdl:part name="req" element="tns:ChangeStatusFolderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusFolderResponse">
+  	<wsdl:part name="res" element="tns:ChangeStatusFolderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateAgencyRequest">
+  	<wsdl:part name="req" element="tns:CreateAgencyReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateAgencyResponse">
+  	<wsdl:part name="res" element="tns:CreateAgencyRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateFolderRequest">
+  	<wsdl:part name="req" element="tns:CreateFolderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateFolderResponse">
+  	<wsdl:part name="res" element="tns:CreateFolderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MoveFolderRequest">
+  	<wsdl:part name="req" element="tns:MoveFolderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MoveFolderResponse">
+  	<wsdl:part name="res" element="tns:MoveFolderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusDocumentRequest">
+  	<wsdl:part name="req" element="tns:ChangeStatusDocumentReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeStatusDocumentResponse">
+  	<wsdl:part name="res" element="tns:ChangeStatusDocumentRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ECMService">
+    <wsdl:operation name="Upload">
+      <wsdl:input message="tns:UploadRequest"/>
+      <wsdl:output message="tns:UploadResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatusAgency">
+    	<wsdl:input message="tns:ChangeStatusAgencyRequest"></wsdl:input>
+    	<wsdl:output message="tns:ChangeStatusAgencyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatusFolder">
+    	<wsdl:input message="tns:ChangeStatusFolderRequest"></wsdl:input>
+    	<wsdl:output message="tns:ChangeStatusFolderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgency">
+    	<wsdl:input message="tns:CreateAgencyRequest"></wsdl:input>
+    	<wsdl:output message="tns:CreateAgencyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFolder">
+    	<wsdl:input message="tns:CreateFolderRequest"></wsdl:input>
+    	<wsdl:output message="tns:CreateFolderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveFolder">
+    	<wsdl:input message="tns:MoveFolderRequest"></wsdl:input>
+    	<wsdl:output message="tns:MoveFolderResponse"></wsdl:output>
+    </wsdl:operation>    <wsdl:operation name="ChangeStatusDocument">    	<wsdl:input message="tns:ChangeStatusDocumentRequest"></wsdl:input>    	<wsdl:output message="tns:ChangeStatusDocumentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ECMServiceSOAP" type="tns:ECMService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="Upload">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/Upload" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ChangeStatusAgency">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/ChangeStatusAgency" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ChangeStatusFolder">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/ChangeStatusFolder" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CreateAgency">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/CreateAgency" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CreateFolder">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/CreateFolder" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="MoveFolder">
+
+  		<soap:operation
+  			soapAction="http://www.pjico.com.vn/entity/vn/ecm/ecmsvcs/1/MoveFolder" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ECMService">
+    <wsdl:port binding="tns:ECMServiceSOAP" name="ECMServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="NotifyFireBase" targetNamespace="http://www.example.org/NotifyFireBase" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/NotifyFireBase" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/NotifyFireBase">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/NotifyFireBase/">
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="http://www.example.org/NotifyFireBase"
+    		schemaLocation="../service/vn/firebase/NotifyFireBase.xsd">
+    	</xsd:import></xsd:schema><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NotifyFireBase">
+</xsd:schema></wsdl:types>
+  <wsdl:message name="NotifyFireBaseRequest">
+    <wsdl:part element="xsd1:NotifyFireBaseReq" name="req"/>
+  </wsdl:message>
+  <wsdl:message name="NotifyFireBaseResponse">
+    <wsdl:part element="xsd1:NotifyFireBaseRes" name="res"/>
+  </wsdl:message>
+  <wsdl:message name="FireBaseRequest">
+  	<wsdl:part name="req" element="xsd1:FireBaseReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FireBaseResponse">
+  	<wsdl:part name="res" element="xsd1:FireBaseRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="NotifyFireBase">
+    <wsdl:operation name="NotifyFireBase">
+      <wsdl:input message="tns:NotifyFireBaseRequest"/>
+      <wsdl:output message="tns:NotifyFireBaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="FireBase">
+    	<wsdl:input message="tns:FireBaseRequest"></wsdl:input>
+    	<wsdl:output message="tns:FireBaseResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotifyFireBaseSOAP" type="tns:NotifyFireBase">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotifyFireBase">
+      <soap:operation soapAction="http://www.example.org/NotifyFireBase/NotifyFireBase"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotifyFireBase">
+    <wsdl:port binding="tns:NotifyFireBaseSOAP" name="NotifyFireBaseSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

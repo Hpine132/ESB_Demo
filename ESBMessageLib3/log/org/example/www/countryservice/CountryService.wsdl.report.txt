@@ -1,0 +1,25 @@
+
+
+Importing file: E:\Demo\Demo4\ESBMessageLib\wsdls\CountryService.wsdl
+
+The WSDL import will proceed with bindings CountryServiceSOAP.
+Creating wsdl schema document for file:///E:/Demo/Demo4/ESBMessageLib/wsdls/CountryService.wsdl.
+Parsing wsdl binding {http://www.example.org/CountryService/}CountryServiceSOAP.
+Parsing wsdl binding input NewOperation.
+Parsing wsdl binding output NewOperation.
+Processing doc style for operation NewOperation.
+Populating WSDL schema wsdls/temp/CountryService.xsd.
+Creating file wsdls/temp/CountryService.xsd in the workspace.
+Creating file wsdls/temp/CountryService_InlineSchema1.xsd in the workspace.
+Creating file /ESBMessageLib/ESBMessageLib/wsdls/temp/schema/Vn/country/CountrySchema.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/temp/schema/Common/Envelope/ServiceEnvelope.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/temp/schema/Common/Envelope/CommonHeader.xsd in the workspace.
+Copying source WSDL CountryService.wsdl to CountryService.wsdl.
+
+Elapsed time processing this message definition file: 7.888 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

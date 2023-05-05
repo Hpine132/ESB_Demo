@@ -1,0 +1,30 @@
+BROKER SCHEMA ErrorHandlers.HTTPXml.ESQLs
+
+
+DECLARE ns NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+CREATE COMPUTE MODULE FilterFault
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+--		DECLARE fCode CHARACTER InputRoot.SOAP.Body.ns:Fault.faultcode;
+--		DECLARE fString CHARACTER InputRoot.SOAP.Body.ns:Fault.faultstring;
+----		CALL ErrorHandlers.Common.ESQLs.throwSOAException(004, fCode, fString);
+--		SET Environment.Variables.ServiceCallout.Status = fCode;	
+--		SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = fString;
+--		RETURN TRUE;
+		SET OutputRoot.Properties = InputRoot.Properties;
+		SET OutputRoot.Properties.ContentType = 'application/xml; charset=utf-8';
+		SET OutputRoot.HTTPRequestHeader = InputRoot.HTTPRequestHeader;
+		SET OutputRoot.HTTPResponseHeader = InputRoot.HTTPResponseHeader;
+		DECLARE httpStatusCode CHAR InputRoot.HTTPResponseHeader."X-Original-HTTP-Status-Code";
+		SET Environment.Variables.ServiceCallout.Status = httpStatusCode;
+		IF httpStatusCode='404' OR httpStatusCode='500' THEN
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = InputRoot.HTTPResponseHeader."X-Original-HTTP-Status-Line";		
+		ELSE
+			DECLARE outString CHAR  CAST(InputRoot.BLOB.BLOB as char  CCSID 1208 Encoding 546);	
+			SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = outString;		
+		END IF;     		
+		RETURN TRUE;
+	END;
+	
+END MODULE;

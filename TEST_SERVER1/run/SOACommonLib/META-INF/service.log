@@ -1,0 +1,174 @@
+
+==============================================
+
+!Wed Apr 26 16:30:46 ICT 2023
+
+Successfully added file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql to BAR file.
+
+Successfully added file SOACommonLib\Cache\GlobalCache\ESQLs\GlobalCacheUtils.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\ComputeModules.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Common\ESQLs\Procedures.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\FilterFault.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\ESQLs\HTTP_Process.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTP\Subflows\HandleHTTP.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\FilterFault.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\ESQLs\HTTP_Process.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\HTTPXml\Subflows\HandleHTTPXml.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterError.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\ESQLs\JavaProcess.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Java\Subflows\HandleJava.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleQueueTimeout.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\HandleWarningQueue.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Queue\ESQLs\ParseQueue.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Queue\Subflows\HandleQueue.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFailure.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\FilterFault.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\ESQLs\SOAP_Process.esql to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAP.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\SOAP\Subflows\HandleSOAPNew.subflow to BAR file.
+
+Successfully added file SOACommonLib\ErrorHandlers\Subflows\HandleGenericErrors.subflow to BAR file.
+
+Successfully added file SOACommonLib\Exception\ESQLs\createException.esql to BAR file.
+
+Successfully added file SOACommonLib\Exception\Subflows\publishException.subflow to BAR file.
+
+Successfully added file SOACommonLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.
+
+Successfully added file SOACommonLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.
+
+Successfully added file SOACommonLib\IBMdefined\soap.xsd to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogRequest.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createBackendLogResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createLog.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createLog.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\ESQLs\createLog.esql to BAR file.
+
+Successfully added file SOACommonLib\Log\Subflows\publishBackendLogEnd.subflow to BAR file.
+
+Successfully added file SOACommonLib\Log\Subflows\publishBackendLogStart.subflow to BAR file.
+
+Successfully added file SOACommonLib\Log\Subflows\publishLog.subflow to BAR file.
+
+Successfully added file SOACommonLib\SOACommonLib\SOAHandleReplyException.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOACreateErrorResponse.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOADynamicLabel.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleException.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOAHandleSecurity.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\ESQLs\SOASetupSOAVariables.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleException.subflow to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleRequest.subflow to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleResponse.subflow to BAR file.
+
+Successfully added file SOACommonLib\Service\Common\Subflows\SOAHandleSecurity.subflow to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonComputeModules.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFilterModules.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonFunctions.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql to BAR file.
+
+Successfully added file SOACommonLib\Service\Utils\ESQLs\CommonProcedures.esql to BAR file.
+
+Successfully added file SOACommonLib\broker\configurableservice\ConfigurableService.esql to BAR file.
+
+Successfully added file SOACommonLib\broker\system\Procedures.esql to BAR file.
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+Successfully added file SOACommonLib\library.descriptor to BAR file.
+
+Successfully added file SOACommonJava\.classpath to BAR file.
+
+Successfully added file SOACommonJava\lib\json-simple-2.3.0.jar to BAR file.

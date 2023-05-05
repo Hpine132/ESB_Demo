@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.pjico.com.vn/entity/vn/finance/1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:com-finance="http://www.pjico.com.vn/entity/vn/finance/1">
+
+    
+
+    <complexType name="MerchandiseType">
+    	<sequence>
+    		<element name="Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="VNName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ENName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TradeFinanceType">
+    	<sequence>
+    		<element name="Type" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TransType">
+    	<sequence>
+    		<element name="TransNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransStatus" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransRefNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransTypeCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransTypeName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransSequence" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ValueDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ExpiredDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SystemDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TransCreator" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransPlace" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    
+
+
+
+
+    <complexType name="LCInfoType">
+    	<sequence>
+    		<element name="FormLC" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ConfirmLC" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Applicant" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryLC" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="NegoInfoType">
+    	<sequence>
+    		<element name="TransSeq" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TransType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="NegotiationDate" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="LetterOfCreditType">
+    	<sequence>
+    		<element name="LCNo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="LCType" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssueDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="ReceiveDate" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="ExpiredDate" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ExpiredPlace" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FormName" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ConfirmIndicative" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Tenor" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="IssuingBank" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ShipFrom" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ShipTo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AvaiableWith" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AvaiableBy" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Applicant" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CountryLC" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

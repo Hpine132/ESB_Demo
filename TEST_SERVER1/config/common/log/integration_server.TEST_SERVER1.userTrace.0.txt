@@ -1,0 +1,35 @@
+
+====== Starting plaintext trace (process ID 11884 - integration_server.TEST_SERVER1) ======
+=== Build ib000-L210923.1848 (S000-L210922.10947) - IBM App Connect Enterprise 12.0.2.0 ===
+=== Platform Windows 10 Home Single Language / AMD64 / 6.3 build 19044  ===
+=== Timestamps are formatted in local time, 420 minutes past GMT. ===
+=== Time now 2023-04-17 17:57:27.168902 ===
+
+
+====== Starting plaintext trace (process ID 13084 - integration_server.TEST_SERVER1) ======
+=== Build ib000-L210923.1848 (S000-L210922.10947) - IBM App Connect Enterprise 12.0.2.0 ===
+=== Platform Windows 10 Home Single Language / AMD64 / 6.3 build 19044  ===
+=== Timestamps are formatted in local time, 420 minutes past GMT. ===
+=== Time now 2023-04-18 11:38:16.351437 ===
+
+
+====== Starting plaintext trace (process ID 1112 - integration_server.TEST_SERVER1) ======
+=== Build ib000-L210923.1848 (S000-L210922.10947) - IBM App Connect Enterprise 12.0.2.0 ===
+=== Platform Windows 10 Home Single Language / AMD64 / 6.3 build 19044  ===
+=== Timestamps are formatted in local time, 420 minutes past GMT. ===
+=== Time now 2023-04-18 13:16:27.802110 ===
+
+
+====== Starting plaintext trace (process ID 14472 - integration_server.TEST_SERVER1) ======
+=== Build ib000-L210923.1848 (S000-L210922.10947) - IBM App Connect Enterprise 12.0.2.0 ===
+=== Platform Windows 10 Home Single Language / AMD64 / 6.3 build 19044  ===
+=== Timestamps are formatted in local time, 420 minutes past GMT. ===
+=== Time now 2023-04-25 01:26:09.570072 ===
+
+
+====== Starting plaintext trace (process ID 1600 - integration_server.TEST_SERVER1) ======
+=== Build ib000-L210923.1848 (S000-L210922.10947) - IBM App Connect Enterprise 12.0.2.0 ===
+=== Platform Windows 10 Home Single Language / AMD64 / 6.3 build 19044  ===
+=== Timestamps are formatted in local time, 420 minutes past GMT. ===
+=== Time now 2023-04-26 16:25:18.849180 ===
+

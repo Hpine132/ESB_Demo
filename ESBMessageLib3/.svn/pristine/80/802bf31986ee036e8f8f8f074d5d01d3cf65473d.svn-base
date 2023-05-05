@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.pjico.com.vn/entity/vn/com/aux/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com-aux="http://www.pjico.com.vn/entity/vn/com/aux/1" xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1">
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/commonheader/1" schemaLocation="../../Common/Envelope/CommonHeader.xsd"/>
+	<xs:complexType name="AuxInfoType">
+		<xs:sequence>
+			<xs:element name="Scode" type="xs:string" minOccurs="0" />
+			<xs:element name="Xref" minOccurs="0" maxOccurs="1"
+				type="xs:string">
+
+			</xs:element>
+			<xs:element name="CraType" type="xs:string" minOccurs="0" />
+			<xs:element name="SettleDay" type="xs:string" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+			<xs:element name="BranchJnl" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+			<xs:element name="CurrentBalance" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+			<xs:element name="UserID" type="xs:string" minOccurs="0" />
+			<xs:element name="Password" type="xs:string" minOccurs="0" />
+			<xs:element name="FunctionCode" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="VTMId" type="xs:string" minOccurs="0" />
+			<xs:element name="MakerID" type="xs:string" minOccurs="0" />
+			<xs:element name="CheckerID" type="xs:string" minOccurs="0" />
+			<xs:element name="Others"
+				type="com-header:NameValuePairsType" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

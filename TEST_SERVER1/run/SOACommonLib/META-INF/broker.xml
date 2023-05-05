@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Broker deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+  <CompiledMessageFlow name="Exception.Subflows.publishException" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Exception.Subflows.publishException#Log4jLoggingPlugin.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#Log4jLoggingPlugin.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#Log4jLoggingPlugin.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#Log4jLoggingPlugin.loggerName" override="putqueue">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#createException.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#createException.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#createException.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.AddRequestToGroup">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.GroupRequestFolderName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.GroupRequestTimeout">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.SSLCertificateLabel">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.SSLCipherSpec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.SSLPeerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.channelName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.connection">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.destinationQueueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.listenerPortNumber">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.policyUrl" override="{ESBPolicy}:ESBMQPolicy">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.queueManagerHostname">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.queueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.queueName" override="soa.exception">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.replyToQ">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.replyToQMgr">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.securityIdentity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.useSSL">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Exception.Subflows.publishException#publishToQ.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.Subflows.HandleGenericErrors" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.Subflows.HandleGenericErrors#handleGenericErrors.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Subflows.HandleGenericErrors#handleGenericErrors.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Subflows.HandleGenericErrors#handleGenericErrors.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Service.Common.Subflows.SOAHandleException" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#Compute.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#Compute.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#Compute.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#CreateMessageTimeout.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#CreateMessageTimeout.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#CreateMessageTimeout.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#HandleReplyException.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#HandleReplyException.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#HandleReplyException.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#SOAP Reply.allowMTOM">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#SOAP Reply.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#SOAP Reply.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr.loggerName" override="handleexception">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr1.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr1.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr1.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#TraceHandleErr1.loggerName" override="handleexception">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#createErrorResponse.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#createErrorResponse.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#createErrorResponse.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToExceptionReply.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToExceptionReply.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToExceptionReply.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToTimeoutLabel.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToTimeoutLabel.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleException#routeToTimeoutLabel.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Service.Common.Subflows.SOAHandleRequest" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#ImmediateEffective" override="1">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.DBSchema">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.Datasource" override="ESBDB">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOASecurity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOA_PERMISSION">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOA_ROLE">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOA_ROLE_PERMISSION">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOA_ROLE_USER">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#SOAHandleSecurity.SOA_USER">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#Validate.validateMaster" override="contentAndValue">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#routeToOperationLabel.connectDatasourceBeforeFlowStarts" override="yes">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#routeToOperationLabel.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#routeToOperationLabel.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#setupSOAVariables.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#setupSOAVariables.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleRequest#setupSOAVariables.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.SOAP.Subflows.HandleSOAPNew" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Failure.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Failure.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Failure.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Fault.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Fault.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#Filter Fault.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#SOAP Process.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#SOAP Process.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAPNew#SOAP Process.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.Queue.Subflows.HandleQueue" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute1.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute1.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute1.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute2.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute2.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Queue.Subflows.HandleQueue#Compute2.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.Java.Subflows.HandleJava" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#Filter Failure.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#Filter Failure.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#Filter Failure.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#FilterError.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#FilterError.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#FilterError.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#SuccessProcess.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#SuccessProcess.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.Java.Subflows.HandleJava#SuccessProcess.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Log.Subflows.publishBackendLogEnd" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#Log4jLoggingPlugin.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#Log4jLoggingPlugin.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#Log4jLoggingPlugin.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#Log4jLoggingPlugin.loggerName" override="putqueue">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#createBackendLogResponse.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#createBackendLogResponse.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#createBackendLogResponse.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.AddRequestToGroup">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.GroupRequestFolderName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.GroupRequestTimeout">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.SSLCertificateLabel">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.SSLCipherSpec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.SSLPeerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.channelName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.connection">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.destinationQueueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.listenerPortNumber">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.policyUrl" override="{ESBPolicy}:ESBMQPolicy">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.queueManagerHostname">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.queueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.queueName" override="target.log">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.replyToQ">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.replyToQMgr">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.securityIdentity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.useSSL">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogEnd#publishToQ1.validateMaster" override="none">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Service.Common.Subflows.SOAHandleResponse" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Service.Common.Subflows.SOAHandleSecurity" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#DBSchema" override="EXGATEWAY">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#Datasource" override="EXGW_DB">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#ExtractAndVerifyIdentity.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#ExtractAndVerifyIdentity.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#ExtractAndVerifyIdentity.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOASecurity" override="SOASecurity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOA_PERMISSION" override="SERVICE">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOA_ROLE" override="SYSROLE">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOA_ROLE_PERMISSION" override="ROLE_SERVICE">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOA_ROLE_USER" override="USER_ROLE">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Service.Common.Subflows.SOAHandleSecurity#SOA_USER" override="SYSUSER">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.HTTP.Subflows.HandleHTTP" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Failure.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Failure.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Failure.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Fault.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Fault.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#Filter Fault.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#HTTP Process.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#HTTP Process.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTP.Subflows.HandleHTTP#HTTP Process.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Log.Subflows.publishLog" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Log.Subflows.publishLog#Log4jLoggingPlugin.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#Log4jLoggingPlugin.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#Log4jLoggingPlugin.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#Log4jLoggingPlugin.loggerName" override="putqueue">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#createLog.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#createLog.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#createLog.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.AddRequestToGroup">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.GroupRequestFolderName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.GroupRequestTimeout">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.SSLCertificateLabel">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.SSLCipherSpec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.SSLPeerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.channelName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.connection">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.destinationQueueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.listenerPortNumber">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.policyUrl" override="{ESBPolicy}:ESBMQPolicy">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.queueManagerHostname">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.queueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.queueName" override="soa.log">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.replyToQ">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.replyToQMgr">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.securityIdentity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.useSSL">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishLog#publishToQ.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Failure.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Failure.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Failure.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Fault.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Fault.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#Filter Fault.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#HTTP Process.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#HTTP Process.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.HTTPXml.Subflows.HandleHTTPXml#HTTP Process.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="ErrorHandlers.SOAP.Subflows.HandleSOAP" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Failure.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Failure.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Failure.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Fault.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Fault.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#Filter Fault.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#SOAP Process.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#SOAP Process.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="ErrorHandlers.SOAP.Subflows.HandleSOAP#SOAP Process.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+  <CompiledMessageFlow name="Log.Subflows.publishBackendLogStart" type="subflow" deployBarfile="SOACommonLibproject.generated.bar" deployTimestamp="2023-04-26 09:30:46">
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#Log4jLoggingPlugin.log4jConfigFile" override="log4jconfig.xml">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#Log4jLoggingPlugin.logLevel" override="ERROR">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#Log4jLoggingPlugin.logText" override="Message: $XML:/$ ExceptionList: $XML:ExceptionList$">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#Log4jLoggingPlugin.loggerName" override="putqueue">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#createBackendLogRequest.connectDatasourceBeforeFlowStarts">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#createBackendLogRequest.dataSource">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#createBackendLogRequest.validateMaster">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.AddRequestToGroup">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.GroupRequestFolderName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.GroupRequestTimeout">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.SSLCertificateLabel">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.SSLCipherSpec">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.SSLPeerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.channelName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.connection">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.destinationQueueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.listenerPortNumber">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.policyUrl" override="{ESBPolicy}:ESBMQPolicy">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.queueManagerHostname">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.queueManagerName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.queueName" override="target.log">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.replyToQ">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.replyToQMgr">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.securityIdentity">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.securityProfileName">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.useSSL">
+    </ConfigurableProperty>
+    <ConfigurableProperty uri="Log.Subflows.publishBackendLogStart#publishToQ.validateMaster">
+    </ConfigurableProperty>
+  </CompiledMessageFlow>
+</Broker>

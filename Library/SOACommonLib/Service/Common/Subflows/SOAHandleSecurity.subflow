@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Service/Common/Subflows/SOAHandleSecurity.subflow" nsPrefix="Service_Common_Subflows_SOAHandleSecurity.subflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Datasource" name="Datasource" lowerBound="1" defaultValueLiteral="EXGW_DB">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.DBSchema" name="DBSchema" lowerBound="1" defaultValueLiteral="EXGATEWAY">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOA_USER" name="SOA_USER" lowerBound="1" defaultValueLiteral="SYSUSER">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOA_ROLE_USER" name="SOA_ROLE_USER" lowerBound="1" defaultValueLiteral="USER_ROLE">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOA_ROLE" name="SOA_ROLE" lowerBound="1" defaultValueLiteral="SYSROLE">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOA_ROLE_PERMISSION" name="SOA_ROLE_PERMISSION" lowerBound="1" defaultValueLiteral="ROLE_SERVICE">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOA_PERMISSION" name="SOA_PERMISSION" lowerBound="1" defaultValueLiteral="SERVICE">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.SOASecurity" name="SOASecurity" lowerBound="1" defaultValueLiteral="SOASecurity">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="SOAHandleSecurity" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/SOACommonLib/icons/full/obj16/SOAHandleSecurity.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/SOACommonLib/icons/full/obj30/SOAHandleSecurity.gif"/>
+    <composition>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="41,84">
+        <translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="281,85">
+        <translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="124,84" computeExpression="esql://routine/Service.Common.ESQLs#SOAHandleSecurity_ExtractAndVerifyIdentity.Main">
+        <translation xmi:type="utility:ConstantString" string="ExtractAndVerifyIdentity"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.Datasource">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.Datasource" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+        <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.DBSchema">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.DBSchema" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+          <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOA_USER">
+            <propertyName xmi:type="utility:TranslatableString" key="Property.SOA_USER" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+            <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOA_ROLE_USER">
+              <propertyName xmi:type="utility:TranslatableString" key="Property.SOA_ROLE_USER" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+              <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOA_ROLE">
+                <propertyName xmi:type="utility:TranslatableString" key="Property.SOA_ROLE" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+                <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOA_ROLE_PERMISSION">
+                  <propertyName xmi:type="utility:TranslatableString" key="Property.SOA_ROLE_PERMISSION" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+                  <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOA_PERMISSION">
+                    <propertyName xmi:type="utility:TranslatableString" key="Property.SOA_PERMISSION" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+                    <propertyDescriptor groupName="Group.SOADB" configurable="true" userDefined="true" describedAttribute="Property.SOASecurity">
+                      <propertyName xmi:type="utility:TranslatableString" key="Property.SOASecurity" bundleName="Service/Common/Subflows/SOAHandleSecurity" pluginId="SOACommonLib"/>
+                    </propertyDescriptor>
+                  </propertyDescriptor>
+                </propertyDescriptor>
+              </propertyDescriptor>
+            </propertyDescriptor>
+          </propertyDescriptor>
+        </propertyDescriptor>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

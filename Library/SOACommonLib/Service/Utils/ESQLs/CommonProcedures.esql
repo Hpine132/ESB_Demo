@@ -1,0 +1,232 @@
+
+
+BROKER SCHEMA Service.Utils.ESQLs
+
+CREATE PROCEDURE checkIP(IN ipcheck CHAR, IN listIPAcess CHAR)
+RETURNS boolean
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.SOASecurity.checkIP";
+
+CREATE PROCEDURE validateInputRegex(IN input CHAR, IN regex CHAR)
+RETURNS boolean
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.SOASecurity.validateInput";
+
+CREATE PROCEDURE maskData(IN RegexString CHAR, IN StringMask CHAR)
+RETURNS CHARACTER
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.SOASecurity.maskData";
+
+CREATE PROCEDURE cutUntilMeetChar(INOUT inputString CHARACTER, IN meetChar CHARACTER) RETURNS CHARACTER
+BEGIN
+	DECLARE i INTEGER POSITION(meetChar IN inputString);
+	IF i > 0 THEN
+		DECLARE cutChar CHARACTER SUBSTRING(inputString FROM 1 FOR i - 1);
+		SET inputString = SUBSTRING(inputString FROM i + 1);
+		RETURN cutChar;
+	END IF;
+END;
+
+CREATE PROCEDURE tokenize(IN inputString CHARACTER, IN delimiter CHARACTER, INOUT outputContainer REFERENCE)
+BEGIN
+	DECLARE i INTEGER POSITION(delimiter IN inputString);
+
+	WHILE i > 0 DO
+		CREATE LASTCHILD OF outputContainer TYPE NameValue NAME 'ITEM' VALUE SUBSTRING(inputString FROM 0 FOR i);
+		SET inputString = OVERLAY(inputString PLACING '' FROM 1 FOR i);
+		SET i = POSITION(delimiter IN inputString);
+
+	END WHILE;
+
+	CREATE LASTCHILD OF outputContainer TYPE NameValue NAME 'ITEM' VALUE RIGHT(inputString, LENGTH(inputString));
+
+END;
+
+CREATE PROCEDURE moveToFinalException(INOUT rootEx REFERENCE)
+BEGIN
+	IF ENDSWITH(FIELDNAME(rootEx),'Exception') THEN
+		WHILE (rootEx.Number is not null) DO
+			move rootEx lastchild;
+		END WHILE;
+		MOVE rootEx PARENT;
+	END IF;
+END;
+
+CREATE PROCEDURE moveFirstChildWhere(INOUT ref REFERENCE, IN childName CHAR, IN childField CHAR, IN childValue CHAR) RETURNS BOOLEAN
+BEGIN
+	DECLARE hasMatch BOOLEAN FALSE; -- hasMatch is "LASTMOVE(ref)"
+	DECLARE ref2 REFERENCE TO ref;
+	MOVE ref2 FIRSTCHILD NAME childName;
+	WHILE LASTMOVE(ref2) AND NOT hasMatch DO
+		IF ref2.{childField} = childValue THEN
+			MOVE ref TO ref2;
+			SET hasMatch = TRUE;
+		END IF;
+		MOVE ref2 NEXTSIBLING REPEAT TYPE NAME;
+	END WHILE;
+	RETURN hasMatch;
+END;
+
+CREATE PROCEDURE moveLastChildWhere(INOUT ref REFERENCE, IN childName CHAR, IN childField CHAR, IN childValue CHAR) RETURNS BOOLEAN
+BEGIN
+	DECLARE hasMatch BOOLEAN FALSE; -- hasMatch is "LASTMOVE(ref)"
+	DECLARE ref2 REFERENCE TO ref;
+	MOVE ref2 LASTCHILD NAME childName;
+	WHILE LASTMOVE(ref2) AND NOT hasMatch DO
+		IF ref2.{childField} = childValue THEN
+			MOVE ref TO ref2;
+			SET hasMatch = TRUE;
+		END IF;
+		MOVE ref2 PREVIOUSSIBLING REPEAT TYPE NAME;
+	END WHILE;
+	RETURN hasMatch;
+END;
+
+CREATE PROCEDURE moveNextSiblingWhere(INOUT ref REFERENCE, IN childName CHAR, IN childField CHAR, IN childValue CHAR) RETURNS BOOLEAN
+BEGIN
+	DECLARE hasMatch BOOLEAN FALSE; -- hasMatch is "LASTMOVE(ref)"
+	DECLARE ref2 REFERENCE TO ref;
+	MOVE ref2 NEXTSIBLING NAME childName;
+	WHILE LASTMOVE(ref2) AND NOT hasMatch DO
+		IF ref2.{childField} = childValue THEN
+			MOVE ref TO ref2;
+			SET hasMatch = TRUE;
+		END IF;
+		MOVE ref2 NEXTSIBLING REPEAT TYPE NAME;
+	END WHILE;
+	RETURN hasMatch;
+END;
+
+CREATE PROCEDURE movePreviousSiblingWhere(INOUT ref REFERENCE, IN childName CHAR, IN childField CHAR, IN childValue CHAR) RETURNS BOOLEAN
+BEGIN
+	DECLARE hasMatch BOOLEAN FALSE; -- hasMatch is "LASTMOVE(ref)"
+	DECLARE ref2 REFERENCE TO ref;
+	MOVE ref2 PREVIOUSSIBLING NAME childName;
+	WHILE LASTMOVE(ref2) AND NOT hasMatch DO
+		IF ref2.{childField} = childValue THEN
+			MOVE ref TO ref2;
+			SET hasMatch = TRUE;
+		END IF;
+		MOVE ref2 PREVIOUSSIBLING REPEAT TYPE NAME;
+	END WHILE;
+	RETURN hasMatch;
+END;
+
+CREATE PROCEDURE select_vw_esb_error_code(IN input CHAR)
+LANGUAGE DATABASE
+DYNAMIC RESULT SETS 1
+EXTERNAL NAME ".pkg_esb_error_code.getdata_from_vw_esb_error_code";
+
+
+CREATE PROCEDURE select_vw_vw_user_service(IN input CHAR)
+LANGUAGE DATABASE
+DYNAMIC RESULT SETS 1
+EXTERNAL NAME ".pkg_user_service.getdata_from_vw_user_service";
+
+CREATE PROCEDURE buildResponseStatus(IN Status CHAR, IN globalErrorCode CHAR, IN globalErrorDesc CHAR, IN backEndErrorCode CHAR, IN backEndErrorDesc CHAR, IN refResponseStatus REFERENCE)
+BEGIN
+	DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+	IF globalErrorDesc IS NULL THEN
+		CREATE FIELD refResponseStatus.SOAERRORCODE;
+		DECLARE SOAERRORCODE REFERENCE TO refResponseStatus.SOAERRORCODE;
+		CALL Cache.GlobalCache.ESQLs.getCacheValue('SOAERRORCOCE', globalErrorCode, SOAERRORCODE);
+		SET globalErrorDesc = SOAERRORCODE.ERRDESCEN;
+		DELETE FIELD refResponseStatus.SOAERRORCODE;
+	END IF;
+	SET refResponseStatus.common:Status = Status;
+	SET refResponseStatus.common:GlobalErrorCode = globalErrorCode;
+	SET refResponseStatus.common:GlobalErrorDescription = globalErrorDesc;
+	SET refResponseStatus.common:ErrorInfo.common:ErrorCode = backEndErrorCode;
+	SET refResponseStatus.common:ErrorInfo.common:ErrorDesc = backEndErrorDesc;
+END;
+
+CREATE PROCEDURE buildResponse(IN Status CHAR, IN backEndErrorCode CHAR, IN backEndErrorDesc CHAR, IN targetId CHAR, IN refResponseStatus REFERENCE)
+BEGIN
+	DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+	DECLARE globalErrorCode, globalErrorDesc CHAR;
+
+	CREATE FIELD refResponseStatus.ERRORCODEMAPPING;
+	DECLARE errCodeMapping REFERENCE TO refResponseStatus.ERRORCODEMAPPING;
+	--Get more error info by backendErrorCode
+	CALL Cache.GlobalCache.ESQLs.getCacheValue('ERRORCODEMAPPING',targetId||backEndErrorCode,errCodeMapping);
+
+	SET globalErrorCode = errCodeMapping.IIBERRORCODE;
+	SET globalErrorDesc = errCodeMapping.CUSTOMERRDESCEN;
+	IF globalErrorDesc IS NULL THEN
+		CREATE FIELD refResponseStatus.SOAERRORCODE;
+		DECLARE SOAERRORCODE REFERENCE TO refResponseStatus.SOAERRORCODE;
+		CALL Cache.GlobalCache.ESQLs.getCacheValue('SOAERRORCOCE', globalErrorCode, SOAERRORCODE);
+		SET globalErrorDesc = SOAERRORCODE.ERRDESCEN;
+		DELETE FIELD refResponseStatus.SOAERRORCODE;
+	END IF;
+
+	CREATE FIELD refResponseStatus.common:ResponseStatus;
+	DECLARE responseStatusRef REFERENCE TO refResponseStatus.common:ResponseStatus;
+	SET responseStatusRef.common:Status = Status;
+	SET responseStatusRef.common:GlobalErrorCode = globalErrorCode;
+	SET responseStatusRef.common:GlobalErrorDescription = globalErrorDesc;
+	SET responseStatusRef.common:ErrorInfo.common:ErrorCode = backEndErrorCode;
+	SET responseStatusRef.common:ErrorInfo.common:ErrorDesc = backEndErrorDesc;
+
+	DELETE FIELD refResponseStatus.ERRORCODEMAPPING;
+END;
+--CREATE PROCEDURE getUDConfigHttp(IN Service CHAR, IN Key CHAR, IN refEnv REFERENCE, IN refHttp REFERENCE)
+--BEGIN
+-- DECLARE timeDefault INTEGER 180;
+-- CALL COALESCE(Service.Utils.ESQLs.getUserDefinedConfig('ESBConfig','DefaultWS.Timeout'), 180) INTO timeDefault;
+--
+-- DECLARE addIndx INTEGER CARDINALITY(refEnv.NameValuePairs[]);
+-- DECLARE url CHAR broker.configurableservice.getValue(Service,Key||'.Url');
+-- SET refEnv.NameValuePairs[addIndx+1].Name = Key;
+-- SET refEnv.NameValuePairs[addIndx+1].Value = url;
+-- SET refHttp.Destination.SOAP.Request.Transport.HTTP.WebServiceURL = url;
+-- DECLARE timeout INTEGER COALESCE (broker.configurableservice.getValue(Service,Key||'.Timeout'), timeDefault);
+-- SET refEnv.NameValuePairs[addIndx+2].Name = Key;
+-- SET refEnv.NameValuePairs[addIndx+2].Value = timeout;
+-- SET refHttp.Destination.SOAP.Request.Transport.HTTP.Timeout = timeout;
+--END;
+
+CREATE PROCEDURE soapInputTimeout(IN refLocalEvr REFERENCE, IN refInputSoap REFERENCE)
+BEGIN
+	DECLARE timeDefault INTEGER 80;
+	CALL COALESCE(Service.Utils.ESQLs.getUserDefinedConfig('FrontendConfig','Default.Timeout'), 80) INTO timeDefault;
+
+	DECLARE ServiceName CHARACTER refInputSoap.Context.service;
+	DECLARE OperationName CHARACTER refInputSoap.Context.operation;
+	DECLARE ServiceTimeout CHARACTER ServiceName|| '.'|| OperationName||'.Timeout';
+	DECLARE timeout INTEGER;
+	CALL COALESCE(Service.Utils.ESQLs.getUserDefinedConfig('FrontendConfig', ServiceTimeout), timeDefault) INTO timeout;
+
+	SET timeout = timeout - 180;
+	DECLARE bolTimout BOOLEAN ChangeIdentifierTimeout(refLocalEvr.Destination.SOAP.Reply.ReplyIdentifier, timeout);
+END;
+
+CREATE PROCEDURE buildJoltBackendRequestLog(IN env REFERENCE, IN SystemName CHAR, IN ServiceName CHAR)
+BEGIN
+	DECLARE soa NAMESPACE 'http://www.pjico.com.vn/common/envelope/soaenvelope/1';
+	DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+	DECLARE addIndx INTEGER CARDINALITY(env.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation.common:NameValuePairs[]);
+	SET env.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation.common:NameValuePairs[addIndx+1].common:Name = 'TARGETID';
+	SET env.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation.common:NameValuePairs[addIndx+1].common:Value = SystemName;
+
+	SET env.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation.common:NameValuePairs[addIndx+2].common:Name = 'TARGETSERVICE';
+	SET env.Variables.SOAVariables.soa:SOAEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:AdditionalInformation.common:NameValuePairs[addIndx+2].common:Value = ServiceName;
+	CREATE FIRSTCHILD OF env.Variables.ServiceCallout.Status;
+	SET env.Variables.ServiceCallout.LogType = 'JOLT';
+	CREATE LASTCHILD OF env.Variables.ServiceCallout.ResponseDetail.ErrorDesc;
+	CREATE LASTCHILD OF env.Variables.ServiceCallout.ResponseDetail.ResponseData.JoltResponse;
+END;
+
+CREATE PROCEDURE select_user_service(IN input CHAR)
+LANGUAGE DATABASE
+DYNAMIC RESULT SETS 1
+EXTERNAL NAME ".pkg_common.getdata_from_user_service";
+
+CREATE PROCEDURE hashValueWithJava(IN password CHAR)
+RETURNS CHAR
+LANGUAGE JAVA
+EXTERNAL NAME "utils.soa.SOASecurity.hashValue";
+
+--CREATE PROCEDURE verifyCertificate(IN cert CHAR, IN intermediateCert CHAR, IN nonce CHAR, IN env REFERENCE, IN pkiServer CHAR)
+--LANGUAGE JAVA
+--EXTERNAL NAME "utils.pki.OCSPClient.verifyCertificate";

@@ -1,0 +1,25 @@
+BROKER SCHEMA ErrorHandlers.SOAP.ESQLs
+
+DECLARE ns25 NAMESPACE 'http://www.westernunion.com/schema/xrsi';
+DECLARE ns NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+CREATE COMPUTE MODULE FilterFault
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE fCode CHARACTER InputRoot.SOAP.Body.ns:Fault.faultcode;
+		DECLARE fString CHARACTER InputRoot.SOAP.Body.ns:Fault.faultstring;
+		DECLARE fError CHARACTER InputRoot.SOAP.Body.ns:Fault.*.error; 
+		--DECLARE fError CHARACTER InputRoot.SOAP.Body.ns:Fault.detail.ns25:"error-reply".error;
+		 
+		IF fError IS NOT NULL  THEN 
+			SET fString = fString || ':' || fError;
+		END IF;
+--		CALL ErrorHandlers.Common.ESQLs.throwSOAException(004, fCode, fString);
+		SET Environment.Variables.ServiceCallout.Status = fCode;	
+		SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = fString;
+		
+		RETURN TRUE;
+	END;
+	
+	
+END MODULE;

@@ -1,0 +1,16 @@
+BROKER SCHEMA ErrorHandlers.Java.ESQLs
+
+DECLARE ns NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+CREATE COMPUTE MODULE FilterError
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET Environment.Variables.ServiceCallout.Status = '1';	
+		SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorCode = '999';
+		SET Environment.Variables.ServiceCallout.ResponseDetail.ErrorDesc = 'ESB Java Error';
+		RETURN TRUE;
+	END;
+	
+	
+END MODULE;

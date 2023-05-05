@@ -1,0 +1,321 @@
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd.
+Successfully added file ESBMessageLib\IBMdefined\org\w3\www\_2003\_05\soapenvelope\soapenv12.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd.
+Successfully added file ESBMessageLib\IBMdefined\org\w3\www\xml\_1998\namespace\xml.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd.
+Successfully added file ESBMessageLib\IBMdefined\org\xmlsoap\schemas\soap\envelope\soapenv11.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\IBMdefined\soap.xsd.
+Successfully added file ESBMessageLib\IBMdefined\soap.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\library.descriptor.
+Successfully added file ESBMessageLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file ESBMessageLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\library.descriptor.
+Successfully added file ESBMessageLib\library.descriptor to BAR file.
+Elapsed time: 0 second(s).
+
+Successfully added file ESBMessageLib\library.descriptor to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\Envelope\CommonHeader.xsd.
+Successfully added file ESBMessageLib\schema\Common\Envelope\CommonHeader.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\Envelope\SOAEnvelope.xsd.
+Successfully added file ESBMessageLib\schema\Common\Envelope\SOAEnvelope.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\Envelope\ServiceEnvelope.xsd.
+Successfully added file ESBMessageLib\schema\Common\Envelope\ServiceEnvelope.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\ExceptionHandling\ErrorReport.xsd.
+Successfully added file ESBMessageLib\schema\Common\ExceptionHandling\ErrorReport.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\ExceptionHandling\Exception.xsd.
+Successfully added file ESBMessageLib\schema\Common\ExceptionHandling\Exception.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\Logging\EngineLog.xsd.
+Successfully added file ESBMessageLib\schema\Common\Logging\EngineLog.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Common\Logging\Log.xsd.
+Successfully added file ESBMessageLib\schema\Common\Logging\Log.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Environment\EnvironmentVariables.xsd.
+Successfully added file ESBMessageLib\schema\Environment\EnvironmentVariables.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\account.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\account.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\com.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\com.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\finance.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\finance.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\insurance.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\insurance.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\loan.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\loan.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\party.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\party.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\pjico.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\pjico.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\pmt.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\pmt.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\tax.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\tax.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\westernunion.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\westernunion.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\com\xfer.xsd.
+Successfully added file ESBMessageLib\schema\Vn\com\xfer.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\schema\Vn\country\CountrySchema.xsd.
+Successfully added file ESBMessageLib\schema\Vn\country\CountrySchema.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\applicationinsurance\applicationinsuranceService.xsd.
+Successfully added file ESBMessageLib\service\vn\applicationinsurance\applicationinsuranceService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\assessment\assessmentService.xsd.
+Successfully added file ESBMessageLib\service\vn\assessment\assessmentService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\authentication\authenticationService.xsd.
+Successfully added file ESBMessageLib\service\vn\authentication\authenticationService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\compensation\compensationService.xsd.
+Successfully added file ESBMessageLib\service\vn\compensation\compensationService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\customer\customerService.xsd.
+Successfully added file ESBMessageLib\service\vn\customer\customerService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\ecm\ecmService.xsd.
+Successfully added file ESBMessageLib\service\vn\ecm\ecmService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\employee\employeeService.xsd.
+Successfully added file ESBMessageLib\service\vn\employee\employeeService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\payment\paymentService.xsd.
+Successfully added file ESBMessageLib\service\vn\payment\paymentService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\service\vn\system\systemService.xsd.
+Successfully added file ESBMessageLib\service\vn\system\systemService.xsd to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\ApplicationInsuranceService.wsdl.
+Successfully added file ESBMessageLib\wsdls\ApplicationInsuranceService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\AssessmentService.wsdl.
+Successfully added file ESBMessageLib\wsdls\AssessmentService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\AuthenticationService.wsdl.
+Successfully added file ESBMessageLib\wsdls\AuthenticationService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\CompensationService.wsdl.
+Successfully added file ESBMessageLib\wsdls\CompensationService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\CountryService.wsdl.
+Successfully added file ESBMessageLib\wsdls\CountryService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\CustomerService.wsdl.
+Successfully added file ESBMessageLib\wsdls\CustomerService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\ECMService.wsdl.
+Successfully added file ESBMessageLib\wsdls\ECMService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\EmployeeService.wsdl.
+Successfully added file ESBMessageLib\wsdls\EmployeeService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\PaymentService.wsdl.
+Successfully added file ESBMessageLib\wsdls\PaymentService.wsdl to BAR file.
+
+==============================================
+
+!Wed Apr 19 15:40:25 ICT 2023
+
+Processing file ESBMessageLib\wsdls\SystemService.wsdl.
+Successfully added file ESBMessageLib\wsdls\SystemService.wsdl to BAR file.

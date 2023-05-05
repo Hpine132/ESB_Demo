@@ -1,0 +1,25 @@
+
+
+Importing file: E:\Demo\Demo4\Library\ESBMessageLib\wsdls\NewWSDLFile.wsdl
+
+The WSDL import will proceed with bindings NewWSDLFileSOAP.
+Creating wsdl schema document for file:///E:/Demo/Demo4/Library/ESBMessageLib/wsdls/NewWSDLFile.wsdl.
+Parsing wsdl binding {http://www.example.org/NewWSDLFile/}NewWSDLFileSOAP.
+Parsing wsdl binding input NewOperation.
+Parsing wsdl binding output NewOperation.
+Processing doc style for operation NewOperation.
+Populating WSDL schema wsdls/temp/NewWSDLFile.xsd.
+Creating file wsdls/temp/NewWSDLFile.xsd in the workspace.
+Creating file wsdls/temp/NewWSDLFile_InlineSchema1.xsd in the workspace.
+Creating file /ESBMessageLib/ESBMessageLib/wsdls/temp/schema/Vn/country/CountrySchema.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/temp/schema/Common/Envelope/ServiceEnvelope.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/temp/schema/Common/Envelope/CommonHeader.xsd in the workspace.
+Copying source WSDL NewWSDLFile.wsdl to NewWSDLFile.wsdl.
+
+Elapsed time processing this message definition file: 0.699 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

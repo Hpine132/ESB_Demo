@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:com-party="http://www.pjico.com.vn/entity/vn/com/party/1"
+	 xmlns:com-com="http://www.pjico.com.vn/entity/vn/com/1"
+	 xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	 targetNamespace="http://www.pjico.com.vn/entity/vn/com/party/1"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.pjico.com.vn/entity/vn/com/1" schemaLocation="com.xsd"/>
+	<xs:import namespace="http://www.pjico.com.vn/common/envelope/commonheader/1" schemaLocation="../../Common/Envelope/CommonHeader.xsd"/>
+	<xs:complexType name="PartyType">
+		<xs:sequence>
+			<xs:element name="PartyID" type="xs:string" minOccurs="0" />
+			<xs:element name="PartyCode" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="PartyName" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+
+			<xs:element name="PartyInfo" minOccurs="0"
+				type="com-party:PartyInfoType">
+
+			</xs:element>
+			<xs:element name="PartyStatus"
+				type="com-party:PartyStatusType" minOccurs="0" />
+			<xs:element name="PartyEnvr" type="com-party:PartyEnvrType"
+				minOccurs="0" />
+			<xs:element name="UdfDetails"
+				type="com-header:NameValuePairsType" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="OrgPartyInfo"
+				type="com-party:OrgPartyInfoType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="PersonalPartyInfo"
+				type="com-party:PersonalPartyInfoType" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="BankInfo" type="com-com:BankInfoType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CreateDt" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="CreateUID" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="EffectiveDt" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="ExpiredDt" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="ModifiedDt" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="ModifiedUID" type="xs:string"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyInfoType">
+		<xs:sequence>
+
+
+
+			<xs:element name="PartyType" type="xs:string" minOccurs="0" />
+			<xs:element name="PartyClass" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="PartyGroup" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Title" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="ContactInfo"
+				type="com-com:ContactInfoType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Religion" type="xs:string" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="TaxInfo" type="com-com:TaxInfoType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+
+
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonalPartyInfoType">
+		<xs:complexContent>
+			<xs:extension base="com-party:PartyInfoType">
+				<xs:sequence>
+					<xs:element name="CIFNo" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="ShortName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="FullName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="SurName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="MiddleName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="LongName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="IDInfo" type="com-com:IDInfoType"
+						minOccurs="0" maxOccurs="unbounded" />
+
+					<xs:element name="Gender" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="BirthDt" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="BirthPlace" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="MaritalStat" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="EducationStatus" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="DependChild" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Accommodation" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Image" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Media" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Ssn" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="SmsBanking" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="Lang" type="xs:string"
+						minOccurs="0" />
+
+
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrgPartyInfoType">
+		<xs:complexContent>
+			<xs:extension base="com-party:PartyInfoType">
+				<xs:sequence>
+					<xs:element name="Name" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="LegalName" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="TaxExempt" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="LegalForm" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="OrgEstablishDt" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="NumEmployees" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="FiscalYearEnd" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="FinancialReportsURL"
+						type="xs:string" minOccurs="0" />
+					<xs:element name="CIFNo" type="xs:string"
+						maxOccurs="1" minOccurs="0">
+					</xs:element>
+					<xs:element name="BrnType" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="BrnTypeName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="BrnNo" type="xs:string"
+						maxOccurs="1" minOccurs="0">
+					</xs:element>
+					<xs:element name="IssueDateOfBrn" type="xs:string"
+						maxOccurs="1" minOccurs="0">
+					</xs:element>
+					<xs:element name="IssuedPlaceOfBrn" type="xs:string"
+						maxOccurs="1" minOccurs="0">
+					</xs:element>
+					<xs:element name="BusinessUnit" type="xs:string"
+						maxOccurs="1" minOccurs="0">
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PartyStatusType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseStatusType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PartyEnvrType">
+		<xs:complexContent>
+			<xs:extension base="com-com:BaseEnvrType"/>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IssueDateOfTaxCodeType">
+		<xs:sequence>
+			<xs:element name="IssuedPlaceOfTaxCode" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,26 @@
+
+
+Importing file: F:\Work\FIS\ESB\VBA\DEV\Workplace3\ESBMessageLib\wsdls\LetterOfCredit.wsdl
+
+The WSDL import will proceed with bindings LetterOfCreditSOAP.
+Creating wsdl schema document for file:///F:/Work/FIS/ESB/VBA/DEV/Workplace3/ESBMessageLib/wsdls/LetterOfCredit.wsdl.
+Parsing wsdl binding {http://www.example.org/LetterOfCredit/}LetterOfCreditSOAP.
+Parsing wsdl binding input IssueLC.
+Parsing wsdl binding output IssueLC.
+Processing doc style for operation IssueLC.
+Populating WSDL schema wsdls/LetterOfCredit.xsd.
+Creating file wsdls/LetterOfCredit.xsd in the workspace.
+Creating file wsdls/LetterOfCredit_InlineSchema1.xsd in the workspace.
+Creating file /ESBMessageLib/ESBMessageLib/wsdls/service/vn/letterofcredit/letterofCredit.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/schema/Vn/com/finance.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/schema/Common/Envelope/ServiceEnvelope.xsd in the workspace.
+Creating file /ESBMessageLib/wsdls/schema/Common/Envelope/CommonHeader.xsd in the workspace.
+Copying source WSDL LetterOfCredit.wsdl to LetterOfCredit.wsdl.
+
+Elapsed time processing this message definition file: 2.408 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

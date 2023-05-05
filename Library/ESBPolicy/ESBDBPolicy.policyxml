@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+  <policy policyType="JDBCProviders" policyName="ESBDBPolicy" policyTemplate="Oracle">
+    <databaseName>esb</databaseName>
+    <databaseType>Oracle</databaseType>
+    <databaseVersion></databaseVersion>
+    <type4DriverClassName>oracle.jdbc.OracleDriver</type4DriverClassName>
+    <type4DatasourceClassName>oracle.jdbc.xa.client.OracleXADataSource</type4DatasourceClassName>
+    <connectionUrlFormat>jdbc:oracle:thin:[user]/[password]@[serverName]:[portNumber]/[connectionUrlFormatAttr1]</connectionUrlFormat>
+    <connectionUrlFormatAttr1>esbpdb</connectionUrlFormatAttr1>
+    <connectionUrlFormatAttr2></connectionUrlFormatAttr2>
+    <connectionUrlFormatAttr3></connectionUrlFormatAttr3>
+    <connectionUrlFormatAttr4></connectionUrlFormatAttr4>
+    <connectionUrlFormatAttr5></connectionUrlFormatAttr5>
+    <serverName>10.14.107.74</serverName>
+    <portNumber>1521</portNumber>
+    <jarsURL>/setup/oraclient/instantclient_19_15</jarsURL>
+    <databaseSchemaNames>ESB</databaseSchemaNames>
+    <description></description>
+    <maxConnectionPoolSize>0</maxConnectionPoolSize>
+    <securityIdentity>ESBDB</securityIdentity>
+    <environmentParms></environmentParms>
+    <jdbcProviderXASupport>false</jdbcProviderXASupport>
+    <useDeployedJars>false</useDeployedJars>
+  </policy>
+</policies>

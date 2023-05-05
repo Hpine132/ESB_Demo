@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/NotifyFireBase"
+	xmlns:tns="http://www.example.org/NotifyFireBase"
+	elementFormDefault="qualified"
+	xmlns:com-header="http://www.pjico.com.vn/common/envelope/commonheader/1"
+	xmlns:com-soa="http://www.pjico.com.vn/common/envelope/soaenvelope/1"
+	xmlns:com-envelope="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+
+	<import
+		schemaLocation="../../../schema/Common/Envelope/CommonHeader.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/commonheader/1">
+	</import>
+	<import
+		schemaLocation="../../../schema/Common/Envelope/SOAEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/soaenvelope/1">
+	</import>
+	<import
+		schemaLocation="../../../schema/Common/Envelope/ServiceEnvelope.xsd"
+		namespace="http://www.pjico.com.vn/common/envelope/serviceenvelope/1">
+	</import>
+	<import></import>
+	<complexType name="NotifyFireBaseReqType">
+		<complexContent>
+			<extension
+				base="com-envelope:BaseServiceEnvelopeRequestType">
+				<sequence>
+					<element name="BodyReq"
+						type="tns:NotifyFireBaseReqBodyType" maxOccurs="1"
+						minOccurs="0">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="NotifyFireBaseReqBodyType">
+		<sequence>
+			<element name="FunctionCode" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Type" type="com-header:NameValuePairsType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="Token" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Title" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Topic" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Content" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Data" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="NotifyFireBaseResType">
+		<complexContent>
+			<extension
+				base="com-envelope:BaseServiceEnvelopeResponseType">
+				<sequence>
+					<element name="BodyRes"
+						type="tns:NotifyFireBaseResBodyType" maxOccurs="1"
+						minOccurs="0">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="NotifyFireBaseResBodyType">
+		<sequence>
+			<element name="FunctionCode" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Name" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="Type" type="com-header:NameValuePairsType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="messageId" type="string" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+    <element name="NotifyFireBaseReq" type="tns:NotifyFireBaseReqType"></element>
+
+    <element name="NotifyFireBaseRes" type="tns:NotifyFireBaseResType"></element>
+
+    <complexType name="FireBaseReqType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Title" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Topic" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Content" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TokenID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="FireBaseResType">
+    	<sequence>
+    		<element name="FunctionCode" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="FireBaseReq" type="tns:FireBaseReqType"></element>
+
+    <element name="FireBaseRes" type="tns:FireBaseReqType"></element>
+
+
+    <complexType name="ListData">
+    	<sequence>
+    		<element name="ListData"
+    			type="com-header:NameValuePairsType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

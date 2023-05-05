@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" overrideConfigurableProperties="false" includeESQL="false">
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1680083374000" workspaceResource="/SourceServiceLib/Service/Utils/CommonProcedure.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLib\Service\Utils\CommonProcedure.esql.&#xA;Successfully added file SourceServiceLib\Service\Utils\CommonProcedure.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="Service\Utils\CommonProcedure.esql"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1680083374000" workspaceResource="/SourceServiceLib/library.descriptor">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLib\library.descriptor.&#xA;Successfully added file SourceServiceLib\library.descriptor to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file SourceServiceLib\library.descriptor to BAR file.&#xA;" severity="0"/>
+      <barEntry name="library.descriptor"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1681702869827" workspaceResource="/SourceServiceLibJava/.classpath">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\.classpath.&#xA;Successfully added file SourceServiceLibJava\.classpath to BAR file.&#xA;Elapsed time: 0.601 second(s).&#xA;" severity="0"/>
+      <barEntry name="SourceServiceLibJava.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659080292000" workspaceResource="/SourceServiceLibJava/lib/google-auth-library-oauth2-http-1.8.1.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\google-auth-library-oauth2-http-1.8.1.jar.&#xA;Successfully added file SourceServiceLibJava\lib\google-auth-library-oauth2-http-1.8.1.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/google-auth-library-oauth2-http-1.8.1.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659082870000" workspaceResource="/SourceServiceLibJava/lib/gson-2.9.0.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\gson-2.9.0.jar.&#xA;Successfully added file SourceServiceLibJava\lib\gson-2.9.0.jar to BAR file.&#xA;Elapsed time: 0.004 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/gson-2.9.0.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659082936000" workspaceResource="/SourceServiceLibJava/lib/opencensus-api-0.31.1.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\opencensus-api-0.31.1.jar.&#xA;Successfully added file SourceServiceLibJava\lib\opencensus-api-0.31.1.jar to BAR file.&#xA;Elapsed time: 0.001 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/opencensus-api-0.31.1.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659083072000" workspaceResource="/SourceServiceLibJava/lib/grpc-context-1.47.0.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\grpc-context-1.47.0.jar.&#xA;Successfully added file SourceServiceLibJava\lib\grpc-context-1.47.0.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/grpc-context-1.47.0.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659082780000" workspaceResource="/SourceServiceLibJava/lib/google-http-client-gson-1.42.0.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\google-http-client-gson-1.42.0.jar.&#xA;Successfully added file SourceServiceLibJava\lib\google-http-client-gson-1.42.0.jar to BAR file.&#xA;Elapsed time: 0.001 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/google-http-client-gson-1.42.0.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659083010000" workspaceResource="/SourceServiceLibJava/lib/opencensus-contrib-http-util-0.31.1.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\opencensus-contrib-http-util-0.31.1.jar.&#xA;Successfully added file SourceServiceLibJava\lib\opencensus-contrib-http-util-0.31.1.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/opencensus-contrib-http-util-0.31.1.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659672950000" workspaceResource="/SourceServiceLibJava/lib/json-simple-2.3.0.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\json-simple-2.3.0.jar.&#xA;Successfully added file SourceServiceLibJava\lib\json-simple-2.3.0.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/json-simple-2.3.0.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659672950000" workspaceResource="/SourceServiceLibJava/lib/ojdbc6.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\ojdbc6.jar.&#xA;Successfully added file SourceServiceLibJava\lib\ojdbc6.jar to BAR file.&#xA;Elapsed time: 0.002 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/ojdbc6.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659081386000" workspaceResource="/SourceServiceLibJava/lib/guava-31.1-jre.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\guava-31.1-jre.jar.&#xA;Successfully added file SourceServiceLibJava\lib\guava-31.1-jre.jar to BAR file.&#xA;Elapsed time: 0.008 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/guava-31.1-jre.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659002490000" workspaceResource="/SourceServiceLibJava/lib/google-auth-library-credentials-1.8.1.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\google-auth-library-credentials-1.8.1.jar.&#xA;Successfully added file SourceServiceLibJava\lib\google-auth-library-credentials-1.8.1.jar to BAR file.&#xA;Elapsed time: 0.001 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/google-auth-library-credentials-1.8.1.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659081652000" workspaceResource="/SourceServiceLibJava/lib/google-http-client-1.42.2.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\google-http-client-1.42.2.jar.&#xA;Successfully added file SourceServiceLibJava\lib\google-http-client-1.42.2.jar to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/google-http-client-1.42.2.jar"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1659672950000" workspaceResource="/SourceServiceLibJava/lib/jpos.jar">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file SourceServiceLibJava\lib\jpos.jar.&#xA;Successfully added file SourceServiceLibJava\lib\jpos.jar to BAR file.&#xA;Elapsed time: 0.009 second(s).&#xA;" severity="0"/>
+      <barEntry name="lib/jpos.jar"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>

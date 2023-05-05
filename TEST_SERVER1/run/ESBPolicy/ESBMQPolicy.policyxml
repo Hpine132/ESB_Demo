@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+  <policy policyType="MQEndpoint" policyName="ESBMQPolicy" policyTemplate="MQEndpoint">
+    <connection>CLIENT</connection>
+    <destinationQueueManagerName>ESB.QMGR1</destinationQueueManagerName>
+    <queueManagerHostname>10.14.107.75</queueManagerHostname>
+    <listenerPortNumber>1414</listenerPortNumber>
+    <channelName>SYSTEM.DEF.SVRCONN</channelName>
+    <securityIdentity></securityIdentity>
+    <useSSL>false</useSSL>
+    <SSLPeerName></SSLPeerName>
+    <SSLCipherSpec></SSLCipherSpec>
+  </policy>
+</policies>

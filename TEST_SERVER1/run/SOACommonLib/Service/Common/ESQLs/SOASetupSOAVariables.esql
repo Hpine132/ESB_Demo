@@ -1,0 +1,48 @@
+BROKER SCHEMA Service.Common.ESQLs
+
+DECLARE soap NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+DECLARE soa NAMESPACE 'http://www.pjico.com.vn/common/envelope/soaenvelope/1';
+DECLARE common NAMESPACE 'http://www.pjico.com.vn/common/envelope/commonheader/1';
+DECLARE ns NAMESPACE 'http://www.pjico.com.vn/common/envelope/serviceenvelope/1';
+DECLARE upd NAMESPACE 'http://www.pjico.com.vn/entity/vn/updateStatus/1';
+
+CREATE COMPUTE MODULE setupSOAVariables
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		
+		DECLARE inReq REFERENCE TO InputRoot.SOAP.Body;	
+		MOVE inReq LASTCHILD;
+		DELETE FIELD OutputRoot.SOAP;
+		CREATE LASTCHILD OF OutputRoot DOMAIN('XMLNSC');
+		SET OutputRoot.XMLNSC.* = inReq;
+		
+		CREATE LASTCHILD OF Environment.Variables.SOAVariables.soa:SOAEnvelope;
+		
+		DECLARE timePattern CHARACTER 'yyyyMMddHHmmssSSS';
+		SET Environment.Variables.SOAVariables.StartTimeDuration = CAST (CURRENT_TIMESTAMP AS CHARACTER FORMAT timePattern);
+		
+		DECLARE refEnvelope REFERENCE TO Environment.Variables.SOAVariables.soa:SOAEnvelope;
+		DECLARE refInputAdditional REFERENCE TO inReq.common:Header.common:Common.common:AdditionalInformation;
+		
+		SET refEnvelope.soa:HTTPInputHeader = InputRoot.HTTPInputHeader;
+		SET refEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail = inReq.common:Header.common:Common;
+		SET refEnvelope.soa:SOAServiceHeader.soa:ClientDetail = inReq.common:Header.common:Client;
+
+
+		--Create Env for UserDefined Configs
+		CREATE FIELD Environment.Variables.SOAVariables.UserDefined.AdditionalInformation;
+		
+		--ensure that messageid has value
+		IF refEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:MessageId IS NULL THEN
+			SET refEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.common:MessageId = UUIDASCHAR;
+		END IF;	   
+
+		SET refEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.soa:ServiceName = InputRoot.SOAP.Context.service;
+		SET refEnvelope.soa:SOAServiceHeader.soa:SOACommonDetail.soa:OperationName = InputRoot.SOAP.Context.operation;
+		SET refEnvelope.soa:ServiceBody.*[1] = inReq;
+		SET Environment.Variables.ReplyID = InputLocalEnvironment.Destination.SOAP.Reply.ReplyIdentifier;
+		RETURN TRUE;
+	END;
+
+END MODULE;
